@@ -98,21 +98,21 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.3
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
-    manualCellSize: 0
-    cellSize: 0.16666667
+    manualCellSize: 1
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d23fa043609f8b547b38ad953a90075b, type: 2}
 --- !u!1 &49911003
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &49911004
@@ -496,7 +496,7 @@ GameObject:
   m_Name: Kommode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &74667171
@@ -1729,7 +1729,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1272496
+  m_Name: pb_Mesh17490
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1884,7 +1884,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1277664
+  m_Name: pb_Mesh17478
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2050,7 +2050,7 @@ GameObject:
   m_Name: Schrank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &340243437
@@ -3670,7 +3670,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &461522453
 Transform:
@@ -3701,7 +3701,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &478375538
 Transform:
@@ -3723,7 +3723,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-915270
+  m_Name: pb_Mesh17274
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3878,7 +3878,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-931206
+  m_Name: pb_Mesh17436
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4033,7 +4033,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1336916
+  m_Name: pb_Mesh17316
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4199,7 +4199,7 @@ GameObject:
   m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &586288371
@@ -4995,7 +4995,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1332320
+  m_Name: pb_Mesh17422
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5517,7 +5517,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1099860
+  m_Name: pb_Mesh17512
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5672,7 +5672,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1295124
+  m_Name: pb_Mesh17594
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5855,7 +5855,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1050072
+  m_Name: pb_Mesh17618
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6010,7 +6010,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1189008
+  m_Name: pb_Mesh17568
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6165,7 +6165,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-871502
+  m_Name: pb_Mesh17394
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6320,7 +6320,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1200194
+  m_Name: pb_Mesh17380
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6486,7 +6486,7 @@ GameObject:
   m_Name: Shower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &975246841
@@ -6842,7 +6842,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1330596
+  m_Name: pb_Mesh17542
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7840,7 +7840,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1250638
+  m_Name: pb_Mesh17250
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8373,7 +8373,7 @@ GameObject:
   m_Name: Sofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1307752125
@@ -8740,7 +8740,7 @@ GameObject:
   m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1332458912
@@ -9107,7 +9107,7 @@ GameObject:
   m_Name: Tisch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1336878100
@@ -9463,7 +9463,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-859086
+  m_Name: pb_Mesh17354
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9626,7 +9626,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1365597137
 Transform:
@@ -9649,7 +9649,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1080580
+  m_Name: pb_Mesh17342
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9804,7 +9804,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1241264
+  m_Name: pb_Mesh17262
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10326,7 +10326,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1315396
+  m_Name: pb_Mesh17556
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10481,7 +10481,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1286160
+  m_Name: pb_Mesh17466
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10647,7 +10647,7 @@ GameObject:
   m_Name: Schrank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1552980271
@@ -11003,7 +11003,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1059420
+  m_Name: pb_Mesh17454
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11169,7 +11169,7 @@ GameObject:
   m_Name: Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1616439560
@@ -11525,7 +11525,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1175694
+  m_Name: pb_Mesh17582
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11691,7 +11691,7 @@ GameObject:
   m_Name: DJ Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1678421382
@@ -12058,7 +12058,7 @@ GameObject:
   m_Name: Tisch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1684281387
@@ -12414,7 +12414,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1255168
+  m_Name: pb_Mesh17528
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12580,7 +12580,7 @@ GameObject:
   m_Name: Fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &1722061127
@@ -12947,7 +12947,7 @@ GameObject:
   m_Name: Bett
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!4 &1723170955
@@ -13311,7 +13311,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1811096973
 Transform:
@@ -13334,7 +13334,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-886092
+  m_Name: pb_Mesh17330
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13497,7 +13497,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1831541073
 Transform:
@@ -13520,7 +13520,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1072000
+  m_Name: pb_Mesh17630
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
