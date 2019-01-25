@@ -35,7 +35,6 @@ public class CharacterMovement : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
         UpdateVelocities();
-        //UpdatePositions();
     }
 
     public void Move(Vector2 desiredDirection)
@@ -59,6 +58,7 @@ public class CharacterMovement : MonoBehaviour {
         //Wir müssen drehen
         if (Mathf.Abs(angleDiff) >= angleAccuracy)
         {
+            rig.velocity = Vector3.zero;
             if (angleDiff > 0.0f)
             {
                 
@@ -71,27 +71,11 @@ public class CharacterMovement : MonoBehaviour {
         }
         else
         {
+            transform.forward = new Vector3(desiredVector.x, transform.forward.y, desiredVector.y);
             rig.angularVelocity = Vector3.zero;
             currentVelocity = Mathf.Clamp(currentVelocity + Time.deltaTime + acceleration, 0.0f, maxVelocity);
             rig.velocity = transform.forward * currentVelocity;
         }
     }
-
-
-    private void UpdatePositions()
-    { 
-        transform.position += new Vector3(desiredVector.x, 0, desiredVector.y).normalized * (currentVelocity * Time.deltaTime);
-
-        if (!desiredVector.Equals(Vector2.zero))
-        {
-            if(Mathf.Abs(angleDiff) <= angleAccuracy)
-                transform.forward = new Vector3(desiredVector.x, transform.forward.y, desiredVector.y);
-            else
-            {
-                transform.Rotate(Vector3.up, Time.deltaTime * currentAngularVelocity);
-            }
-        }
-    }
-
 
 }
