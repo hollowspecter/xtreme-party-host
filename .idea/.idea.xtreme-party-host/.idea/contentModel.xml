@@ -43,7 +43,10 @@
           <e p="PartPersons" t="Include">
             <e p="PartyPersonGenerator.cs" t="Include" />
             <e p="PPGenEvent.cs" t="Include" />
+            <e p="PPSound.cs" t="Include" />
+            <e p="PPSoundEvent.cs" t="Include" />
             <e p="UsePPGen.cs" t="Include" />
+            <e p="UsePPSound.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">
