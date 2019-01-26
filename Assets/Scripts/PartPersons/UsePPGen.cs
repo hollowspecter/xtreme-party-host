@@ -18,7 +18,7 @@ public class UsePPGen : MonoBehaviour
 	// Update is called once per frame
 	protected virtual void Update () 
 	{
-		if (Input.GetKeyDown("s"))
+		if (Input.GetKeyDown("0"))
 		{
 			_bellSource.Play();
 			PPGenerator.PPGEn(gameObject.transform.position);
