@@ -40,7 +40,7 @@ public class WalkAction : AbstractAction
             if (distance <= myObject.interactionDistance)
             {
                 Debug.Log("WalkAction: Close enough. Stop");
-                needs.GetComponent<AIMoveController>().Stop();
+                needs.GetComponent<AIMoveController>().StopPath();
                 TargetReached();
             }
         }

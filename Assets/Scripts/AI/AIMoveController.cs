@@ -72,10 +72,9 @@ public class AIMoveController : MonoBehaviour
                 else
                 {
                     //if this was the last corner, clear the path
-                    navMeshPath = new NavMeshPath();
+                    StopPath();
                     if(PathComplete != null)
                         PathComplete();
-                    Stop();
                 }
             }
         }
@@ -108,12 +107,22 @@ public class AIMoveController : MonoBehaviour
         Repath();
     }
 
-    public void Stop()
+
+
+    public void StopPath()
     {
-        StartCoroutine(DoStop());
+        movement.Stop();
+        navMeshPath = new NavMeshPath();
+        target = null;
     }
 
-    IEnumerator DoStop()
+
+    public void Crash()
+    {
+        StartCoroutine(DoCrash());
+    }
+
+    IEnumerator DoCrash()
     {
         canWalk = false;
         //Debug.Log("false");
