@@ -30,12 +30,26 @@
         <e p="RandomTarget.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AI" t="Include">
+            <e p="AbstractAction.cs" t="Include" />
+            <e p="ActionManager.cs" t="Include" />
+            <e p="ActionQueue.cs" t="Include" />
+            <e p="Actions" t="Include">
+              <e p="TimedAction.cs" t="Include" />
+              <e p="WalkAction.cs" t="Include" />
+            </e>
+            <e p="AdvertisingObject.cs" t="Include" />
+            <e p="AdvertisingObjects" t="Include">
+              <e p="Pizza.cs" t="Include" />
+            </e>
             <e p="AIMoveController.cs" t="Include" />
             <e p="CrashFeeler.cs" t="Include" />
             <e p="DebugMovement.cs" t="Include" />
+            <e p="Needs.cs" t="Include" />
           </e>
           <e p="CharacterMovement.cs" t="Include" />
           <e p="Controller" t="Include">
+            <e p="IActorInput.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
             <e p="PlayerInput.cs" t="Include" />
           </e>
           <e p="DiscoballSpin.cs" t="Include" />
@@ -48,9 +62,46 @@
             <e p="UsePPGen.cs" t="Include" />
             <e p="UsePPSound.cs" t="Include" />
           </e>
+          <e p="PlayerActions" t="Include">
+            <e p="Interactables" t="Include">
+              <e p="GeneralInteractable.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+              <e p="PickupItem.cs" t="Include" />
+              <e p="Refridgerator.cs" t="Include" />
+            </e>
+            <e p="PlayerActions.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Clock.cs" t="Include" />
+          </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="DiscoBall.shader" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
