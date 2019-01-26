@@ -8,6 +8,11 @@ public abstract class IInteractable : MonoBehaviour
     [SerializeField]
     protected float neededTime = 1.0f;
 
+    public void setNeededTime(float _value)
+    {
+        neededTime = _value;
+    }
+
     protected float interactionProgress = 0.0f;
 
     public bool ResetOnStop = false;
