@@ -66,8 +66,24 @@ GameObject:
   - component: {fileID: 136169407176848090}
   - component: {fileID: 114968774201016430}
   - component: {fileID: 114813195885800690}
+  - component: {fileID: 114980998005774876}
   m_Layer: 0
   m_Name: TestNPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1398418197027976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4801445844801960}
+  m_Layer: 0
+  m_Name: DebugHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,8 +119,22 @@ Transform:
   - {fileID: 4947872555955614}
   - {fileID: 224070532143237644}
   - {fileID: 224294365119558952}
+  - {fileID: 4801445844801960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4801445844801960
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398418197027976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.32, z: 0.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4089504914925306}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4947872555955614
 Transform:
@@ -553,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92567a5bb20ad467f993c03a1673e31c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionTickInterval: 5
+  actionTickInterval: 3
   tmpdebug: {fileID: 114075732711385270}
 --- !u!114 &114968774201016430
 MonoBehaviour:
@@ -739,6 +769,23 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   moodColorRenderer: {fileID: 23366528041731480}
+--- !u!114 &114980998005774876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223030496390074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c78bd8078e2446b96338ea0824791a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededTime: 1
+  ResetOnStop: 1
+  ItemType: default
+  ItemNeeded: 
+  AlternativeMethod: 0
+  hand: {fileID: 4801445844801960}
 --- !u!136 &136169407176848090
 CapsuleCollider:
   m_ObjectHideFlags: 1
