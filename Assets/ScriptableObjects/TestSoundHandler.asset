@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: TestSoundHandler
   m_EditorClassIdentifier: 
   PukePool:
-  - {fileID: 8300000, guid: ff388988497e0974db8dd779d866ba4f, type: 3}
+  - {fileID: 8300000, guid: b19351b15f754014cba13b52e02a657f, type: 3}
   ShoutingPool:
-  - {fileID: 8300000, guid: ff388988497e0974db8dd779d866ba4f, type: 3}
+  - {fileID: 8300000, guid: 814c9cf967e470e4da425f6e1702a7c1, type: 3}
   HappyPool:
-  - {fileID: 8300000, guid: ff388988497e0974db8dd779d866ba4f, type: 3}
+  - {fileID: 8300000, guid: 6aa6dbae35ebcd44da3473e86065bf1b, type: 3}
   rRange: 0.5
-  volumeRangePos: 0.24415703
-  pitchRangePos: 0.8060474
+  volumeRangePos: 0.6189218
+  pitchRangePos: 1.3455737

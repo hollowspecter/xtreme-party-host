@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53b91ea77cd2e34f9ab3014e15dc50b, type: 3}
   m_Name: TestPerson
   m_EditorClassIdentifier: 
-  PartyPerson: {fileID: 1834354280423762, guid: d6e5ac72b5cd6e947a9e1ce53974919f,
+  PartyPerson: {fileID: 1223030496390074, guid: 270b625fca49d084ca7709d39ae569d5,
     type: 2}
   HatPool:
   - {fileID: 1442985684930896, guid: 2b570aca34f44b14cb7d8131d1e2bd1b, type: 2}
