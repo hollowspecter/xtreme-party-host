@@ -41,17 +41,15 @@ public abstract class AdvertisingObject : MonoBehaviour {
         return advertisedActions;
     }
 
-    public virtual AbstractAction PickAction(AbstractAction _action)
+    public virtual void RemoveAction(AbstractAction _action)
     {
         if (advertisedActions.Contains(_action))
         {
             advertisedActions.Remove(_action);
-            return _action;
         }
         else
         {
             Debug.LogError("This action is not available anymore. Check why");
-            return null;
         }
     }
 

@@ -14,5 +14,8 @@ MonoBehaviour:
   PartyPerson: {fileID: 1834354280423762, guid: d6e5ac72b5cd6e947a9e1ce53974919f,
     type: 2}
   HatPool:
-  - {fileID: 1858216638923914, guid: f982b295f2a4f234da27b258515dda6b, type: 2}
-  - {fileID: 1738380014209984, guid: 2b5747ed5a874d4478b2c7463499ed14, type: 2}
+  - {fileID: 1442985684930896, guid: 2b570aca34f44b14cb7d8131d1e2bd1b, type: 2}
+  - {fileID: 1656037998962182, guid: c982126503dc6614a80470ce807a4279, type: 2}
+  - {fileID: 1441699965129564, guid: f6f3ef9d6c44bc04798d759d13cc534b, type: 2}
+  - {fileID: 1297625471295458, guid: 0433c4f8c9c71604985d717f080168d2, type: 2}
+  - {fileID: 1379288816397612, guid: 473070da4362c4740b8292ee984792b4, type: 2}

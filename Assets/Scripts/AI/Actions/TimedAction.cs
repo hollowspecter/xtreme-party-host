@@ -16,6 +16,8 @@ public class TimedAction : AbstractAction
 
     protected override bool EvaluatePrecondition()
     {
+        if (!base.EvaluatePrecondition()) return false;
+
         // check distance to player
         float distance = Vector3.Distance(needs.transform.position, myObject.transform.position);
         if (distance <= myObject.interactionDistance)
@@ -51,6 +53,11 @@ public class TimedAction : AbstractAction
     }
 
     public override void PausePerform()
+    {
+
+    }
+
+    public override void EndInterrupted()
     {
 
     }
