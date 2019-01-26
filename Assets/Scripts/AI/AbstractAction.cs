@@ -53,8 +53,17 @@ public abstract class AbstractAction {
 
         return evaluationResult;
     }
-    
-    abstract protected bool EvaluatePrecondition();
+
+    protected virtual bool EvaluatePrecondition()
+    {
+        if (myObject == null || needs == null)
+        {
+            interrupted = true;
+            return false;
+        }
+        else
+            return true;
+    }
     abstract public void PausePerform();
     abstract public void EndInterrupted();
 

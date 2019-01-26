@@ -31,7 +31,7 @@ public class PlayerActions : MonoBehaviour {
         //if(other.CompareTag("PlayerInteractable"))
         //{
             IInteractable item = other.GetComponent<IInteractable>();
-            if(item != null)
+            if(item != null && item.interactable)
                 interactablesList.Add(other.gameObject);
         //}
     }

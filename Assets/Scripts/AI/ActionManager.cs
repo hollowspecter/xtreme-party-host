@@ -88,8 +88,8 @@ public class ActionManager : MonoBehaviour {
                 currentMood = needs.CalculateMood();
                 futureMood = needs.CalculatePotentialMood(action.AdvertisedReward);
                 score = currentMood - futureMood;
-                sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
-                score = score / sqrDistance;
+                //sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
+                //score = score / sqrDistance;
 
                 listedActions.Add(new KeyValuePair<float, AbstractAction>(score, action));
             }

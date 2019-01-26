@@ -88,6 +88,7 @@ public class AIMoveController : MonoBehaviour
         else if(!canWalk)
         {
             movement.Stop();
+            iKControl.isWalking = false;
         }
     }
     private Vector3 AddDrunknessToDirection(Vector3 direction)
@@ -119,6 +120,7 @@ public class AIMoveController : MonoBehaviour
     public void StopPath()
     {
         movement.Stop();
+        iKControl.isWalking = false;
         navMeshPath = new NavMeshPath();
         target = null;
     }
