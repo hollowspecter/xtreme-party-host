@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1v2.unity" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1v2.unity.meta" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Furniture/Table.mat" afterPath="$PROJECT_DIR$/Assets/Materials/Furniture/Table.mat" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/ProBuilderPreferences.asset" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/ProBuilderPreferences.asset" />
-    </list>
+    <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
