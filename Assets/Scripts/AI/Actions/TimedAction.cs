@@ -54,4 +54,9 @@ public class TimedAction : AbstractAction
     {
 
     }
+
+    public override void EndInterrupted()
+    {
+
+    }
 }

@@ -15,9 +15,11 @@ public abstract class AbstractAction {
     protected KeyValuePair<NeedType, float>[] rewards;
 
     protected Needs needs;
+    public ActionManager ActionManager { get { return needs.GetComponent<ActionManager>(); } }
     protected UnityAction onEnd;
     protected UnityAction onStart;
     protected AdvertisingObject myObject;
+    public AdvertisingObject MyObject { get { return myObject; } }
     public Vector3 MyObjectPosition { get { return myObject.transform.position; } }
 
     protected bool startedOnce = false;
@@ -31,7 +33,8 @@ public abstract class AbstractAction {
         onEnd = _onEnd;
         onStart = _onStart;
     }
-  public virtual void SetupActionForMe(Needs _needs)
+
+    public virtual void SetupActionForMe(Needs _needs)
     {
         needs = _needs; // sets the player and is now occupied
 
@@ -52,8 +55,8 @@ public abstract class AbstractAction {
     }
     
     abstract protected bool EvaluatePrecondition();
-
     abstract public void PausePerform();
+    abstract public void EndInterrupted();
 
     /// <summary>
     /// Is called when progress is 1

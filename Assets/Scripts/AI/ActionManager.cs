@@ -46,6 +46,7 @@ public class ActionManager : MonoBehaviour {
         // actions will be thrown away either when they are canceled/interrupted or qhen they are performed successfully
         if (currentAction.interrupted || currentAction.Perform())
         {
+            if (currentAction.interrupted) currentAction.EndInterrupted();
             currentAction = null;
 
             // select the next action in the queue immedieatly
@@ -59,7 +60,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void ActionTick()
     {
-        Debug.Log(gameObject.name + ": ActionTick!");
+        //Debug.Log(gameObject.name + ": ActionTick!");
         // are there any actions in the queue? if yes, take the next one
         if (actionQueue.Count == 0)
         {
@@ -105,6 +106,7 @@ public class ActionManager : MonoBehaviour {
         int selectedOption = Random.Range(0, numOptions);
         AbstractAction selectedAction = listedActions[selectedOption].Value;
         Debug.Log(gameObject.name + ": Selected: " + selectedAction.Name);
+        selectedAction.MyObject.RemoveAction(selectedAction); // remove action from advertised actions
         actionQueue.Enqueue(selectedAction);
     }
 
