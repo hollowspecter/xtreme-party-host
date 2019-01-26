@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" />
-    </list>
+    <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +109,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="320" />
     <option name="y" value="86" />
     <option name="width" value="1464" />
@@ -182,12 +178,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548457550808</updated>
       <workItem from="1548457563390" duration="4619000" />
-      <workItem from="1548495416720" duration="16377000" />
+      <workItem from="1548495416720" duration="16845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20996000" />
+    <option name="totallyTimeSpent" value="21464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -199,7 +195,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="320" y="86" width="1464" height="924" extended-state="1" />
+    <frame x="320" y="86" width="1464" height="924" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
