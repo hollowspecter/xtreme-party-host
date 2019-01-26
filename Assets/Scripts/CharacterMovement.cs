@@ -20,6 +20,7 @@ public class CharacterMovement : MonoBehaviour {
     private float currentVelocity;
     private float currentAngularVelocity;
     private Vector2 desiredVector;
+    private float desiredVelocity;
 
     private float angleDiff;
     private float angleAccuracy = 30.0f;
@@ -40,6 +41,8 @@ public class CharacterMovement : MonoBehaviour {
     public void Move(Vector2 desiredDirection)
     {
         desiredVector = desiredDirection;
+        Vector2.ClampMagnitude(desiredVector, 1.0f);
+        desiredVelocity = desiredVector.magnitude * maxVelocity;
     }
 
     public void Move(Vector3 desiredDirection)
@@ -82,9 +85,17 @@ public class CharacterMovement : MonoBehaviour {
         }
         else
         {
+            float rigVelo = rig.velocity.magnitude;
+            if (rigVelo < desiredVelocity)
+            {
+                currentVelocity = Mathf.Clamp(currentVelocity + Time.deltaTime + acceleration, 0.0f, desiredVelocity);
+            }
+            else if (rigVelo > desiredVelocity)
+            { 
+                currentVelocity = Mathf.Clamp(currentVelocity - Time.deltaTime - acceleration, desiredVelocity, maxVelocity);
+            }
             transform.forward = new Vector3(desiredVector.x, transform.forward.y, desiredVector.y);
             rig.angularVelocity = Vector3.zero;
-            currentVelocity = Mathf.Clamp(currentVelocity + Time.deltaTime + acceleration, 0.0f, maxVelocity);
             rig.velocity = transform.forward * currentVelocity;
         }
     }
