@@ -42,7 +42,6 @@ public class GeneralInteractable : IInteractable {
 
             //Kein Item, kann ich alternativ damit antworten
             else if (AlternativeMethod) {
-                Debug.Log("Hello!");
                 base.StartInteracting(playerAction);
                 foundRequirement = null;
             }

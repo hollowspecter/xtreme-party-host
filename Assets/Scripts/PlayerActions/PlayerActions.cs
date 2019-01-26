@@ -24,26 +24,26 @@ public class PlayerActions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ProgressAction();
-	}
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PlayerInteractable"))
-        {
+        //if(other.CompareTag("PlayerInteractable"))
+        //{
             IInteractable item = other.GetComponent<IInteractable>();
             if(item != null)
                 interactablesList.Add(other.gameObject);
-        }
+        //}
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("PlayerInteractable"))
-        {
+        //if(other.CompareTag("PlayerInteractable"))
+        //{
             IInteractable item = other.GetComponent<IInteractable>();
             if (item != null)
                 interactablesList.Remove(other.gameObject);
-        }
+        //}
     }
 
     public void Dance()
@@ -74,7 +74,6 @@ public class PlayerActions : MonoBehaviour {
         else if(holdingItem){
             PutDownObject();
         }
-
     }
 
 
@@ -100,6 +99,9 @@ public class PlayerActions : MonoBehaviour {
         holdingItem.transform.position = holdingPoint.transform.position;
         holdingItem.transform.up = transform.up;
         objectToCarry.transform.SetParent(transform);
+        Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
+        if (itemRig)
+            itemRig.isKinematic = true;
     }
 
     public void PutDownObject()
@@ -108,8 +110,12 @@ public class PlayerActions : MonoBehaviour {
         if (holdingItem != null)
         {
             holdingItem.GetComponent<PickupItem>().ResetInteraction();
+            Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
+            if (itemRig)
+                itemRig.isKinematic = false;
         }
         holdingItem = null;
+
     }
 
     public void ThrowObject()
