@@ -56,6 +56,7 @@ public class NPCInteractable : GeneralInteractable {
             GetComponent<AIMoveController>().drunkness += 0.2f;
             ikcontrol.DrinkItem(false);
             ikcontrol.GrabItem(false);
+            GetComponent<UsePPSound>().Happy();
         },
         () => {
             ikcontrol.DrinkItem(true);
