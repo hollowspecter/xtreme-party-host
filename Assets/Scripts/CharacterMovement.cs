@@ -23,9 +23,10 @@ public class CharacterMovement : MonoBehaviour {
     private float desiredVelocity;
 
     private float angleDiff;
-    private float angleAccuracy = 30.0f;
+    private float angleAccuracy = 45.0f;
 
     private Rigidbody rig;
+    public bool isAIMovement = false;
 
     private void Start()
     {
@@ -45,11 +46,24 @@ public class CharacterMovement : MonoBehaviour {
         desiredVelocity = desiredVector.magnitude * maxVelocity;
     }
 
+    public void Move(Vector3 desiredDirection)
+    {
+        desiredVector.x = desiredDirection.x;
+        desiredVector.y = desiredDirection.z;
+        Move(desiredVector.normalized);
+    }
+
+    public void Stop()
+    {
+        desiredVector = Vector2.zero;
+        rig.velocity = Vector3.zero;
+    }
+
     private void UpdateVelocities()
     {
         angleDiff = Vector2.SignedAngle(new Vector2(transform.forward.x, transform.forward.z), desiredVector);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
 
         if (desiredVector.Equals(Vector2.zero))
         {
@@ -61,7 +75,10 @@ public class CharacterMovement : MonoBehaviour {
         //Wir müssen drehen
         if (Mathf.Abs(angleDiff) >= angleAccuracy)
         {
-            rig.velocity = Vector3.zero;
+            if (isAIMovement)
+                rig.velocity *= 0.75f;
+            else
+                rig.velocity = Vector3.zero;
             if (angleDiff > 0.0f)
             {
                 
