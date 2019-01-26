@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class AIMoveController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class AIMoveController : MonoBehaviour
 
     private bool canWalk = true;
 
+    private UnityAction PathComplete;
+
     private void Awake()
     {
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
@@ -44,7 +47,7 @@ public class AIMoveController : MonoBehaviour
 
     private void Update()
     {
-        if (canWalk && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
+        if (canWalk && target && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
         {
             toNextCornerVector = (navMeshPath.corners[currentCorner] - movement.transform.position);
             toNextCornerVector.y = 0;
@@ -70,6 +73,8 @@ public class AIMoveController : MonoBehaviour
                 {
                     //if this was the last corner, clear the path
                     navMeshPath = new NavMeshPath();
+                    if(PathComplete != null)
+                        PathComplete();
                     Stop();
                 }
             }
@@ -77,10 +82,6 @@ public class AIMoveController : MonoBehaviour
         else if(!canWalk)
         {
             movement.Stop();
-        }
-        else
-        {
-            DEBUGFindRandomLocation();
         }
     }
     private Vector3 AddDrunknessToDirection(Vector3 direction)
@@ -98,6 +99,12 @@ public class AIMoveController : MonoBehaviour
         navMeshPath = new NavMeshPath();
         target = RandomTarget.instance.GetRandomTarget();
         Repath();
+    }
+
+    public void SetTarget(Transform target, UnityAction completionCallback)
+    {
+        this.target = target;
+        PathComplete = completionCallback;
     }
 
     public void Stop()
