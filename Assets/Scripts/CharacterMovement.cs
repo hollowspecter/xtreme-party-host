@@ -23,9 +23,10 @@ public class CharacterMovement : MonoBehaviour {
     private float desiredVelocity;
 
     private float angleDiff;
-    private float angleAccuracy = 30.0f;
+    private float angleAccuracy = 45.0f;
 
     private Rigidbody rig;
+    public bool isAIMovement = false;
 
     private void Start()
     {
@@ -45,11 +46,24 @@ public class CharacterMovement : MonoBehaviour {
         desiredVelocity = desiredVector.magnitude * maxVelocity;
     }
 
+    public void Move(Vector3 desiredDirection)
+    {
+        desiredVector.x = desiredDirection.x;
+        desiredVector.y = desiredDirection.z;
+        Move(desiredVector.normalized);
+    }
+
+    public void Stop()
+    {
+        desiredVector = Vector2.zero;
+        rig.velocity = Vector3.zero;
+    }
+
     private void UpdateVelocities()
     {
         angleDiff = Vector2.SignedAngle(new Vector2(transform.forward.x, transform.forward.z), desiredVector);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
 
         if (desiredVector.Equals(Vector2.zero))
         {
@@ -61,7 +75,10 @@ public class CharacterMovement : MonoBehaviour {
         //Wir müssen drehen
         if (Mathf.Abs(angleDiff) >= angleAccuracy)
         {
-            rig.velocity = new Vector3(0.0f, rig.velocity.y, 0.0f);
+            if (isAIMovement)
+                rig.velocity *= 0.75f;
+            else
+                rig.velocity = Vector3.zero;
             if (angleDiff > 0.0f)
             {
                 
@@ -83,7 +100,7 @@ public class CharacterMovement : MonoBehaviour {
             { 
                 currentVelocity = Mathf.Clamp(currentVelocity - Time.deltaTime - acceleration, desiredVelocity, maxVelocity);
             }
-            transform.forward = new Vector3(desiredVector.x, 0.0f, desiredVector.y);
+            transform.forward = new Vector3(desiredVector.x, transform.forward.y, desiredVector.y);
             rig.angularVelocity = Vector3.zero;
             rig.velocity = transform.forward * currentVelocity;
         }
