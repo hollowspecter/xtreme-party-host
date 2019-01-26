@@ -13,8 +13,8 @@ public class PlayerActions : MonoBehaviour {
 
     //Holding item?
     public GameObject holdingItem;
-    [SerializeField]
-    private Transform holdingPoint;
+
+    public Transform holdingPoint;
 
 	// Use this for initialization
 	void Awake () {
@@ -98,14 +98,13 @@ public class PlayerActions : MonoBehaviour {
     {
         holdingItem = objectToCarry;
         holdingItem.transform.position = holdingPoint.transform.position;
-        holdingItem.transform.forward = transform.forward;
+        holdingItem.transform.up = transform.up;
         objectToCarry.transform.SetParent(transform);
     }
 
     public void PutDownObject()
     {
         holdingItem.transform.SetParent(null);
-        holdingItem.transform.forward = transform.forward;
         if (holdingItem != null)
         {
             holdingItem.GetComponent<PickupItem>().ResetInteraction();

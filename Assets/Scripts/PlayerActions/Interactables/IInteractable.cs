@@ -46,7 +46,6 @@ public abstract class IInteractable : MonoBehaviour
 
     public virtual void StartInteracting(PlayerActions playerAction)
     {
-        Debug.Log("Inteaction IInteractable");
         interactingPlayer = playerAction;
     }
 
@@ -70,7 +69,7 @@ public abstract class IInteractable : MonoBehaviour
 
     protected virtual void OnInteractingFinish()
     {
-
+        ResetInteraction();
     }
     protected virtual void OnInteractingInterrupted()
     {
@@ -81,6 +80,7 @@ public abstract class IInteractable : MonoBehaviour
 
     public virtual void ResetInteraction()
     {
+        interactingPlayer = null;
         interactionProgress = 0.0f;
         progressable = true;
     }

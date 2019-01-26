@@ -1,11 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneralInteractable : IInteractable {
 
     [SerializeField]
-    private string ItemNeeded = "";
+    protected string ItemNeeded = "";
+    [SerializeField]
+    protected bool AlternativeMethod;
+
+
+    protected GameObject foundRequirement;
 
 
 
@@ -21,26 +27,47 @@ public class GeneralInteractable : IInteractable {
         }
         else
         {
+            bool requirementMet = playerAction.holdingItem;
             //Item wird gehalten
-            if(playerAction.holdingItem)
-            {
-                IInteractable holdingItem = playerAction.holdingItem.GetComponent<IInteractable>();
+            if (requirementMet) {
+                IInteractable holdingInteractable = playerAction.holdingItem.GetComponent<IInteractable>();
+                requirementMet &= holdingInteractable != null && holdingInteractable.ItemType.Equals(ItemNeeded);
                 //Hat es benötigte Komponente, und ist es das richtige Item?
-                if(holdingItem != null && holdingItem.Equals(ItemNeeded)) {
-                    Debug.Log(ItemNeeded+" Requirement met!");
+                if (requirementMet)
+                {
                     base.StartInteracting(playerAction);
+                    foundRequirement = playerAction.holdingItem;
                 }
             }
-            //Requirement nicht erfüllt
-            else {
-                Debug.Log(ItemNeeded+" Requirement needed!");
+
+            //Kein Item, kann ich alternativ damit antworten
+            else if (AlternativeMethod) {
+                Debug.Log("Hello!");
+                base.StartInteracting(playerAction);
+                foundRequirement = null;
             }
         }
     }
 
+
     protected override void OnInteractingFinish()
     {
+        if(foundRequirement)
+            ConsumeRequirement();
+        else {
+            AlternativeFinish();
+        }
         base.OnInteractingFinish();
+    }
 
+    protected virtual void AlternativeFinish()
+    {
+        
+    }
+
+    protected virtual void ConsumeRequirement()
+    {
+        interactingPlayer.holdingItem = null;
+        Destroy(foundRequirement);
     }
 }

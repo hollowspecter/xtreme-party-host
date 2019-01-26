@@ -5,10 +5,11 @@ using UnityEngine.Events;
 
 public class PickupItem : IInteractable
 {
+   
     protected override void OnInteractingFinish()
     {
-        base.OnInteractingFinish();
-        progressable = false;
         interactingPlayer.PickupObject(gameObject);
+        progressable = false;
+        base.OnInteractingFinish();
     }
 }
