@@ -54,14 +54,14 @@ public class CharacterMovement : MonoBehaviour {
         if (desiredVector.Equals(Vector2.zero))
         {
             rig.angularVelocity = Vector3.zero;
-            rig.velocity = Vector3.zero;
+            rig.velocity = new Vector3(0.0f,rig.velocity.y, 0.0f);
             return;
         }
         
         //Wir müssen drehen
         if (Mathf.Abs(angleDiff) >= angleAccuracy)
         {
-            rig.velocity = Vector3.zero;
+            rig.velocity = new Vector3(0.0f, rig.velocity.y, 0.0f);
             if (angleDiff > 0.0f)
             {
                 
@@ -83,7 +83,7 @@ public class CharacterMovement : MonoBehaviour {
             { 
                 currentVelocity = Mathf.Clamp(currentVelocity - Time.deltaTime - acceleration, desiredVelocity, maxVelocity);
             }
-            transform.forward = new Vector3(desiredVector.x, transform.forward.y, desiredVector.y);
+            transform.forward = new Vector3(desiredVector.x, 0.0f, desiredVector.y);
             rig.angularVelocity = Vector3.zero;
             rig.velocity = transform.forward * currentVelocity;
         }

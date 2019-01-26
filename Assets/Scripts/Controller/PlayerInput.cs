@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour, IActorInput {
 
     [SerializeField]
-    private CharacterMovement usedMovement;
+    private CharacterMovement playerMovement;
+    [SerializeField]
+    private PlayerActions playerActions;
+
     [SerializeField]
     private int playerNumber;
 
@@ -54,17 +57,17 @@ public class PlayerInput : MonoBehaviour, IActorInput {
 
     public void MainActionDown()
     {
-        throw new System.NotImplementedException();
+        playerActions.StartAction();
     }
 
     public void MainActionPressed()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public void MainActionReleased()
     {
-        throw new System.NotImplementedException();
+        playerActions.StopAction();
     }
 
     public void MobileJoystickPosition(Vector2 value)
@@ -112,10 +115,10 @@ public class PlayerInput : MonoBehaviour, IActorInput {
     {
         desiredMovement.y = value;
         if (desiredMovement.sqrMagnitude > 0.0f)
-            usedMovement.Move(desiredMovement);
+            playerMovement.Move(desiredMovement);
         else
         {
-            usedMovement.Move(Vector2.zero);
+            playerMovement.Move(Vector2.zero);
         }
     }
 

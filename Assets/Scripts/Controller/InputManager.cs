@@ -7,8 +7,6 @@ using System.Collections.Generic;
     /// </summary>
     public class InputManager : MonoBehaviour
     {
-        // reference to mobile touch controls UI. If device is not a mobile device, we hide this canvas from screen.
-        public RectTransform MobileTouchControls;
 
         /// <summary>
         /// when true, we don't handle keyboards events
