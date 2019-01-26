@@ -21,14 +21,21 @@ public class Pizza : AdvertisingObject {
         // Create the consume action
         KeyValuePair<NeedType, float>[] ads = new KeyValuePair<NeedType, float>[1];
         ads[0] = new KeyValuePair<NeedType, float>(NeedType.HUNGER, foodValue);
-        TimedAction action = new TimedAction(this, "Eat", ads, ads, OnSliceEaten, eatingDuration);
-        advertisedActions.Add(action);
+        TimedAction action = new TimedAction(this, "Eat Pizza", ads, ads, OnSliceEaten, eatingDuration);
+
+        for (int i = 0; i < slicesLeft+1; ++i)
+        {
+            advertisedActions.Add(action);
+        }
     }
 
     protected virtual void OnSliceEaten()
     {
         Debug.Log("On Slice Eaten!");
         slicesLeft--;
-        if (slicesLeft > 0) AddSlicesOfPizza();
+        if (slicesLeft == 0)
+        {
+            Debug.Log("Pizza is now empty!");
+        }
     }
 }

@@ -9,8 +9,6 @@ public abstract class AdvertisingObject : MonoBehaviour {
 
     protected List<AbstractAction> advertisedActions = new List<AbstractAction>();
 
-    public bool occupied = false;
-
     protected virtual void Awake()
     {
     
@@ -39,5 +37,19 @@ public abstract class AdvertisingObject : MonoBehaviour {
     public virtual List<AbstractAction> GetAdvertisedActions()
     {
         return advertisedActions;
+    }
+
+    public virtual AbstractAction PickAction(AbstractAction _action)
+    {
+        if (advertisedActions.Contains(_action))
+        {
+            advertisedActions.Remove(_action);
+            return _action;
+        }
+        else
+        {
+            Debug.LogError("This action is not available anymore. Check why");
+            return null;
+        }
     }
 }

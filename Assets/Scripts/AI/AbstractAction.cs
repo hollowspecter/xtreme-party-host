@@ -9,6 +9,8 @@ public abstract class AbstractAction {
     public KeyValuePair<NeedType, float>[] AdvertisedReward { private set; get; }
 
     protected string name;
+    public bool interrupted = false;
+    public string Name { get { return name; } }
     protected KeyValuePair<NeedType, float>[] advertisedReward;
     protected KeyValuePair<NeedType, float>[] rewards;
 
@@ -28,23 +30,33 @@ public abstract class AbstractAction {
     public virtual void SetupActionForMe(Needs _needs)
     {
         needs = _needs; // sets the player and is now occupied
-        myObject.GetAdvertisedActions().Remove(this);
+
+        if (myObject != null)
+            myObject.GetAdvertisedActions().Remove(this);
     }
 
-    abstract public bool Perform();
+    public virtual bool Perform()
+    {
+        return EvaluatePrecondition();
+    }
+    
+    abstract protected bool EvaluatePrecondition();
 
     /// <summary>
     /// Is called when progress is 1
     /// Describes what happens on the end of this action.
     /// will evaluate the reward on the needs
     /// </summary>
-    public void EndAction()
+    public virtual void EndAction()
     {
         if (onEnd != null) onEnd();
 
-        foreach (KeyValuePair<NeedType, float> reward in rewards)
+        if (rewards != null)
         {
-            needs.RewardNeed(reward.Key, reward.Value);
+            foreach (KeyValuePair<NeedType, float> reward in rewards)
+            {
+                needs.RewardNeed(reward.Key, reward.Value);
+            }
         }
 
         needs = null; // free the player
