@@ -16091,98 +16091,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: VelocityModule.radial.scalar
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.range.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
-      value: 1.7117112
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
-      value: 1.7117112
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].time
-      value: 0.57717204
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
-      value: -0.96574754
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
-      value: -0.96574754
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
-      value: 0.07277041
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743139808273300, guid: 75d371ab44d3844708d3fa80025020b1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743139808273300, guid: 75d371ab44d3844708d3fa80025020b1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743139808273300, guid: 75d371ab44d3844708d3fa80025020b1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].value
-      value: 0.9879518
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198739933281333144, guid: 75d371ab44d3844708d3fa80025020b1,
-        type: 2}
-      propertyPath: startDelay.scalar
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75d371ab44d3844708d3fa80025020b1, type: 2}
   m_IsPrefabAsset: 0
@@ -18295,7 +18203,7 @@ Transform:
   m_GameObject: {fileID: 1835911217}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
