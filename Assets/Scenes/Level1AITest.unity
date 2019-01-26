@@ -4028,7 +4028,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh18816
+  m_Name: pb_Mesh16184
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5667,7 +5667,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh18892
+  m_Name: pb_Mesh16272
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10748,6 +10748,10 @@ Prefab:
     - target: {fileID: 1013250703519010, guid: 9e2344711037347e4b2f46d5da1ee66e, type: 2}
       propertyPath: m_Name
       value: Pizza (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013250703519010, guid: 9e2344711037347e4b2f46d5da1ee66e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e2344711037347e4b2f46d5da1ee66e, type: 2}
