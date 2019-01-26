@@ -59,11 +59,18 @@ public class AIMoveController : MonoBehaviour
                 {
                     //if this was not the last corner on our path
                     currentCorner++;
+                    toNextCornerVector = (navMeshPath.corners[currentCorner] - movement.transform.position);
+                    toNextCornerVector.y = 0;
+                    if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
+                    {
+                        movement.Move(AddDrunknessToDirection(toNextCornerVector));
+                    }
                 }
                 else
                 {
                     //if this was the last corner, clear the path
                     navMeshPath = new NavMeshPath();
+                    Stop();
                 }
             }
         }

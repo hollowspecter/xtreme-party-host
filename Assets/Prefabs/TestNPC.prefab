@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4089504914925306}
   - component: {fileID: 114015589829225542}
+  - component: {fileID: 114707270047267014}
   - component: {fileID: 195840411742651372}
   - component: {fileID: 33695264238882670}
   - component: {fileID: 23366528041731480}
   - component: {fileID: 54355010553510010}
-  - component: {fileID: 114707270047267014}
   m_Layer: 0
   m_Name: TestNPC
   m_TagString: Untagged
@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223030496390074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.29, y: 1.09, z: -2.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 14.335547, y: 1.61, z: -9.456117}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4947872555955614}
   m_Father: {fileID: 0}
@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1726883446545208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.78}
+  m_LocalScale: {x: 1, y: 1, z: 0.51709}
   m_Children: []
   m_Father: {fileID: 4089504914925306}
   m_RootOrder: 0
@@ -185,9 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56138786bf7104ebca89da780fe11e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 3
-  maxRotationalVelocity: 10
-  acceleration: 10
+  maxVelocity: 4
+  maxRotationalVelocity: 5
+  acceleration: 12
+  isAIMovement: 1
 --- !u!195 &195840411742651372
 NavMeshAgent:
   m_ObjectHideFlags: 1
