@@ -109,6 +109,7 @@ public class PlayerActions : MonoBehaviour {
         }
 
         holdingItem = objectToCarry;
+        interactable.interactable = false;
         holdingItem.GetComponent<Collider>().enabled = false;
         //holdingItem.transform.position = holdingPoint.transform.position;
         //holdingItem.transform.up = transform.up;
@@ -126,7 +127,11 @@ public class PlayerActions : MonoBehaviour {
         holdingItem.GetComponent<Collider>().enabled = true;
         if (holdingItem != null)
         {
-            holdingItem.GetComponent<PickupItem>().ResetInteraction();
+            IInteractable interactble = holdingItem.GetComponent<IInteractable>();
+            {
+                interactble.ResetInteraction();
+                interactble.interactable = true;
+            }
             Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
             if (itemRig)
                 itemRig.isKinematic = false;
