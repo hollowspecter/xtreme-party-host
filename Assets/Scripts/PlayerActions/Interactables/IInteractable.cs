@@ -20,6 +20,7 @@ public abstract class IInteractable : MonoBehaviour
     protected PlayerActions interactingPlayer = null;
 
     protected bool progressable = true;
+    public bool interactable = true;
 
     public string ItemType = "default";
 
