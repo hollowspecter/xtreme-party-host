@@ -26,6 +26,12 @@ public class CharacterMovement : MonoBehaviour {
     private float angleAccuracy = 45.0f;
 
     private Rigidbody rig;
+    public Vector3 rigidBodyVelocity
+    {
+        get { if (rig != null) return rig.velocity;
+            else return Vector3.zero;
+        }
+    }
     public bool isAIMovement = false;
 
     private void Start()
@@ -68,7 +74,7 @@ public class CharacterMovement : MonoBehaviour {
         if (desiredVector.Equals(Vector2.zero))
         {
             rig.angularVelocity = Vector3.zero;
-            rig.velocity = Vector3.zero;
+            rig.velocity = new Vector3(0.0f,rig.velocity.y, 0.0f);
             return;
         }
         

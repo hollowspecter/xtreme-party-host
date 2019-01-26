@@ -8,6 +8,7 @@ public class AIMoveController : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
     CharacterMovement movement;
+    IKControl iKControl;
     const float MOVEMENTTHRESHHOLD = 0.1f;
 
     NavMeshPath navMeshPath;
@@ -43,6 +44,7 @@ public class AIMoveController : MonoBehaviour
         navMeshAgent.updateUpAxis = false;
         movement = GetComponentInChildren<CharacterMovement>();
         perlinYCoordinate = Random.Range(0, 100);
+        iKControl = GetComponentInChildren<IKControl>();
     }
 
     private void Update()
@@ -53,6 +55,8 @@ public class AIMoveController : MonoBehaviour
             toNextCornerVector.y = 0;
             if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
             {
+                iKControl.isWalking = true;
+                iKControl.walkAnimSpeed = movement.rigidBodyVelocity.magnitude;
                 movement.Move(AddDrunknessToDirection(toNextCornerVector));
             }
             else
@@ -66,22 +70,25 @@ public class AIMoveController : MonoBehaviour
                     toNextCornerVector.y = 0;
                     if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
                     {
+
+                        iKControl.isWalking = true;
+                        iKControl.walkAnimSpeed = movement.rigidBodyVelocity.magnitude;
                         movement.Move(AddDrunknessToDirection(toNextCornerVector));
                     }
                 }
                 else
                 {
                     //if this was the last corner, clear the path
-                    navMeshPath = new NavMeshPath();
+                    StopPath();
                     if(PathComplete != null)
                         PathComplete();
-                    Stop();
                 }
             }
         }
         else if(!canWalk)
         {
             movement.Stop();
+            iKControl.isWalking = false;
         }
     }
     private Vector3 AddDrunknessToDirection(Vector3 direction)
@@ -105,25 +112,38 @@ public class AIMoveController : MonoBehaviour
     {
         this.target = target;
         PathComplete = completionCallback;
+        Repath();
     }
 
-    public void Stop()
+
+
+    public void StopPath()
     {
-        StartCoroutine(DoStop());
+        movement.Stop();
+        iKControl.isWalking = false;
+        navMeshPath = new NavMeshPath();
+        target = null;
     }
 
-    IEnumerator DoStop()
+
+    public void Crash()
+    {
+        StartCoroutine(DoCrash());
+    }
+
+    IEnumerator DoCrash()
     {
         canWalk = false;
-        Debug.Log("false");
+        //Debug.Log("false");
         yield return new WaitForSeconds(Mathf.Lerp(minCrashStopTime, maxCrashStopTime, drunkness));
-        Debug.Log("true");
+        //Debug.Log("true");
         canWalk = true;
     }
 
     public void Repath()
     {
         currentCorner = 0;
+        navMeshPath = new NavMeshPath();
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);
