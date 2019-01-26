@@ -7,12 +7,14 @@ public class NPCInteractable : GeneralInteractable {
     public Transform hand;
 
     protected GameObject beerBottle;
+    protected IKControl ikcontrol;
 
     protected override void Awake()
     {
         base.Awake();
 
         ItemNeeded = "Beerbottle";
+        ikcontrol = GetComponentInChildren<IKControl>();
     }
 
     protected override void ConsumeRequirement()
@@ -24,11 +26,12 @@ public class NPCInteractable : GeneralInteractable {
         Rigidbody itemRig = beerBottle.GetComponent<Rigidbody>();
         if (itemRig)
             itemRig.isKinematic = true;
+        itemRig.GetComponent<Collider>().enabled = false;
         beerBottle.transform.parent = hand;
         beerBottle.transform.localPosition = Vector3.zero;
         Destroy(beerBottle.GetComponent<PickupItem>());
-
         interactable = false;
+        ikcontrol.GrabItem(true, true);
 
         AddBeerDrinkingAction();
     }
@@ -47,11 +50,16 @@ public class NPCInteractable : GeneralInteractable {
         () => { // onend
             beerBottle.transform.parent = null;
             beerBottle.GetComponent<Rigidbody>().isKinematic = false;
+            beerBottle.GetComponent<Collider>().enabled = true;
             RubbishSpawner.AddRubbishToObject(beerBottle, 5f, 2f);
             interactable = true;
             GetComponent<AIMoveController>().drunkness += 0.2f;
-          },
-        () => { }, // on start
+            ikcontrol.DrinkItem(false);
+            ikcontrol.GrabItem(false);
+        },
+        () => {
+            ikcontrol.DrinkItem(true);
+        }, // on start
         5f); // dirnking duration
 
         GetComponent<ActionManager>().actionQueue.Enqueue(action);

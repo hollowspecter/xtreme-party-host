@@ -9,6 +9,7 @@ public class PlayerActions : MonoBehaviour {
 
     List<GameObject> interactablesList;
     IInteractable currentInteractingObject;
+    IKControl ikcontrol;
 
 
     //Holding item?
@@ -19,6 +20,7 @@ public class PlayerActions : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         interactablesList = new List<GameObject>();
+        ikcontrol = GetComponentInChildren<IKControl>();
 	}
 	
 	// Update is called once per frame
@@ -95,10 +97,24 @@ public class PlayerActions : MonoBehaviour {
 
     public void PickupObject(GameObject objectToCarry)
     {
+        IInteractable interactable = objectToCarry.GetComponent<IInteractable>();
+        if (interactable.ItemType == "Beercrate"
+        || interactable.ItemType == "Pizza")
+        {
+            ikcontrol.GrabItem(true);
+        }
+        else
+        {
+            ikcontrol.GrabItem(true, true);
+        }
+
         holdingItem = objectToCarry;
-        holdingItem.transform.position = holdingPoint.transform.position;
-        holdingItem.transform.up = transform.up;
-        objectToCarry.transform.SetParent(transform);
+        holdingItem.GetComponent<Collider>().enabled = false;
+        //holdingItem.transform.position = holdingPoint.transform.position;
+        //holdingItem.transform.up = transform.up;
+        holdingItem.transform.SetParent(holdingPoint.transform);
+        holdingItem.transform.localRotation = Quaternion.identity;
+        holdingItem.transform.localPosition = Vector3.zero;
         Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
         if (itemRig)
             itemRig.isKinematic = true;
@@ -107,6 +123,7 @@ public class PlayerActions : MonoBehaviour {
     public void PutDownObject()
     {
         holdingItem.transform.SetParent(null);
+        holdingItem.GetComponent<Collider>().enabled = true;
         if (holdingItem != null)
         {
             holdingItem.GetComponent<PickupItem>().ResetInteraction();
@@ -115,6 +132,7 @@ public class PlayerActions : MonoBehaviour {
                 itemRig.isKinematic = false;
         }
         holdingItem = null;
+        ikcontrol.GrabItem(false);
 
     }
 

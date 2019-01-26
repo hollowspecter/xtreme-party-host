@@ -24,6 +24,12 @@ public class WalkAction : AbstractAction
     {
         if (!base.Perform()) return false;
 
+        if (myObject == null)
+        {
+            interrupted = true;
+            return false;
+        }
+
         // not walking towards rn?
         if (!walking)
         {

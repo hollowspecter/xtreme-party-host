@@ -13,7 +13,13 @@ public class PlayerInput : MonoBehaviour, IActorInput {
     private int playerNumber;
 
     Vector2 desiredMovement;
+    private IKControl ikcontrol;
     #region IActorInput
+
+    void Awake()
+    {
+        ikcontrol = GetComponentInChildren<IKControl>();
+    }
 
     public void AltActionDown()
     {
@@ -115,10 +121,15 @@ public class PlayerInput : MonoBehaviour, IActorInput {
     {
         desiredMovement.y = value;
         if (desiredMovement.sqrMagnitude > 0.0f)
+        {
             playerMovement.Move(desiredMovement);
+            ikcontrol.walkAnimSpeed = Mathf.Clamp(playerMovement.rigidBodyVelocity.magnitude, 0f, 3f);
+            ikcontrol.isWalking = true;
+        }
         else
         {
             playerMovement.Move(Vector2.zero);
+            ikcontrol.isWalking = false;
         }
     }
 
