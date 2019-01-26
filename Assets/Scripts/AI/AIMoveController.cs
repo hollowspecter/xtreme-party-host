@@ -105,6 +105,7 @@ public class AIMoveController : MonoBehaviour
     {
         this.target = target;
         PathComplete = completionCallback;
+        Repath();
     }
 
     public void Stop()
@@ -115,15 +116,16 @@ public class AIMoveController : MonoBehaviour
     IEnumerator DoStop()
     {
         canWalk = false;
-        Debug.Log("false");
+        //Debug.Log("false");
         yield return new WaitForSeconds(Mathf.Lerp(minCrashStopTime, maxCrashStopTime, drunkness));
-        Debug.Log("true");
+        //Debug.Log("true");
         canWalk = true;
     }
 
     public void Repath()
     {
         currentCorner = 0;
+        navMeshPath = new NavMeshPath();
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);
