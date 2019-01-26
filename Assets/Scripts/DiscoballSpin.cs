@@ -7,7 +7,7 @@ public class DiscoballSpin : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		var ySpin = spinSpeed * Time.time;
+		var ySpin = spinSpeed * Time.deltaTime;
 		this.transform.eulerAngles += new Vector3(0,ySpin,0);
 	}
 }

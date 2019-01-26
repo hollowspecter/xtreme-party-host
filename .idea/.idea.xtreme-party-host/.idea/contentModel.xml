@@ -27,14 +27,24 @@
             </e>
           </e>
         </e>
+        <e p="RandomTarget.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AIMoveController.cs" t="Include" />
+            <e p="CrashFeeler.cs" t="Include" />
+            <e p="DebugMovement.cs" t="Include" />
+          </e>
           <e p="CharacterMovement.cs" t="Include" />
           <e p="Controller" t="Include">
             <e p="PlayerInput.cs" t="Include" />
           </e>
           <e p="DiscoballSpin.cs" t="Include" />
           <e p="FowManager.cs" t="Include" />
-          <e p="PlaceholderScript.cs" t="Include" />
+          <e p="PartPersons" t="Include">
+            <e p="PartyPersonGenerator.cs" t="Include" />
+            <e p="PPGenEvent.cs" t="Include" />
+            <e p="UsePPGen.cs" t="Include" />
+          </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="DiscoBall.shader" t="Include" />

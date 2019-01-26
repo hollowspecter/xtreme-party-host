@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Discoball.mat" afterPath="$PROJECT_DIR$/Assets/Materials/Discoball.mat" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/DiscoBall.prefab" afterPath="$PROJECT_DIR$/Assets/PreFabs/DiscoBall.prefab" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/ProBuilderPreferences.asset" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/ProBuilderPreferences.asset" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Matt.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Matt.unity" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,14 +52,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiscoballSpin.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DiscoballSpin.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
-                <marker date="1548500334582" expanded="true" signature="63:220" ph="{...}" />
-                <marker date="1548500334582" expanded="true" signature="119:218" ph="{...}" />
+                <marker date="1548509006216" expanded="true" signature="63:225" ph="{...}" />
+                <marker date="1548509006216" expanded="true" signature="119:223" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PartyPersonGenerator.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+              <folding>
+                <marker date="1548508924699" expanded="true" signature="81:347" ph="{...}" />
+                <marker date="1548508924699" expanded="true" signature="350:490" ph="/* class generator SO abstract ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PPGenEvent.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+              <folding>
+                <marker date="1548509647407" expanded="true" signature="6:67" ph="..." />
+                <marker date="1548509647407" expanded="true" signature="154:1826" ph="{...}" />
+                <marker date="1548509647407" expanded="true" signature="532:792" ph="{...}" />
+                <marker date="1548509647407" expanded="true" signature="847:1128" ph="{...}" />
+                <marker date="1548509647407" expanded="true" signature="1185:1481" ph="{...}" />
+                <marker date="1548509647407" expanded="true" signature="1535:1824" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsePPGen.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="74" lean-forward="true" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+              <folding>
+                <marker date="1548509673727" expanded="true" signature="6:107" ph="..." />
+                <marker date="1548509673727" expanded="true" signature="186:1098" ph="{...}" />
+                <marker date="1548509673727" expanded="true" signature="310:719" ph="{...}" />
+                <marker date="1548509673727" expanded="true" signature="791:1096" ph="{...}" />
+                <marker date="1548509673727" expanded="true" signature="823:891" ph="{...}" />
+                <marker date="1548509673727" expanded="true" signature="921:993" ph="{...}" />
+                <marker date="1548509673727" expanded="true" signature="1023:1089" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,15 +120,21 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/DiscoBall.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/FowManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/DiscoBall.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" />
       </list>
     </option>
   </component>
@@ -86,9 +144,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="348" />
-    <option name="y" value="82" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="164" />
+    <option name="y" value="90" />
     <option name="width" value="1464" />
     <option name="height" value="924" />
   </component>
@@ -155,12 +213,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548457550808</updated>
       <workItem from="1548457563390" duration="4619000" />
-      <workItem from="1548495416720" duration="3515000" />
+      <workItem from="1548495416720" duration="11916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8134000" />
+    <option name="totallyTimeSpent" value="16535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -172,7 +230,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="348" y="82" width="1464" height="924" extended-state="0" />
+    <frame x="164" y="90" width="1464" height="924" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -183,7 +241,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13743094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -257,10 +315,52 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
-            <marker date="1548500334582" expanded="true" signature="63:220" ph="{...}" />
-            <marker date="1548500334582" expanded="true" signature="119:218" ph="{...}" />
+            <marker date="1548509006216" expanded="true" signature="63:225" ph="{...}" />
+            <marker date="1548509006216" expanded="true" signature="119:223" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+          <folding>
+            <marker date="1548508924699" expanded="true" signature="81:347" ph="{...}" />
+            <marker date="1548508924699" expanded="true" signature="350:490" ph="/* class generator SO abstract ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <marker date="1548509647407" expanded="true" signature="6:67" ph="..." />
+            <marker date="1548509647407" expanded="true" signature="154:1826" ph="{...}" />
+            <marker date="1548509647407" expanded="true" signature="532:792" ph="{...}" />
+            <marker date="1548509647407" expanded="true" signature="847:1128" ph="{...}" />
+            <marker date="1548509647407" expanded="true" signature="1185:1481" ph="{...}" />
+            <marker date="1548509647407" expanded="true" signature="1535:1824" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="74" lean-forward="true" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+          <folding>
+            <marker date="1548509673727" expanded="true" signature="6:107" ph="..." />
+            <marker date="1548509673727" expanded="true" signature="186:1098" ph="{...}" />
+            <marker date="1548509673727" expanded="true" signature="310:719" ph="{...}" />
+            <marker date="1548509673727" expanded="true" signature="791:1096" ph="{...}" />
+            <marker date="1548509673727" expanded="true" signature="823:891" ph="{...}" />
+            <marker date="1548509673727" expanded="true" signature="921:993" ph="{...}" />
+            <marker date="1548509673727" expanded="true" signature="1023:1089" ph="{...}" />
           </folding>
         </state>
       </provider>
