@@ -31,7 +31,6 @@ public class Clock : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(time.ToShortTimeString());
         time = time.AddMinutes(Time.deltaTime * simulationTimeFactor);
         clockText.text = time.ToString("HH:mm");
     }
