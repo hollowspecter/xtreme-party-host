@@ -74,7 +74,7 @@ public class CharacterMovement : MonoBehaviour {
         if (desiredVector.Equals(Vector2.zero))
         {
             rig.angularVelocity = Vector3.zero;
-            rig.velocity = Vector3.zero;
+            rig.velocity = new Vector3(0.0f,rig.velocity.y, 0.0f);
             return;
         }
         

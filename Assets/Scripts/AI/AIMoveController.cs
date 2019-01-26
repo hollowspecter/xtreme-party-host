@@ -79,10 +79,9 @@ public class AIMoveController : MonoBehaviour
                 else
                 {
                     //if this was the last corner, clear the path
-                    navMeshPath = new NavMeshPath();
+                    StopPath();
                     if(PathComplete != null)
                         PathComplete();
-                    Stop();
                 }
             }
         }
@@ -112,25 +111,37 @@ public class AIMoveController : MonoBehaviour
     {
         this.target = target;
         PathComplete = completionCallback;
+        Repath();
     }
 
-    public void Stop()
+
+
+    public void StopPath()
     {
-        StartCoroutine(DoStop());
+        movement.Stop();
+        navMeshPath = new NavMeshPath();
+        target = null;
     }
 
-    IEnumerator DoStop()
+
+    public void Crash()
+    {
+        StartCoroutine(DoCrash());
+    }
+
+    IEnumerator DoCrash()
     {
         canWalk = false;
-        Debug.Log("false");
+        //Debug.Log("false");
         yield return new WaitForSeconds(Mathf.Lerp(minCrashStopTime, maxCrashStopTime, drunkness));
-        Debug.Log("true");
+        //Debug.Log("true");
         canWalk = true;
     }
 
     public void Repath()
     {
         currentCorner = 0;
+        navMeshPath = new NavMeshPath();
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);
