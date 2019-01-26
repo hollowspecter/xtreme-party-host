@@ -13,7 +13,6 @@ public class CrashFeeler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("crash");
         aiMoveController.Stop();
         aiMoveController.Repath();
     }

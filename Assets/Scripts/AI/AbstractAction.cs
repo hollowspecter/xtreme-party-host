@@ -16,18 +16,21 @@ public abstract class AbstractAction {
 
     protected Needs needs;
     protected UnityAction onEnd;
+    protected UnityAction onStart;
     protected AdvertisingObject myObject;
 
-    protected AbstractAction(AdvertisingObject _myObject, string _name, KeyValuePair<NeedType, float>[] _advertisedReward, KeyValuePair<NeedType, float>[] _rewards, UnityAction _onEnd)
+    protected bool startedOnce = false;
+
+    protected AbstractAction(AdvertisingObject _myObject, string _name, KeyValuePair<NeedType, float>[] _advertisedReward, KeyValuePair<NeedType, float>[] _rewards, UnityAction _onEnd = null, UnityAction _onStart = null)
     {
         myObject = _myObject;
         name = _name;
         advertisedReward = _advertisedReward;
         rewards = _rewards;
         onEnd = _onEnd;
+        onStart = _onStart;
     }
-
-    public virtual void SetupActionForMe(Needs _needs)
+  public virtual void SetupActionForMe(Needs _needs)
     {
         needs = _needs; // sets the player and is now occupied
 
@@ -37,10 +40,19 @@ public abstract class AbstractAction {
 
     public virtual bool Perform()
     {
-        return EvaluatePrecondition();
+        bool evaluationResult = EvaluatePrecondition();
+        if (!startedOnce && evaluationResult)
+        {
+            startedOnce = true;
+            if (onStart != null) onStart();
+        }
+
+        return evaluationResult;
     }
     
     abstract protected bool EvaluatePrecondition();
+
+    abstract public void PausePerform();
 
     /// <summary>
     /// Is called when progress is 1

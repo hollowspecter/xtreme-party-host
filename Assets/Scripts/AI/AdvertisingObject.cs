@@ -9,6 +9,8 @@ public abstract class AdvertisingObject : MonoBehaviour {
 
     protected List<AbstractAction> advertisedActions = new List<AbstractAction>();
 
+    public float interactionDistance = 2f; //what distance do you need to interact with it
+
     protected virtual void Awake()
     {
     
@@ -51,5 +53,10 @@ public abstract class AdvertisingObject : MonoBehaviour {
             Debug.LogError("This action is not available anymore. Check why");
             return null;
         }
+    }
+
+    public virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, interactionDistance);
     }
 }

@@ -44,12 +44,22 @@ public class ActionManager : MonoBehaviour {
     protected virtual void TryPerformCurrentAction()
     {
         // actions will be thrown away either when they are canceled/interrupted or qhen they are performed successfully
-        if (currentAction.interrupted || currentAction.Perform()) currentAction = null;
+        if (currentAction.interrupted || currentAction.Perform())
+        {
+            currentAction = null;
+
+            // select the next action in the queue immedieatly
+            if (actionQueue.Count > 0)
+            {
+                Debug.Log(gameObject.name + ": Follow up with next action!");
+                ActionTick();
+            }
+        }
     }
 
     protected virtual void ActionTick()
     {
-        Debug.Log("ActionTick!");
+        Debug.Log(gameObject.name + ": ActionTick!");
         // are there any actions in the queue? if yes, take the next one
         if (actionQueue.Count == 0)
         {
@@ -63,7 +73,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void SelectAction()
     {
-        Debug.Log("Try Select an Action");
+        Debug.Log(gameObject.name + ": Try Select an Action");
 
         // go thru all objects
         List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
@@ -89,13 +99,13 @@ public class ActionManager : MonoBehaviour {
         int numOptions = Mathf.Min(listedActions.Count, 2); //max 3 options
         int selectedOption = Random.Range(0, numOptions);
         AbstractAction selectedAction = listedActions[selectedOption].Value;
-        Debug.Log("Selected: " + selectedAction.Name);
+        Debug.Log(gameObject.name + ": Selected: " + selectedAction.Name);
         actionQueue.Enqueue(selectedAction);
     }
 
     protected virtual void SetCurrentAction(AbstractAction _action)
     {
-        Debug.Log("SetCurrentAction");
+        Debug.Log(gameObject.name + ": SetCurrentAction " + _action.Name);
         currentAction = _action;
         currentAction.SetupActionForMe(GetComponent<Needs>());
     }
@@ -116,8 +126,10 @@ public class ActionManager : MonoBehaviour {
 
     public virtual void ForceAction(AbstractAction _action)
     {
+        Debug.Log(gameObject.name + ": Force Action: " + _action.Name);
         // store current action to front
-        actionQueue.EnqueueFront(_action);
+        currentAction.PausePerform();
+        actionQueue.EnqueueFront(currentAction);
         // take the forced action as current action
         SetCurrentAction(_action);
     }
