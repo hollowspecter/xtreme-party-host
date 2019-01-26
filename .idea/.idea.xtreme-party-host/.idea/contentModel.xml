@@ -28,6 +28,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CharacterMovement.cs" t="Include" />
+          <e p="Controller" t="Include">
+            <e p="PlayerInput.cs" t="Include" />
+          </e>
           <e p="FowManager.cs" t="Include" />
           <e p="PlaceholderScript.cs" t="Include" />
         </e>

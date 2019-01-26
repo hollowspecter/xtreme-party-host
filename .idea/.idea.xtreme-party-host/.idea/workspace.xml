@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/FogOfWar.mat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/FogOfWar.mat.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/NPCDefault.mat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/NPCDefault.mat.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/PlayerDefault.mat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Materials/PlayerDefault.mat.meta" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FowManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/FowManager.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
                 <marker date="1548461586351" expanded="true" signature="6:37" ph="..." />
                 <marker date="1548461586351" expanded="true" signature="118:1316" ph="{...}" />
@@ -128,12 +122,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548457550808</updated>
-      <workItem from="1548457563390" duration="4044000" />
+      <workItem from="1548457563390" duration="4619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4044000" />
+    <option name="totallyTimeSpent" value="4619000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -185,7 +179,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
             <marker date="1548461586351" expanded="true" signature="6:37" ph="..." />
             <marker date="1548461586351" expanded="true" signature="118:1316" ph="{...}" />
