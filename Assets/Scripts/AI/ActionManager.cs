@@ -46,6 +46,7 @@ public class ActionManager : MonoBehaviour {
         // actions will be thrown away either when they are canceled/interrupted or qhen they are performed successfully
         if (currentAction.interrupted || currentAction.Perform())
         {
+            if (currentAction.interrupted) currentAction.EndInterrupted();
             currentAction = null;
 
             // select the next action in the queue immedieatly
@@ -59,7 +60,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void ActionTick()
     {
-        Debug.Log(gameObject.name + ": ActionTick!");
+        //Debug.Log(gameObject.name + ": ActionTick!");
         // are there any actions in the queue? if yes, take the next one
         if (actionQueue.Count == 0)
         {
@@ -77,14 +78,18 @@ public class ActionManager : MonoBehaviour {
 
         // go thru all objects
         List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
-        float score;
+        float score, sqrDistance, currentMood, futureMood;
         foreach (var obj in AdvertisingObject.allObjects)
         {
             // go thru all actions
             foreach(var action in obj.GetAdvertisedActions())
             {
                 // calculate the score
-                score = needs.CalculateMood() - needs.CalculatePotentialMood(action.AdvertisedReward);
+                currentMood = needs.CalculateMood();
+                futureMood = needs.CalculatePotentialMood(action.AdvertisedReward);
+                score = currentMood - futureMood;
+                sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
+                score = score / sqrDistance;
 
                 listedActions.Add(new KeyValuePair<float, AbstractAction>(score, action));
             }
@@ -94,12 +99,14 @@ public class ActionManager : MonoBehaviour {
 
         // sort the scores and actions
         listedActions.Sort((emp1, emp2) => emp2.Key.CompareTo(emp1.Key));
+        Debug.Log("<b>" + gameObject.name + " Score List</b>" + listedActions.PrintList());
 
         // queue one of the three best actions
         int numOptions = Mathf.Min(listedActions.Count, 2); //max 3 options
         int selectedOption = Random.Range(0, numOptions);
         AbstractAction selectedAction = listedActions[selectedOption].Value;
         Debug.Log(gameObject.name + ": Selected: " + selectedAction.Name);
+        selectedAction.MyObject.RemoveAction(selectedAction); // remove action from advertised actions
         actionQueue.Enqueue(selectedAction);
     }
 

@@ -20,7 +20,6 @@ public class Pizza : AdvertisingObject {
 
     protected virtual void AddSlicesOfPizza()
     {
-        Debug.Log("Add Slice of Pizza");
         // Create the consume action
         KeyValuePair<NeedType, float>[] ads = new KeyValuePair<NeedType, float>[1];
         ads[0] = new KeyValuePair<NeedType, float>(NeedType.HUNGER, foodValue);
@@ -39,13 +38,15 @@ public class Pizza : AdvertisingObject {
 
     protected virtual void OnSliceEaten()
     {
-        Debug.Log("On Slice Eaten!");
         slicesLeft--;
-        slices[slicesLeft - 1].SetActive(false);
         if (slicesLeft == 0)
         {
             Debug.Log("Pizza is now empty!");
             Destroy(gameObject);
+        }
+        else
+        {
+            slices[slicesLeft - 1].SetActive(false);
         }
     }
 }

@@ -27,7 +27,6 @@ public class WalkAction : AbstractAction
         // not walking towards rn?
         if (!walking)
         {
-            Debug.Log("WalkAction: Set Target");
             // set the target and wait for the callback to be called
             needs.GetComponent<AIMoveController>().SetTarget(myObject.transform, TargetReached);
             walking = true;
@@ -39,7 +38,6 @@ public class WalkAction : AbstractAction
             float distance = Vector3.Distance(needs.transform.position, myObject.transform.position);
             if (distance <= myObject.interactionDistance)
             {
-                Debug.Log("WalkAction: Close enough. Stop");
                 needs.GetComponent<AIMoveController>().StopPath();
                 TargetReached();
             }
@@ -62,5 +60,10 @@ public class WalkAction : AbstractAction
     public override void PausePerform()
     {
         walking = false;
+    }
+
+    public override void EndInterrupted()
+    {
+        needs.GetComponent<AIMoveController>().StopPath();
     }
 }
