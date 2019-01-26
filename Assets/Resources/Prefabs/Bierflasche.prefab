@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114077771814294406}
   - component: {fileID: 54302694693094018}
   - component: {fileID: 65681638008429478}
+  - component: {fileID: 114925824741583148}
   m_Layer: 0
   m_Name: Bierflasche
   m_TagString: PlayerInteractable
@@ -126,4 +127,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededTime: 1
   ResetOnStop: 0
+  interactable: 1
   ItemType: Beerbottle
+--- !u!114 &114925824741583148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889158294022594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a3b8aaac99a4f629ae2914cb8161a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 1

@@ -8,6 +8,7 @@ public class AIMoveController : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
     CharacterMovement movement;
+    IKControl iKControl;
     const float MOVEMENTTHRESHHOLD = 0.1f;
 
     NavMeshPath navMeshPath;
@@ -43,6 +44,7 @@ public class AIMoveController : MonoBehaviour
         navMeshAgent.updateUpAxis = false;
         movement = GetComponentInChildren<CharacterMovement>();
         perlinYCoordinate = Random.Range(0, 100);
+        iKControl = GetComponentInChildren<IKControl>();
     }
 
     private void Update()
@@ -53,6 +55,8 @@ public class AIMoveController : MonoBehaviour
             toNextCornerVector.y = 0;
             if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
             {
+                iKControl.isWalking = true;
+                iKControl.walkAnimSpeed = movement.rigidBodyVelocity.magnitude;
                 movement.Move(AddDrunknessToDirection(toNextCornerVector));
             }
             else
@@ -66,6 +70,9 @@ public class AIMoveController : MonoBehaviour
                     toNextCornerVector.y = 0;
                     if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
                     {
+
+                        iKControl.isWalking = true;
+                        iKControl.walkAnimSpeed = movement.rigidBodyVelocity.magnitude;
                         movement.Move(AddDrunknessToDirection(toNextCornerVector));
                     }
                 }
@@ -81,6 +88,7 @@ public class AIMoveController : MonoBehaviour
         else if(!canWalk)
         {
             movement.Stop();
+            iKControl.isWalking = false;
         }
     }
     private Vector3 AddDrunknessToDirection(Vector3 direction)
@@ -112,6 +120,7 @@ public class AIMoveController : MonoBehaviour
     public void StopPath()
     {
         movement.Stop();
+        iKControl.isWalking = false;
         navMeshPath = new NavMeshPath();
         target = null;
     }
