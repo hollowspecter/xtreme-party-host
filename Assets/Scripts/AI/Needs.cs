@@ -42,24 +42,48 @@ public class Needs : MonoBehaviour {
     public virtual void Update()
     {
         DecayNeeds();
-        mood = CalculateMood(needs);
+        mood = CalculateMood();
         UpdateColorMood();
 
         if (debug_tmp)
             debug_tmp.text = string.Format("Fun={0}\nSocial={1}\nBladder={2}\nHunger={3}\nRoom={4}", Fun, Social, Bladder, Hunger, Room);
     }
 
-    public virtual float CalculateMood(float[] _needs)
+    public virtual float CalculatePotentialMood(KeyValuePair<NeedType, float>[] advertisedRewards)
+    {
+        // store needs
+        float[] originalNeeds = new float[needs.Length]; for (int i = 0; i < needs.Length; ++i) originalNeeds[i] = needs[i];
+
+        // add rewards if it has any
+        if (advertisedRewards != null)
+        {
+            foreach (var reward in advertisedRewards)
+            {
+                RewardNeed(reward.Key, reward.Value);
+            }
+        }
+
+        // calculate mood
+        float _mood = CalculateMood();
+
+        // restore needs
+        for (int i = 0; i < needs.Length; ++i) needs[i] = originalNeeds[i];
+
+        // return
+        return _mood;
+    }
+
+    public virtual float CalculateMood()
     {
         float sum = 0f;
-        for (int i = 0; i < _needs.Length; ++i)
+        for (int i = 0; i < needs.Length; ++i)
         {
             if (!useAlternateFunction)
-                sum += curves[i].Evaluate(_needs[i]);
+                sum += curves[i].Evaluate(needs[i]);
             else
-                sum += (10f / _needs[i]);
+                sum += (10f / needs[i]);
         }
-        return mood;
+        return sum;
     }
 
     protected virtual void UpdateColorMood()

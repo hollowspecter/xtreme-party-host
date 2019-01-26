@@ -6,8 +6,6 @@ using TMPro;
 
 public class ActionManager : MonoBehaviour {
 
-    public Pizza pizza;
-
     public float actionTickInterval = 5f;
     public ActionQueue actionQueue;
 
@@ -16,10 +14,12 @@ public class ActionManager : MonoBehaviour {
 
     private AbstractAction currentAction = null;
     private float tickTimer = 0f;
+    private Needs needs;
 
     protected virtual void Awake()
     {
         actionQueue = new ActionQueue();
+        needs = GetComponent<Needs>();
     }
 
     protected virtual void Update () {
@@ -64,16 +64,33 @@ public class ActionManager : MonoBehaviour {
     protected virtual void SelectAction()
     {
         Debug.Log("Try Select an Action");
-        // TODO: do correct action selection only on objects that are not occupied i guess or not performed rn? or let them wait?
 
-        // TODO pick only first one, and remove it using PICK
-        foreach (AbstractAction action in pizza.GetAdvertisedActions())
+        // go thru all objects
+        List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
+        float score;
+        foreach (var obj in AdvertisingObject.allObjects)
         {
-            Debug.Log("Enqueue Action!");
+            // go thru all actions
+            foreach(var action in obj.GetAdvertisedActions())
+            {
+                // calculate the score
+                score = needs.CalculateMood() - needs.CalculatePotentialMood(action.AdvertisedReward);
 
-            actionQueue.Enqueue(pizza.PickAction(action));
-            return;
+                listedActions.Add(new KeyValuePair<float, AbstractAction>(score, action));
+            }
         }
+
+        if (listedActions.Count <= 0) return;
+
+        // sort the scores and actions
+        listedActions.Sort((emp1, emp2) => emp2.Key.CompareTo(emp1.Key));
+
+        // queue one of the three best actions
+        int numOptions = Mathf.Min(listedActions.Count, 2); //max 3 options
+        int selectedOption = Random.Range(0, numOptions);
+        AbstractAction selectedAction = listedActions[selectedOption].Value;
+        Debug.Log("Selected: " + selectedAction.Name);
+        actionQueue.Enqueue(selectedAction);
     }
 
     protected virtual void SetCurrentAction(AbstractAction _action)
