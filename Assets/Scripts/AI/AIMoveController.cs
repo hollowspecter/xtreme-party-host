@@ -6,20 +6,31 @@ using UnityEngine.AI;
 public class AIMoveController : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
-    DebugMovement debugViewMovement;
-    const float MOVEMENTTHRESHHOLD = 0.125f;
+    CharacterMovement movement;
+    const float MOVEMENTTHRESHHOLD = 0.1f;
 
     NavMeshPath navMeshPath;
     int currentCorner = 0;
     Vector3 toNextCornerVector;
 
+    [Header("Drunkness")]
     [Range(0f, 1f)]
     public float drunkness = 0.0f;
-    private Vector3 drunkSteerDirection;
-    const float MAXDRUNKANGLE = 10f;
+    public float speed = 5;
 
-    //DebugStuff
-    Vector3 gizmoOfffset = new Vector3(0, 0.1f, 0);
+    public float swerveAmount = 2f;
+    public float swerveSpeed = 2;
+
+    public float minCrashStopTime = 0.5f;
+    public float maxCrashStopTime = 3f;
+
+    [Header("Components")]
+    public Transform target;
+    private Vector3 lastPosition;
+
+    private float perlinYCoordinate;
+
+    private bool canWalk = true;
 
     private void Awake()
     {
@@ -27,19 +38,19 @@ public class AIMoveController : MonoBehaviour
         //navMeshAgent.updatePosition = false;
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
-        debugViewMovement = GetComponentInChildren<DebugMovement>();
-        drunkSteerDirection = transform.forward;
+        movement = GetComponentInChildren<CharacterMovement>();
+        perlinYCoordinate = Random.Range(0, 100);
     }
 
     private void Update()
     {
-        if (navMeshPath != null && navMeshPath.corners.Length > currentCorner)
+        if (canWalk && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
         {
-            toNextCornerVector = (navMeshPath.corners[currentCorner] - debugViewMovement.transform.position);
+            toNextCornerVector = (navMeshPath.corners[currentCorner] - movement.transform.position);
             toNextCornerVector.y = 0;
             if (toNextCornerVector.magnitude > MOVEMENTTHRESHHOLD)
             {
-                debugViewMovement.Move(AddDrunknessToDirection(toNextCornerVector).normalized);
+                movement.Move(AddDrunknessToDirection(toNextCornerVector));
             }
             else
             {
@@ -56,47 +67,70 @@ public class AIMoveController : MonoBehaviour
                 }
             }
         }
+        else if(!canWalk)
+        {
+            movement.Stop();
+        }
         else
         {
             DEBUGFindRandomLocation();
         }
     }
-
     private Vector3 AddDrunknessToDirection(Vector3 direction)
     {
-        float maxDeviationAngle = MAXDRUNKANGLE;
-        float deviationAngle = Random.Range(-maxDeviationAngle, maxDeviationAngle);
-        drunkSteerDirection = Quaternion.AngleAxis(deviationAngle, Vector3.up)  * drunkSteerDirection;
-        //drunkSteerDirection = Vector3.Lerp(drunkSteerDirection, toNextCornerVector, Time.deltaTime * 1f * (1.0f-drunkness));
-        return Vector3.Lerp(toNextCornerVector, drunkSteerDirection, drunkness);
+        Vector3 delta = toNextCornerVector;
+        Vector3 deltaP = new Vector3(-delta.y, 0, delta.x);
+        Vector3 offset = deltaP * swerveAmount * ((Mathf.PerlinNoise(Time.time * swerveSpeed, perlinYCoordinate) - 0.5f) * 2f) * drunkness;
+        Vector3 swerveTarget = navMeshPath.corners[currentCorner] + offset;
+        Debug.DrawLine(movement.transform.position, swerveTarget, Color.cyan);
+        return (swerveTarget - movement.transform.position).normalized;
     }
 
     private void DEBUGFindRandomLocation()
     {
-        float x = Random.Range(-10f, 10f);
-        float z = Random.Range(-10f, 10f);
         navMeshPath = new NavMeshPath();
+        target = RandomTarget.instance.GetRandomTarget();
+        Repath();
+    }
+
+    public void Stop()
+    {
+        StartCoroutine(DoStop());
+    }
+
+    IEnumerator DoStop()
+    {
+        canWalk = false;
+        Debug.Log("false");
+        yield return new WaitForSeconds(Mathf.Lerp(minCrashStopTime, maxCrashStopTime, drunkness));
+        Debug.Log("true");
+        canWalk = true;
+    }
+
+    public void Repath()
+    {
         currentCorner = 0;
-        navMeshAgent.CalculatePath(new Vector3(x, 0, z), navMeshPath);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
+            navMeshAgent.CalculatePath(hit.position, navMeshPath);
+
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        if(navMeshPath != null && navMeshPath.corners.Length > 0)
+        if (navMeshPath != null && navMeshPath.corners.Length > 0)
         {
-            for(int i = 1; i < navMeshPath.corners.Length; i++)
+            for (int i = 1; i < navMeshPath.corners.Length; i++)
             {
                 Gizmos.DrawLine(navMeshPath.corners[i - 1], navMeshPath.corners[i]);
             }
         }
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, drunkSteerDirection * 2f);
         if (navMeshPath != null && navMeshPath.corners.Length > currentCorner)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawLine(navMeshPath.corners[currentCorner], debugViewMovement.transform.position);
+            Gizmos.DrawLine(navMeshPath.corners[currentCorner], movement.transform.position);
 
         }
     }

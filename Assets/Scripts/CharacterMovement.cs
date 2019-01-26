@@ -42,11 +42,22 @@ public class CharacterMovement : MonoBehaviour {
         desiredVector = desiredDirection;
     }
 
+    public void Move(Vector3 desiredDirection)
+    {
+        desiredVector.x = desiredDirection.x;
+        desiredVector.y = desiredDirection.z;
+    }
+
+    public void Stop()
+    {
+        desiredVector = Vector2.zero;
+    }
+
     private void UpdateVelocities()
     {
         angleDiff = Vector2.SignedAngle(new Vector2(transform.forward.x, transform.forward.z), desiredVector);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
-        Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
 
         if (desiredVector.Equals(Vector2.zero))
         {
