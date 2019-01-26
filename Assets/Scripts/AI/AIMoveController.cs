@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class AIMoveController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class AIMoveController : MonoBehaviour
 
     private bool canWalk = true;
 
+    private UnityAction PathComplete;
+
     private void Awake()
     {
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
@@ -44,7 +47,7 @@ public class AIMoveController : MonoBehaviour
 
     private void Update()
     {
-        if (canWalk && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
+        if (canWalk && target && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
         {
             toNextCornerVector = (navMeshPath.corners[currentCorner] - movement.transform.position);
             toNextCornerVector.y = 0;
@@ -69,18 +72,15 @@ public class AIMoveController : MonoBehaviour
                 else
                 {
                     //if this was the last corner, clear the path
-                    navMeshPath = new NavMeshPath();
-                    Stop();
+                    StopPath();
+                    if(PathComplete != null)
+                        PathComplete();
                 }
             }
         }
         else if(!canWalk)
         {
             movement.Stop();
-        }
-        else
-        {
-            DEBUGFindRandomLocation();
         }
     }
     private Vector3 AddDrunknessToDirection(Vector3 direction)
@@ -100,23 +100,41 @@ public class AIMoveController : MonoBehaviour
         Repath();
     }
 
-    public void Stop()
+    public void SetTarget(Transform target, UnityAction completionCallback)
     {
-        StartCoroutine(DoStop());
+        this.target = target;
+        PathComplete = completionCallback;
+        Repath();
     }
 
-    IEnumerator DoStop()
+
+
+    public void StopPath()
+    {
+        movement.Stop();
+        navMeshPath = new NavMeshPath();
+        target = null;
+    }
+
+
+    public void Crash()
+    {
+        StartCoroutine(DoCrash());
+    }
+
+    IEnumerator DoCrash()
     {
         canWalk = false;
-        Debug.Log("false");
+        //Debug.Log("false");
         yield return new WaitForSeconds(Mathf.Lerp(minCrashStopTime, maxCrashStopTime, drunkness));
-        Debug.Log("true");
+        //Debug.Log("true");
         canWalk = true;
     }
 
     public void Repath()
     {
         currentCorner = 0;
+        navMeshPath = new NavMeshPath();
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);
