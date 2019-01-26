@@ -6,7 +6,7 @@ using UnityEngine.Events;
 // one action can only be used by one player?
 public abstract class AbstractAction {
 
-    public KeyValuePair<NeedType, float>[] AdvertisedReward { private set; get; }
+    public KeyValuePair<NeedType, float>[] AdvertisedReward { get { return advertisedReward; } }
 
     protected string name;
     public bool interrupted = false;
@@ -18,6 +18,7 @@ public abstract class AbstractAction {
     protected UnityAction onEnd;
     protected UnityAction onStart;
     protected AdvertisingObject myObject;
+    public Vector3 MyObjectPosition { get { return myObject.transform.position; } }
 
     protected bool startedOnce = false;
 
