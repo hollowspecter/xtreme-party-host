@@ -99,6 +99,9 @@ public class PlayerActions : MonoBehaviour {
         holdingItem.transform.position = holdingPoint.transform.position;
         holdingItem.transform.up = transform.up;
         objectToCarry.transform.SetParent(transform);
+        Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
+        if (itemRig)
+            itemRig.isKinematic = true;
     }
 
     public void PutDownObject()
@@ -107,8 +110,12 @@ public class PlayerActions : MonoBehaviour {
         if (holdingItem != null)
         {
             holdingItem.GetComponent<PickupItem>().ResetInteraction();
+            Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
+            if (itemRig)
+                itemRig.isKinematic = false;
         }
         holdingItem = null;
+
     }
 
     public void ThrowObject()
