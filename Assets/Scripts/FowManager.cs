@@ -9,7 +9,7 @@ public class FowManager : MonoBehaviour
    
    //Wall for movement and fog for alpha blend
    public GameObject Wall;
-   public GameObject Fog;
+   //public GameObject Fog;
    
    
    private int _playersInside = 0;
@@ -22,17 +22,16 @@ public class FowManager : MonoBehaviour
       var boxCollider = gameObject.AddComponent<BoxCollider>();
       boxCollider.isTrigger = true;
 
-      fogMaterial = Fog.GetComponent<Renderer>().material;
+      //fogMaterial = Fog.GetComponent<Renderer>().material;
       
-      _initPos = Wall.transform.localPosition;
-
-
+            _initPos = Wall.transform.localPosition;
    }
    
    //Player entered room
    private void OnTriggerEnter(Collider other)
    {
       if(!other.CompareTag("Player")) return;
+        Debug.Log("Player entered" + this.gameObject.ToString());
       _playersInside++;
    }
 
@@ -47,18 +46,18 @@ public class FowManager : MonoBehaviour
 
    private void Update()
    {
-      if (_playersInside >= 1)
-      {
-         // Reveal room
-         Wall.transform.DOMoveY(-2, revealTime);
-         fogMaterial.DOFade(0, revealTime);
-         return;
-      }
-      
-      //hide room
-      Wall.transform.DOMove(_initPos, revealTime);
-      fogMaterial.DOFade(1, revealTime);
+        if (_playersInside >= 1)
+        {
+            // Reveal room
+                Wall.transform.DOMoveY(-3, revealTime);
 
-   }
+            //fogMaterial.DOFade(0, revealTime);
+            return;
+        }
+            //hide room
+            Wall.transform.DOMove(_initPos, revealTime);
+        //fogMaterial.DOFade(1, revealTime);
+
+    }
    
 }
