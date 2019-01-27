@@ -33,6 +33,7 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
     public bool isAIMovement = false;
+    public bool movementBlocked = false;
 
     private void Start()
     {
@@ -71,7 +72,7 @@ public class CharacterMovement : MonoBehaviour {
         //Debug.DrawLine(transform.position, transform.position + 10.0f * transform.forward, Color.blue);
         //Debug.DrawLine(transform.position, transform.position + 10.0f * new Vector3(desiredVector.x, 0.0f, desiredVector.y), Color.red);
 
-        if (desiredVector.Equals(Vector2.zero))
+        if (desiredVector.Equals(Vector2.zero) || movementBlocked)
         {
             rig.angularVelocity = Vector3.zero;
             rig.velocity = new Vector3(0.0f,rig.velocity.y, 0.0f);

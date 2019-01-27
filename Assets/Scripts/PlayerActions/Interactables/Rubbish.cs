@@ -7,6 +7,7 @@ public class Rubbish : GeneralInteractable {
     public static List<Rubbish> allRubbish = new List<Rubbish>();
     public float disgustness;
 
+
     protected override void Awake()
     {
         base.Awake();
