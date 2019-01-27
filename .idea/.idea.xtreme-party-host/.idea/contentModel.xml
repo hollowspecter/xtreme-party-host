@@ -81,6 +81,7 @@
             <e p="BoomBoxBouncer.cs" t="Include" />
             <e p="IKControl.cs" t="Include" />
           </e>
+          <e p="BillBoard.cs" t="Include" />
           <e p="CharacterMovement.cs" t="Include" />
           <e p="Controller" t="Include">
             <e p="IActorInput.cs" t="Include" />
@@ -114,6 +115,7 @@
             <e p="NPCInteractable.cs" t="Include" />
             <e p="PlayerActions.cs" t="Include" />
           </e>
+          <e p="ScoreManager.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="Clock.cs" t="Include" />
           </e>

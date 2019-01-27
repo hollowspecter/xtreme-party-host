@@ -13,15 +13,20 @@ public class VictoryScreen : MonoBehaviour
 
 	private void Start()
 	{
-		//if score is higher than XXX
-		VictoryText.text = victory;
+		if (ScoreManager.instance.Score > 14)
+		{
+			VictoryText.text = victory;
+
+		}
+	
+		else
+		{
+			VictoryText.text = fail;
+		}
+
+
+		Score.text = "" + ScoreManager.instance.Score; //insert score
 		
-		//if score is lower than XXX
-		VictoryText.text = fail;
-
-
-		Score.text = ToString(); //insert score
-
 	}
 	
 	
