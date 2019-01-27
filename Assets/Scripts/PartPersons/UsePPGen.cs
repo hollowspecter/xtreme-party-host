@@ -42,7 +42,7 @@ public class UsePPGen : MonoBehaviour
             DoInvoke();
 
         _bellSource.Play();
-        PPGenerator.PPGEn(gameObject.transform.position, _maxStayAmt);
+        PPGenerator.PPGEn(gameObject.transform, _maxStayAmt);
         Debug.Log("Person " + _personAmt + " spawned!");
         _personAmt++;
     }
