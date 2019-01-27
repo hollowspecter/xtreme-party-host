@@ -65,6 +65,11 @@ public class PlayerActions : MonoBehaviour {
             Debug.Log("Interacting with: " + closest.name);
             currentInteractingObject = closest.GetComponent<IInteractable>();
             currentInteractingObject.StartInteracting(this);
+
+            if (currentInteractingObject.ItemType == "Refridgerator")
+            {
+                GetComponent<UsePPSound>().PlayFridgeBeer();
+            }
         }
         else if(holdingItem){
             PutDownObject();

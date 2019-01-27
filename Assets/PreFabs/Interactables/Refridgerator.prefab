@@ -108,8 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0beb3ee4eaba541c08e0dd3ddb53a4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededTime: 1
+  neededTime: 5
   ResetOnStop: 0
+  interactable: 1
   ItemType: Refridgerator
   ItemNeeded: Beercrate
   AlternativeMethod: 1
