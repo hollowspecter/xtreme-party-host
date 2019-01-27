@@ -14,7 +14,7 @@ public class Pizza : AdvertisingObject {
     protected override void Awake()
     {
         base.Awake();
-
+        Debug.Log("Activating Pizza");
         AddSlicesOfPizza();
     }
 
@@ -41,8 +41,10 @@ public class Pizza : AdvertisingObject {
         slicesLeft--;
         if (slicesLeft == 0)
         {
-            Debug.Log("Pizza is now empty!");
-            Destroy(gameObject);
+            Debug.Log("Pizza is now empty and turns to rubbish!");
+            slices[0].SetActive(false);
+            RubbishSpawner.AddRubbishToObject(gameObject, 20f);
+            //Destroy(gameObject);
         }
         else
         {

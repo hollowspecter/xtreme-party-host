@@ -69,7 +69,7 @@ public class PlayerActions : MonoBehaviour {
             }
         }
         if(closest) {
-            Debug.Log(closest.name);
+            Debug.Log("Interacting with: " + closest.name);
             currentInteractingObject = closest.GetComponent<IInteractable>();
             currentInteractingObject.StartInteracting(this);
         }
@@ -77,8 +77,6 @@ public class PlayerActions : MonoBehaviour {
             PutDownObject();
         }
     }
-
-
 
     public void StopAction()
     {
