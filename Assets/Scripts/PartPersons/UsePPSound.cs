@@ -17,24 +17,11 @@ public class UsePPSound : MonoBehaviour
 		Debug.Log("my pitch is: " + PartyPersonSound.pitchRangePos);
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown("p"))
-		{
-			PartyPersonSound.PukingSound(_mouth);
-			Debug.Log("Puking");
-		}
+    public void Puke() { PartyPersonSound.PukingSound(_mouth); }
 
-		if (Input.GetKeyDown("o"))
-		{
-			PartyPersonSound.ShoutingSound(_mouth);
-			Debug.Log("Shouting");
-		}
+    public void Shout() { PartyPersonSound.ShoutingSound(_mouth); }
 
-		if (Input.GetKeyDown("i"))
-		{
-			PartyPersonSound.HappySound(_mouth);
-			Debug.Log("Happy");
-		}
-	}
+    public void Happy() { PartyPersonSound.HappySound(_mouth); }
+
+
 }

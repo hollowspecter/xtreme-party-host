@@ -8,6 +8,7 @@ public class ActionManager : MonoBehaviour {
 
     public float actionTickInterval = 5f;
     public ActionQueue actionQueue;
+    public Transform hatpoint;
 
     [Header("Debug")]
     public TextMeshPro tmpdebug;
