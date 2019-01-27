@@ -8,8 +8,10 @@ public class Telephone : GeneralInteractable {
     public Transform spawnPoint;
     public GameObject deliveryPrefab;
     public Vector2 minMaxDeliveryDuration = new Vector2(15f, 30f);
+    public AudioClip[] soundeffect;
 
     protected bool orderOnTheWay;
+    private int index = 0;
 
     protected override void AlternativeFinish()
     {
@@ -23,5 +25,6 @@ public class Telephone : GeneralInteractable {
     {
         Instantiate(deliveryPrefab, spawnPoint.position + Vector3.up * 2f, Quaternion.identity);
         orderOnTheWay = false;
+        GetComponent<AudioSource>().PlayOneShot(soundeffect[(index++)%2], 3f);
     }
 }

@@ -10,6 +10,9 @@ public class PPSoundEvent : PPSound
     public AudioClip BackgroundChatter;
     public AudioClip BeerBotteClinging;
     public AudioClip FridgeBeer;
+    public AudioClip TelephoneCall;
+    public AudioClip PizzaHere;
+    public AudioClip BeerHere;
 	public float rRange = 0.5f;
 
 	public float volumeRangePos;
