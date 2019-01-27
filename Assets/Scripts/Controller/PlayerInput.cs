@@ -135,7 +135,7 @@ public class PlayerInput : MonoBehaviour, IActorInput {
 
     // Use this for initialization
     void Start () {
-        InputManager.Instance.SetPlayer(playerNumber-1, this);
+        InputManager.Instance.SetPlayer(playerNumber, this);
         desiredMovement = Vector2.zero;
 	}
 

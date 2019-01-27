@@ -77,9 +77,16 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void TryPerformCurrentAction()
     {
+        if (currentAction.Name == "Dance to Music")
+        {
+            GetComponentInChildren<IKControl>().isDancing = true;
+        }
+
         // actions will be thrown away either when they are canceled/interrupted or qhen they are performed successfully
         if (currentAction.interrupted || currentAction.Perform())
         {
+            GetComponentInChildren<IKControl>().isDancing = false;
+
             if (currentAction.interrupted) currentAction.EndInterrupted();
             currentAction = null;
 
@@ -108,7 +115,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void SelectAction()
     {
-        Debug.Log(gameObject.name + ": Try Select an Action");
+        //Debug.Log(gameObject.name + ": Try Select an Action");
 
         // go thru all objects
         List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
