@@ -90,6 +90,7 @@
           <e p="DiscoballSpin.cs" t="Include" />
           <e p="FowManager.cs" t="Include" />
           <e p="KonfettiScript.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
           <e p="PartPersons" t="Include">
             <e p="PartyPersonGenerator.cs" t="Include" />
             <e p="PPGenEvent.cs" t="Include" />
@@ -107,6 +108,7 @@
               <e p="Refridgerator.cs" t="Include" />
               <e p="Rubbish.cs" t="Include" />
               <e p="RubbishSpawner.cs" t="Include" />
+              <e p="Soundanlage.cs" t="Include" />
               <e p="Telephone.cs" t="Include" />
             </e>
             <e p="NPCInteractable.cs" t="Include" />
