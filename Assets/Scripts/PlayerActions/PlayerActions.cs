@@ -115,6 +115,13 @@ public class PlayerActions : MonoBehaviour {
         //holdingItem.transform.up = transform.up;
         holdingItem.transform.SetParent(holdingPoint.transform);
         holdingItem.transform.localRotation = Quaternion.identity;
+
+        if (interactable.ItemType == "Beercrate"
+        || interactable.ItemType == "Pizza")
+        {
+            holdingItem.transform.up = transform.up;
+        }
+
         holdingItem.transform.localPosition = Vector3.zero;
         Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
         if (itemRig)

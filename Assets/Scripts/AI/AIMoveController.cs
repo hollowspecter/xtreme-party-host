@@ -144,6 +144,7 @@ public class AIMoveController : MonoBehaviour
     {
         currentCorner = 0;
         navMeshPath = new NavMeshPath();
+        if (target == null) return;
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);
