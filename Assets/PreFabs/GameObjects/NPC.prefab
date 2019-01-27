@@ -746,7 +746,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223030496390074}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.76161796, z: -0, w: 0.64802635}
   m_LocalPosition: {x: 12.485328, y: 2.3599997, z: -7.541198}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
@@ -758,7 +758,7 @@ Transform:
   - {fileID: 4770085470878042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 99.214005, z: 0}
 --- !u!4 &4096211573991024
 Transform:
   m_ObjectHideFlags: 1
@@ -1534,6 +1534,7 @@ MonoBehaviour:
   ikActive: 1
   headIkActive: 0
   isWalking: 0
+  isDancing: 0
   holdingItem: 0
   holdingOnlyRight: 0
   drinkingItem: 0
@@ -1548,7 +1549,8 @@ MonoBehaviour:
   rightFootObj: {fileID: 4441492590794246}
   leftFootObj: {fileID: 4275747907082806}
   lookObj: {fileID: 4944929944337910}
-  grabObjectPosition: {fileID: 4306216316693654}
+  grabObjectPosition: {fileID: 4551352632661774, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   walkAnimSpeed: 4
   feetCurve:
     serializedVersion: 2
@@ -1571,12 +1573,85 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    m_PreInfinity: 2
+    m_PreInfinity: 0
     m_PostInfinity: 0
     m_RotationOrder: 4
-  drinkObjectHandPosition: {fileID: 4848762094983602}
-  drinkObjectLookPosition: {fileID: 4191212462215162}
+  drinkObjectHandPosition: {fileID: 4539059843089054, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
+  drinkObjectLookPosition: {fileID: 4982587299470158, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   drinkTiltBackAngle: -30
+  danceAnimSpeed: 2
+  chosenDance: 0
+  changeDanceInterval: 4
+  chosenHands: 1
+  changeHandsInterval: 2
+  pointedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00011862158
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: -1
+      inSlope: 2.390192
+      outSlope: 2.390192
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24775696
+    - serializedVersion: 3
+      time: 0.7
+      value: 1
+      inSlope: 5.01169
+      outSlope: 5.01169
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2743586
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  posedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.09146104
+      outSlope: -0.09146104
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1415441
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
 --- !u!114 &114038591669002386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2119,7 +2194,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 929cf2d2b86b8e743b6ec53d13c314c0, type: 3}
+  - {fileID: 2100000, guid: ecf799e559bb0e64f8660a6bcd16ba6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
