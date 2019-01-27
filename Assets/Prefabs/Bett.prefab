@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4028285637383120}
+  - component: {fileID: 114304044546136002}
   m_Layer: 0
   m_Name: Bett
   m_TagString: Untagged
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995302229496566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9200001, y: 1, z: -3.96}
+  m_LocalPosition: {x: 19.48, y: 1, z: -13.783}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542807242200772}
@@ -258,3 +259,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679983268602344}
   m_Mesh: {fileID: 4300000, guid: 89962a72baf72064488178b67f8f6cec, type: 3}
+--- !u!114 &114304044546136002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995302229496566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b190e8001ed745f9b6166e58e6c89c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 0.74
+  actionName: Have sex
+  socialValue: 30
+  inBed: 0
+  sexInterval: 10
