@@ -273,5 +273,6 @@ MonoBehaviour:
   interactionDistance: 0.74
   actionName: Have sex
   socialValue: 30
-  inBed: 0
+  funValue: 30
   sexInterval: 10
+  sexDuration: 20
