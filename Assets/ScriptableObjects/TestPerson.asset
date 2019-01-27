@@ -19,3 +19,6 @@ MonoBehaviour:
   - {fileID: 1441699965129564, guid: f6f3ef9d6c44bc04798d759d13cc534b, type: 2}
   - {fileID: 1297625471295458, guid: 0433c4f8c9c71604985d717f080168d2, type: 2}
   - {fileID: 1379288816397612, guid: 473070da4362c4740b8292ee984792b4, type: 2}
+  - {fileID: 1388843359624572, guid: 14d423b050ec5ce49905d00109419c81, type: 2}
+  StayRange: {x: 0, y: 0}
+  myStayAmt: 0
