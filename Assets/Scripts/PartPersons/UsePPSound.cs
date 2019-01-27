@@ -13,8 +13,8 @@ public class UsePPSound : MonoBehaviour
 		PartyPersonSound.volumeRangePos = Random.Range(0.2f, 1f);
 		PartyPersonSound.pitchRangePos = Random.Range(0.5f, 2);
 		
-		Debug.Log("my volume is: " + PartyPersonSound.volumeRangePos);
-		Debug.Log("my pitch is: " + PartyPersonSound.pitchRangePos);
+		//Debug.Log("my volume is: " + PartyPersonSound.volumeRangePos);
+		//Debug.Log("my pitch is: " + PartyPersonSound.pitchRangePos);
 	}
 
     public void Puke() { PartyPersonSound.PukingSound(_mouth); }

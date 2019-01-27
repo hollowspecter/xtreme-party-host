@@ -16,8 +16,10 @@ using System.Collections.Generic;
         // singleton pattern
         static public InputManager Instance { get { return _instance; } }
         static protected InputManager _instance;
+        
 
         protected Dictionary<int, IActorInput> _players;
+        
 
         /// <summary>
         /// initialization of the active players list and type of input

@@ -108,7 +108,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void SelectAction()
     {
-        Debug.Log(gameObject.name + ": Try Select an Action");
+        //Debug.Log(gameObject.name + ": Try Select an Action");
 
         // go thru all objects
         List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
