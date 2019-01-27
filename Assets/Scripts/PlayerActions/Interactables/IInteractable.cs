@@ -13,8 +13,7 @@ public abstract class IInteractable : MonoBehaviour
         neededTime = _value;
     }
 
-    [SerializeField]
-    protected float interactionProgress = 0.0f;
+    public float interactionProgress = 0.0f;
 
     public bool ResetOnStop = false;
 

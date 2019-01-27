@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(CharacterMovement))]
@@ -16,6 +17,9 @@ public class PlayerActions : MonoBehaviour {
     public GameObject holdingItem;
 
     public Transform holdingPoint;
+
+    [SerializeField]
+    private Image progressBar;
 
 	// Use this for initialization
 	void Awake () {
@@ -91,6 +95,7 @@ public class PlayerActions : MonoBehaviour {
             currentInteractingObject.StopInteracting();
             currentInteractingObject = null;
             movement.movementBlocked = false;
+            progressBar.fillAmount = 0.0f;
         }
     }
 
@@ -101,9 +106,14 @@ public class PlayerActions : MonoBehaviour {
             {
                 movement.movementBlocked = false;
                 currentInteractingObject = null;
+                progressBar.fillAmount = 0.0f;
             }
             else
+            {
                 currentInteractingObject.OnInteractionProgress(Time.deltaTime);
+                if (progressBar)
+                    progressBar.fillAmount = currentInteractingObject.interactionProgress;
+            }
         }
     }
 
