@@ -6,13 +6,22 @@ public class PPSoundEvent : PPSound
 	public AudioClip[] PukePool;
 	public AudioClip[] ShoutingPool;
 	public AudioClip[] HappyPool;
+    public AudioClip PizzaCrunch;
+    public AudioClip BackgroundChatter;
+    public AudioClip BeerBotteClinging;
+    public AudioClip FridgeBeer;
 	public float rRange = 0.5f;
 
 	public float volumeRangePos;
 	public float pitchRangePos;
 	
 
-	public override void PukingSound(AudioSource source)
+    public virtual void PlaySound(AudioSource source, AudioClip clip, float volumeScale)
+    {
+        source.PlayOneShot(clip, volumeScale);
+    }
+
+    public override void PukingSound(AudioSource source)
 	{
 		if (PukePool.Length == 0) return;
 

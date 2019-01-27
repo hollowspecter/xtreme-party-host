@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour {
 
-
+    [SerializeField]
     List<GameObject> interactablesList;
     IInteractable currentInteractingObject;
     IKControl ikcontrol;
@@ -30,22 +30,15 @@ public class PlayerActions : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.CompareTag("PlayerInteractable"))
-        //{
-            IInteractable item = other.GetComponent<IInteractable>();
-            if(item != null && item.interactable)
+        if(other.CompareTag("PlayerInteractable"))
+        {
                 interactablesList.Add(other.gameObject);
-        //}
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //if(other.CompareTag("PlayerInteractable"))
-        //{
-            IInteractable item = other.GetComponent<IInteractable>();
-            if (item != null)
-                interactablesList.Remove(other.gameObject);
-        //}
+            interactablesList.Remove(other.gameObject);
     }
 
     public void Dance()
@@ -72,6 +65,11 @@ public class PlayerActions : MonoBehaviour {
             Debug.Log("Interacting with: " + closest.name);
             currentInteractingObject = closest.GetComponent<IInteractable>();
             currentInteractingObject.StartInteracting(this);
+
+            if (currentInteractingObject.ItemType == "Refridgerator")
+            {
+                GetComponent<UsePPSound>().PlayFridgeBeer();
+            }
         }
         else if(holdingItem){
             PutDownObject();
@@ -108,7 +106,9 @@ public class PlayerActions : MonoBehaviour {
 
         holdingItem = objectToCarry;
         interactable.interactable = false;
-        holdingItem.GetComponent<Collider>().enabled = false;
+        Collider itemCollider = holdingItem.GetComponent<Collider>();
+        itemCollider.enabled = false;
+        OnTriggerExit(itemCollider);
         //holdingItem.transform.position = holdingPoint.transform.position;
         //holdingItem.transform.up = transform.up;
         holdingItem.transform.SetParent(holdingPoint.transform);

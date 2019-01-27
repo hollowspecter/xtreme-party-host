@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 114858555536373266}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: PlayerInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -561,6 +561,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1861394925847194
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4492740853278900}
+  m_Layer: 0
+  m_Name: PukePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1885938721006482
 GameObject:
   m_ObjectHideFlags: 1
@@ -685,7 +700,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223030496390074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.335547, y: 1.61, z: -9.456117}
+  m_LocalPosition: {x: 0, y: 0.69, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4947872555955614}
@@ -721,6 +736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 4016146186727236}
+  - {fileID: 4492740853278900}
   m_Father: {fileID: 4718546205335908}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -927,6 +943,19 @@ Transform:
   - {fileID: 4370556285695242}
   m_Father: {fileID: 4286498185707388}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4492740853278900
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861394925847194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.00143, z: 0.00312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4156578476218946}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4503620867102480
 Transform:
@@ -1427,6 +1456,8 @@ MonoBehaviour:
   minCrashStopTime: 0.5
   maxCrashStopTime: 3
   target: {fileID: 0}
+  pukePosition: {fileID: 4492740853278900}
+  pukePrefab: {fileID: 1334240321100460, guid: 7cdd2586a20b5459c8cee52a3796ea3b, type: 2}
 --- !u!114 &114023135434933836
 MonoBehaviour:
   m_ObjectHideFlags: 1
