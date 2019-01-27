@@ -29,6 +29,7 @@ public class Rubbish : GeneralInteractable {
     protected override void OnInteractingFinish()
     {
         //Räume den Müll weg!
+        interactingPlayer.RemoveFromList(gameObject);
         Destroy(gameObject);
     }
 }
