@@ -68,6 +68,7 @@
             <e p="AdvertisingObjects" t="Include">
               <e p="Bett.cs" t="Include" />
               <e p="EmptyObject.cs" t="Include" />
+              <e p="Musik.cs" t="Include" />
               <e p="Pizza.cs" t="Include" />
               <e p="Toilet.cs" t="Include" />
             </e>
@@ -102,9 +103,11 @@
               <e p="GeneralInteractable.cs" t="Include" />
               <e p="IInteractable.cs" t="Include" />
               <e p="PickupItem.cs" t="Include" />
+              <e p="PickupPizza.cs" t="Include" />
               <e p="Refridgerator.cs" t="Include" />
               <e p="Rubbish.cs" t="Include" />
               <e p="RubbishSpawner.cs" t="Include" />
+              <e p="Telephone.cs" t="Include" />
             </e>
             <e p="NPCInteractable.cs" t="Include" />
             <e p="PlayerActions.cs" t="Include" />

@@ -18,8 +18,12 @@ public class Clock : MonoBehaviour
 
     DateTime time;
     public float simulationTimeFactor = 20f;
+    public float timeUntilPartyEnd = 300f;
+    
+    //buffer, so Party People have time to leave/give points.
+    [SerializeField] private float _partyEndBuffer = 10f;
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start ()
     {
         outline.color = lineColor;
@@ -27,11 +31,23 @@ public class Clock : MonoBehaviour
         clockText.color = lineColor;
         clockText.fontMaterial.SetColor(ShaderUtilities.ID_GlowColor, glowColor);
         time = new DateTime(1,1,1, 20, 0, 0);
+        timeUntilPartyEnd += _partyEndBuffer;
     }
 
     private void Update()
     {
-        time = time.AddMinutes(Time.deltaTime * simulationTimeFactor);
+        var timeTick = Time.deltaTime * simulationTimeFactor;
+        timeUntilPartyEnd = timeUntilPartyEnd - timeTick;
+        
+        time = time.AddMinutes(timeTick);
         clockText.text = time.ToString("HH:mm");
+        
+        if (_partyEndBuffer > 0) return;
+            //final score is set and ending screen will be shown
+
+
+
     }
+    
+    
 }
