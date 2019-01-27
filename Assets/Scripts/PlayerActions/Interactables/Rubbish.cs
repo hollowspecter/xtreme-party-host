@@ -31,6 +31,7 @@ public class Rubbish : GeneralInteractable {
     {
         //Räume den Müll weg!
         interactingPlayer.RemoveFromList(gameObject);
+        interactingPlayer.StopAction();
         Destroy(gameObject);
     }
 }

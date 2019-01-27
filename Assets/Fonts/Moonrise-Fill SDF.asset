@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Moonrise-Fill SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 759855357
   material: {fileID: 21211402804460050}
-  materialHashCode: 0
+  materialHashCode: 667546326
   fontAssetType: 1
   m_fontInfo:
     Name: Moonrise
     PointSize: 110
-    Scale: 0
+    Scale: 1
     CharacterCount: 82
     LineHeight: 132
     Baseline: 0
     Ascender: 110
-    CapHeight: 0
+    CapHeight: 67.375
     Descender: -22
     CenterLine: 0
     SuperscriptOffset: 110
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 5.5
     strikethrough: 32
     strikethroughThickness: 5.5
-    TabWidth: 0
+    TabWidth: 330
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -42,10 +42,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 33
+    height: 132
     xOffset: 0
-    yOffset: 0
+    yOffset: 110
     xAdvance: 33
     scale: 1
   - id: 33
@@ -904,9 +904,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
