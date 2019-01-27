@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 23235730675507136}
   - component: {fileID: 222447530639933408}
   - component: {fileID: 114075732711385270}
+  - component: {fileID: 114986252998462486}
   m_Layer: 0
   m_Name: TMPActionDebug
   m_TagString: Untagged
@@ -154,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1144153310002486
 GameObject:
   m_ObjectHideFlags: 1
@@ -2166,6 +2167,17 @@ MonoBehaviour:
   ItemNeeded: 
   AlternativeMethod: 0
   hand: {fileID: 4202535627338460}
+--- !u!114 &114986252998462486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046019903922280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7345f5e3d7e6043adbecf837eecf9c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136169407176848090
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2396,9 +2408,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046019903922280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_LocalScale: {x: -1.666667, y: 1.6666665, z: 1.6666665}
   m_Children: []
   m_Father: {fileID: 4089504914925306}
   m_RootOrder: 2
