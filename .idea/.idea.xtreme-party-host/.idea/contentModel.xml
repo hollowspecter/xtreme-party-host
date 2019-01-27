@@ -118,6 +118,7 @@
             <e p="Clock.cs" t="Include" />
           </e>
           <e p="Utility.cs" t="Include" />
+          <e p="VictoryScreen.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
           <e p="DiscoBall.shader" t="Include" />

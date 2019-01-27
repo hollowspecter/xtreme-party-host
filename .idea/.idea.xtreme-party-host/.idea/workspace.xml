@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VictoryScreen.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/VictoryScreen.unity" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -55,6 +54,20 @@
                 <marker date="1548593341474" expanded="true" signature="233:353" ph="{...}" />
                 <marker date="1548593341474" expanded="true" signature="371:471" ph="{...}" />
                 <marker date="1548593341474" expanded="true" signature="399:468" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VictoryScreen.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <marker date="1548594744258" expanded="true" signature="6:67" ph="..." />
+                <marker date="1548594744258" expanded="true" signature="111:468" ph="{...}" />
+                <marker date="1548594744258" expanded="true" signature="288:462" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -83,9 +96,14 @@
       <file leaf-file-name="Clock.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="237">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="37" />
+              <folding>
+                <marker date="1548586825886" expanded="true" signature="6:127" ph="..." />
+                <marker date="1548586825886" expanded="true" signature="163:1336" ph="{...}" />
+                <marker date="1548586825886" expanded="true" signature="650:947" ph="{...}" />
+                <marker date="1548586825886" expanded="true" signature="974:1324" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,6 +126,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KonfettiScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -125,6 +144,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs" />
       </list>
     </option>
   </component>
@@ -135,7 +155,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="410" />
+    <option name="x" value="220" />
     <option name="y" value="68" />
     <option name="width" value="1464" />
     <option name="height" value="924" />
@@ -204,12 +224,12 @@
       <updated>1548457550808</updated>
       <workItem from="1548457563390" duration="4619000" />
       <workItem from="1548495416720" duration="16845000" />
-      <workItem from="1548582016392" duration="9318000" />
+      <workItem from="1548582016392" duration="10234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31779000" />
+    <option name="totallyTimeSpent" value="32695000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -221,7 +241,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="410" y="68" width="1464" height="924" extended-state="1" />
+    <frame x="220" y="68" width="1464" height="924" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -604,14 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -665,6 +677,31 @@
             <marker date="1548593341474" expanded="true" signature="233:353" ph="{...}" />
             <marker date="1548593341474" expanded="true" signature="371:471" ph="{...}" />
             <marker date="1548593341474" expanded="true" signature="399:468" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <marker date="1548586825886" expanded="true" signature="6:127" ph="..." />
+            <marker date="1548586825886" expanded="true" signature="163:1336" ph="{...}" />
+            <marker date="1548586825886" expanded="true" signature="650:947" ph="{...}" />
+            <marker date="1548586825886" expanded="true" signature="974:1324" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1548594744258" expanded="true" signature="6:67" ph="..." />
+            <marker date="1548594744258" expanded="true" signature="111:468" ph="{...}" />
+            <marker date="1548594744258" expanded="true" signature="288:462" ph="{...}" />
           </folding>
         </state>
       </provider>
