@@ -59,6 +59,7 @@ public class NPCInteractable : GeneralInteractable {
             GetComponent<UsePPSound>().Happy();
         },
         () => {
+            GetComponent<UsePPSound>().PlayBeerBotteClinging();
             ikcontrol.DrinkItem(true);
         }, // on start
         5f); // dirnking duration

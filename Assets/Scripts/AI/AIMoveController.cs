@@ -91,13 +91,16 @@ public class AIMoveController : MonoBehaviour
             iKControl.isWalking = false;
         }
     }
-
+    bool pukingInvoked = false;
     protected virtual void CheckIfNeedToPuke()
     {
         if (drunkness >= 1f)
         {
+            pukingInvoked = true;
             Invoke("Puke", 10f);
         }
+        if (drunkness <= 0.8f)
+            pukingInvoked = false;
     }
 
     // TODO JOSCHA MACH HIER DEIN KOTZE NEI
@@ -106,7 +109,8 @@ public class AIMoveController : MonoBehaviour
         // spawn a puddle, add a vfx
 
         // make puddle a rubbish, with value 50f
-
+        GameObject random = null;
+        RubbishSpawner.AddRubbishToObject(random, 50.0f, 8.0f);
     }
 
     private Vector3 AddDrunknessToDirection(Vector3 direction)
