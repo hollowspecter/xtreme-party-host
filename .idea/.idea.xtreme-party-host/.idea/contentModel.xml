@@ -66,6 +66,7 @@
             </e>
             <e p="AdvertisingObject.cs" t="Include" />
             <e p="AdvertisingObjects" t="Include">
+              <e p="Bett.cs" t="Include" />
               <e p="EmptyObject.cs" t="Include" />
               <e p="Pizza.cs" t="Include" />
               <e p="Toilet.cs" t="Include" />
@@ -76,6 +77,7 @@
             <e p="Needs.cs" t="Include" />
           </e>
           <e p="Animation" t="Include">
+            <e p="BoomBoxBouncer.cs" t="Include" />
             <e p="IKControl.cs" t="Include" />
           </e>
           <e p="CharacterMovement.cs" t="Include" />
@@ -86,6 +88,7 @@
           </e>
           <e p="DiscoballSpin.cs" t="Include" />
           <e p="FowManager.cs" t="Include" />
+          <e p="KonfettiScript.cs" t="Include" />
           <e p="PartPersons" t="Include">
             <e p="PartyPersonGenerator.cs" t="Include" />
             <e p="PPGenEvent.cs" t="Include" />

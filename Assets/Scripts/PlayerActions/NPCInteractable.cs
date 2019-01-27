@@ -53,9 +53,10 @@ public class NPCInteractable : GeneralInteractable {
             beerBottle.GetComponent<Collider>().enabled = true;
             RubbishSpawner.AddRubbishToObject(beerBottle, 5f, 2f);
             interactable = true;
-            GetComponent<AIMoveController>().drunkness += 0.2f;
+            GetComponent<AIMoveController>().drunkness += 0.4f;
             ikcontrol.DrinkItem(false);
             ikcontrol.GrabItem(false);
+            GetComponent<UsePPSound>().Happy();
         },
         () => {
             ikcontrol.DrinkItem(true);

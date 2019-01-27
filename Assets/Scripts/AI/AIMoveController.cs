@@ -91,6 +91,24 @@ public class AIMoveController : MonoBehaviour
             iKControl.isWalking = false;
         }
     }
+
+    protected virtual void CheckIfNeedToPuke()
+    {
+        if (drunkness >= 1f)
+        {
+            Invoke("Puke", 10f);
+        }
+    }
+
+    // TODO JOSCHA MACH HIER DEIN KOTZE NEI
+    private void Puke()
+    {
+        // spawn a puddle, add a vfx
+
+        // make puddle a rubbish, with value 50f
+
+    }
+
     private Vector3 AddDrunknessToDirection(Vector3 direction)
     {
         Vector3 delta = toNextCornerVector;
@@ -144,6 +162,7 @@ public class AIMoveController : MonoBehaviour
     {
         currentCorner = 0;
         navMeshPath = new NavMeshPath();
+        if (target == null) return;
         NavMeshHit hit;
         if (NavMesh.SamplePosition(target.position, out hit, 5f, NavMesh.AllAreas))
             navMeshAgent.CalculatePath(hit.position, navMeshPath);

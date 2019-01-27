@@ -8,6 +8,8 @@ public class ActionManager : MonoBehaviour {
 
     public float actionTickInterval = 5f;
     public ActionQueue actionQueue;
+    public Transform hatpoint;
+    public bool useDistanceAttenuation = false;
 
     [Header("Debug")]
     public TextMeshPro tmpdebug;
@@ -88,8 +90,12 @@ public class ActionManager : MonoBehaviour {
                 currentMood = needs.CalculateMood();
                 futureMood = needs.CalculatePotentialMood(action.AdvertisedReward);
                 score = currentMood - futureMood;
-                //sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
-                //score = score / sqrDistance;
+
+                if (useDistanceAttenuation)
+                {
+                    sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
+                    score = score / sqrDistance;
+                }
 
                 listedActions.Add(new KeyValuePair<float, AbstractAction>(score, action));
             }

@@ -18,12 +18,14 @@ public class PPGenEvent : PartyPersonGenerator
 
 		
 		if (HatPool.Length == 0) return;
-		
-		var randomHatPick = Random.Range(0, HatPool.Length);
-		var hatSpawnPos = PPCharacter.transform.Find("HatAttachPoint").transform.position;  //hatAttachPoint; Find("HatAttachPoint").transform
+
+        var hatpointTransform = PPCharacter.GetComponent<ActionManager>().hatpoint.transform;
+        var randomHatPick = Random.Range(0, HatPool.Length);
+        var hatSpawnPos = hatpointTransform.position;
+        //var hatSpawnPos = PPCharacter.transform.Find("HatAttachPoint").transform.position;  //hatAttachPoint; Find("HatAttachPoint").transform
 
 		var newHat = Instantiate(HatPool[randomHatPick], hatSpawnPos, Quaternion.identity);
-		newHat.transform.parent = PPCharacter.transform;
+        newHat.transform.parent = hatpointTransform;
 
 	}
 

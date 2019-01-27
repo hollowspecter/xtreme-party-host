@@ -63,7 +63,7 @@ public abstract class IInteractable : MonoBehaviour
 
     public virtual void OnInteractionProgress(float progress)
     {
-        if(progressable)
+        if(progressable && interactingPlayer)
         {
             progress /= neededTime;
             bool wasFinished = 1.0f - interactionProgress <= float.Epsilon;

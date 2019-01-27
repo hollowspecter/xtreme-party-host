@@ -69,7 +69,7 @@ public class PlayerActions : MonoBehaviour {
             }
         }
         if(closest) {
-            Debug.Log(closest.name);
+            Debug.Log("Interacting with: " + closest.name);
             currentInteractingObject = closest.GetComponent<IInteractable>();
             currentInteractingObject.StartInteracting(this);
         }
@@ -77,8 +77,6 @@ public class PlayerActions : MonoBehaviour {
             PutDownObject();
         }
     }
-
-
 
     public void StopAction()
     {
@@ -109,11 +107,19 @@ public class PlayerActions : MonoBehaviour {
         }
 
         holdingItem = objectToCarry;
+        interactable.interactable = false;
         holdingItem.GetComponent<Collider>().enabled = false;
         //holdingItem.transform.position = holdingPoint.transform.position;
         //holdingItem.transform.up = transform.up;
         holdingItem.transform.SetParent(holdingPoint.transform);
         holdingItem.transform.localRotation = Quaternion.identity;
+
+        if (interactable.ItemType == "Beercrate"
+        || interactable.ItemType == "Pizza")
+        {
+            holdingItem.transform.up = transform.up;
+        }
+
         holdingItem.transform.localPosition = Vector3.zero;
         Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
         if (itemRig)
@@ -126,7 +132,11 @@ public class PlayerActions : MonoBehaviour {
         holdingItem.GetComponent<Collider>().enabled = true;
         if (holdingItem != null)
         {
-            holdingItem.GetComponent<PickupItem>().ResetInteraction();
+            IInteractable interactble = holdingItem.GetComponent<IInteractable>();
+            {
+                interactble.ResetInteraction();
+                interactble.interactable = true;
+            }
             Rigidbody itemRig = holdingItem.GetComponent<Rigidbody>();
             if (itemRig)
                 itemRig.isKinematic = false;
