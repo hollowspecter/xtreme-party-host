@@ -339,6 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PPGenerator: {fileID: 11400000, guid: 1933531075e6eba4aa08174421668c99, type: 2}
+  maximumPP: 20
+  minMaxSpawnIntervals: {x: 10, y: 30}
 --- !u!82 &1159171134
 AudioSource:
   m_ObjectHideFlags: 0

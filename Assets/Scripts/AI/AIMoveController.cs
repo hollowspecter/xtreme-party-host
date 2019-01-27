@@ -28,6 +28,13 @@ public class AIMoveController : MonoBehaviour
 
     [Header("Components")]
     public Transform target;
+
+    [SerializeField]
+    private Transform pukePosition;
+
+    [SerializeField]
+    private GameObject pukePrefab;
+
     private Vector3 lastPosition;
 
     private float perlinYCoordinate;
@@ -49,6 +56,7 @@ public class AIMoveController : MonoBehaviour
 
     private void Update()
     {
+        CheckIfNeedToPuke();
         if (canWalk && target && navMeshPath != null && navMeshPath.corners.Length > currentCorner)
         {
             toNextCornerVector = (navMeshPath.corners[currentCorner] - movement.transform.position);
@@ -91,13 +99,16 @@ public class AIMoveController : MonoBehaviour
             iKControl.isWalking = false;
         }
     }
-
+    bool pukingInvoked = false;
     protected virtual void CheckIfNeedToPuke()
     {
-        if (drunkness >= 1f)
+        if (drunkness >= 1f && !pukingInvoked)
         {
+            pukingInvoked = true;
             Invoke("Puke", 10f);
         }
+        if (drunkness <= 0.8f && pukingInvoked)
+            pukingInvoked = false;
     }
 
     // TODO JOSCHA MACH HIER DEIN KOTZE NEI
@@ -106,7 +117,8 @@ public class AIMoveController : MonoBehaviour
         // spawn a puddle, add a vfx
 
         // make puddle a rubbish, with value 50f
-
+        GameObject random = Instantiate<GameObject>(pukePrefab, pukePosition.position, pukePosition.rotation);
+        RubbishSpawner.AddRubbishToObject(random, 50.0f, 8.0f);
     }
 
     private Vector3 AddDrunknessToDirection(Vector3 direction)

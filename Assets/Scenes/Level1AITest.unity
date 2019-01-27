@@ -1658,6 +1658,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &150466093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1465235299750896, guid: cbb9939359f50403888a1f526a7bfb94,
+    type: 2}
+  m_PrefabInternal: {fileID: 192804298}
+--- !u!114 &150466094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150466093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738fe441435bf45978a62c5e635690d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 0
 --- !u!1 &180653540
 GameObject:
   m_ObjectHideFlags: 0
@@ -12586,32 +12603,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 33909779253278572, guid: 270b625fca49d084ca7709d39ae569d5,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 33790651000409046, guid: 270b625fca49d084ca7709d39ae569d5,
         type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114536012940504876, guid: 270b625fca49d084ca7709d39ae569d5,
+    - target: {fileID: 33909779253278572, guid: 270b625fca49d084ca7709d39ae569d5,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114075732711385270, guid: 270b625fca49d084ca7709d39ae569d5,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114536012940504876, guid: 270b625fca49d084ca7709d39ae569d5,
+    - target: {fileID: 114075732711385270, guid: 270b625fca49d084ca7709d39ae569d5,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114075732711385270, guid: 270b625fca49d084ca7709d39ae569d5,
+    - target: {fileID: 114536012940504876, guid: 270b625fca49d084ca7709d39ae569d5,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114075732711385270, guid: 270b625fca49d084ca7709d39ae569d5,
+    - target: {fileID: 114536012940504876, guid: 270b625fca49d084ca7709d39ae569d5,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1

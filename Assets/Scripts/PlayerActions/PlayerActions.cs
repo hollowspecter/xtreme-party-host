@@ -41,6 +41,12 @@ public class PlayerActions : MonoBehaviour {
             interactablesList.Remove(other.gameObject);
     }
 
+    public void RemoveFromList(GameObject _item)
+    {
+        interactablesList.Remove(_item);
+    }
+
+
     public void Dance()
     {
         Debug.Log("Im dancing!");

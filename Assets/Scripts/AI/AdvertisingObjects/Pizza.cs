@@ -39,7 +39,7 @@ public class Pizza : AdvertisingObject {
     protected virtual void OnSliceEaten()
     {
         slicesLeft--;
-        if (slicesLeft == 0)
+        if (slicesLeft <= 0)
         {
             Debug.Log("Pizza is now empty and turns to rubbish!");
             slices[0].SetActive(false);
@@ -48,7 +48,7 @@ public class Pizza : AdvertisingObject {
         }
         else
         {
-            slices[slicesLeft - 1].SetActive(false);
+            slices[(slicesLeft)%slices.Length].SetActive(false);
         }
     }
 }

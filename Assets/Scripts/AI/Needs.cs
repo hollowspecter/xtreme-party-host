@@ -34,6 +34,12 @@ public class Needs : MonoBehaviour {
     public float Hunger { get { return needs[(int)NeedType.HUNGER]; } set { needs[(int)NeedType.HUNGER] = Mathf.Clamp(value, 0f, 100f); } }
     public float Room { get { return needs[(int)NeedType.ROOM]; } set { needs[(int)NeedType.ROOM] = Mathf.Clamp(value, 0f, 100f); } }
 
+    [Header("icons")]
+    public SpriteRenderer sprechblase;
+    public SpriteRenderer iconSprite;
+    public float showIconNeedValueThreshold = 40f;
+    public Sprite[] needIcons;
+
     public virtual void Awake()
     {
         DefaultValues();
@@ -44,6 +50,7 @@ public class Needs : MonoBehaviour {
         DecayNeeds();
         mood = CalculateMood();
         UpdateColorMood();
+        UpdateIcon();
 
         if (debug_tmp)
             debug_tmp.text = string.Format("Fun={0}\nSocial={1}\nBladder={2}\nHunger={3}\nRoom={4}", Fun, Social, Bladder, Hunger, Room);
@@ -84,6 +91,33 @@ public class Needs : MonoBehaviour {
                 sum += (10f / needs[i]);
         }
         return sum;
+    }
+
+    protected virtual void UpdateIcon()
+    {
+        int lowestNeedIndex = -1;
+        float lowestNeedValue = float.MaxValue;
+        for (int i=0; i<needs.Length; ++i)
+        {
+            if (needs[i] < lowestNeedValue)
+            {
+                lowestNeedIndex = i;
+                lowestNeedValue = needs[i];
+            }
+        }
+
+        if (lowestNeedValue < showIconNeedValueThreshold)
+        {
+            // show icon
+            iconSprite.sprite = needIcons[lowestNeedIndex];
+            sprechblase.enabled = true;
+        }
+        else
+        {
+            // hide icon
+            iconSprite.sprite = null;
+            sprechblase.enabled = false;
+        }
     }
 
     protected virtual void UpdateColorMood()

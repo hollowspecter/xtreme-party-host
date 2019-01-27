@@ -2,7 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Toilet : AdvertisingObject {
+
+    [SerializeField]
+    private Transform smellyPoint;
+    [SerializeField]
+    private GameObject smellyParticle;
+
+    private GameObject currentSmell;
+
+    [Range(0,1)]
+    public float probability = 0.0f;
 
     protected override void Awake()
     {
@@ -16,7 +27,17 @@ public class Toilet : AdvertisingObject {
     {
         Debug.Log("Add Toilet Action");
         KeyValuePair<NeedType, float>[] ads = new KeyValuePair<NeedType, float>[1];
-        ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 100f);
+
+
+        //Wenn der Toilettengestank noch da ist, weniger Rewarding
+        if(currentSmell)
+        {
+            ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 50f);
+        }
+        else
+        {
+            ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 100f);
+        }
         TimedAction toiletAction = new TimedAction(this, "Empty Bladder", ads, ads, OnEndToiletUsed, null, 5f);
         advertisedActions.Add(toiletAction);
     }
@@ -24,6 +45,17 @@ public class Toilet : AdvertisingObject {
     protected virtual void OnEndToiletUsed()
     {
         AddToiletAction();
+        if(currentSmell != null)
+        {
+            return;
+        }
+        probability += 0.2f;
+        if(Random.value <= probability )
+        {
+            //Fire Toilet event
+            probability = 0.0f;
+            currentSmell = Instantiate<GameObject>(smellyParticle, smellyPoint);
+        }
     }
 
     // gets called when toilet action is done!
