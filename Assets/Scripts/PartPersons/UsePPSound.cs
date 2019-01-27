@@ -27,4 +27,7 @@ public class UsePPSound : MonoBehaviour
     public void PlayBackgroundChatter() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.BackgroundChatter, 1f); }
     public void PlayBeerBotteClinging() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.BeerBotteClinging, 1f); }
     public void PlayFridgeBeer() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.FridgeBeer, 0.7f); }
+    public void PlayTelephoneCall() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.TelephoneCall, 1f); }
+    public void PlayPizzaHere() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.PizzaHere, 1f); }
+    public void PlayBeerHere() { PartyPersonSound.PlaySound(_mouth, PartyPersonSound.BeerHere, 1f); }
 }

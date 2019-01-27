@@ -73,9 +73,9 @@ public class PlayerActions : MonoBehaviour {
             currentInteractingObject.StartInteracting(this);
 
             if (currentInteractingObject.ItemType == "Refridgerator")
-            {
                 GetComponent<UsePPSound>().PlayFridgeBeer();
-            }
+            else if (currentInteractingObject.ItemType == "Telephone")
+                GetComponent<UsePPSound>().PlayTelephoneCall();
         }
         else if(holdingItem){
             PutDownObject();

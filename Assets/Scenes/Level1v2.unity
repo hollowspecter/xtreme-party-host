@@ -27905,6 +27905,8 @@ MonoBehaviour:
   outlineGlow: {fileID: 323265501}
   clockText: {fileID: 1337999823}
   simulationTimeFactor: 5
+  timeUntilPartyEnd: 300
+  _partyEndBuffer: 10
 --- !u!222 &908033717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44921,23 +44923,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4355168007658714, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355168007658714, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114112087964400086, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9,
         type: 2}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1080316820}
-    - target: {fileID: 1239938161712882, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
-      propertyPath: m_TagString
-      value: PlayerInteractable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
   m_IsPrefabAsset: 0
@@ -51509,15 +51499,6 @@ Prefab:
     - target: {fileID: 4643132155622566, guid: 362e7175d468473458c27d3311d1b5cc, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 64633398963347194, guid: 362e7175d468473458c27d3311d1b5cc,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1097248582499490, guid: 362e7175d468473458c27d3311d1b5cc, type: 2}
-      propertyPath: m_TagString
-      value: PlayerInteractable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 362e7175d468473458c27d3311d1b5cc, type: 2}
@@ -65300,23 +65281,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4635140542806368, guid: b242e854abe954661a91e99778572316, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4635140542806368, guid: b242e854abe954661a91e99778572316, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114276565748240360, guid: b242e854abe954661a91e99778572316,
         type: 2}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1080316820}
-    - target: {fileID: 1581629450548564, guid: b242e854abe954661a91e99778572316, type: 2}
-      propertyPath: m_TagString
-      value: PlayerInteractable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b242e854abe954661a91e99778572316, type: 2}
   m_IsPrefabAsset: 0
