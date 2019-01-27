@@ -12,11 +12,13 @@ public class Bett : AdvertisingObject
 
     public TimedAction action1, action2;
 
+    protected bool invoked = false;
+
     protected override void Awake()
     {
         base.Awake();
 
-        AddBedActions();
+        Invoke("AddBedActions", sexInterval);
     }
 
     protected override void Update()
@@ -42,7 +44,7 @@ public class Bett : AdvertisingObject
         KeyValuePair<NeedType, float>[] ads = new KeyValuePair<NeedType, float>[2];
         ads[0] = new KeyValuePair<NeedType, float>(NeedType.SOCIAL, socialValue);
         ads[1] = new KeyValuePair<NeedType, float>(NeedType.FUN, funValue);
-        action1 = new TimedAction(this, actionName + "1", ads, ads, null, null, sexDuration);
+        action1 = new TimedAction(this, actionName + "1", ads, ads, OnEndBedAction, null, sexDuration);
         advertisedActions.Add(action1);
         action2 = new TimedAction(this, actionName + "2", ads, ads, OnEndBedAction, null, sexDuration);
         advertisedActions.Add(action2);
@@ -54,11 +56,20 @@ public class Bett : AdvertisingObject
 
     protected virtual void OnEndBedAction()
     {
-        action1.finishEarly = true;
-        action2.finishEarly = true;
+        Debug.Log("Finished Sex");
+        if (action1 != null) action1.finishEarly = true;
+        if (action2 != null) action2.finishEarly = true;
         action1 = null;
         action2 = null;
-
-        Invoke("AddBedActions", sexInterval);
+        
+        if (!invoked)
+        {
+            Invoke("AddBedActions", sexInterval);
+            invoked = true;
+        }
+        else
+        {
+            invoked = false;
+        }
     }
 }

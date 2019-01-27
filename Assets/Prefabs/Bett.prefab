@@ -270,9 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b190e8001ed745f9b6166e58e6c89c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 0.74
+  interactionDistance: 0.89
   actionName: Have sex
   socialValue: 30
   funValue: 30
-  sexInterval: 10
+  sexInterval: 60
   sexDuration: 20

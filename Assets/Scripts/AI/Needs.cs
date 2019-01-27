@@ -108,7 +108,13 @@ public class Needs : MonoBehaviour {
         Social = Social - socialDecayPerSecond * Time.deltaTime;
         Bladder = Bladder - bladderDecayPerSecond * Time.deltaTime;
         Hunger = Hunger - hungerDecayPerSecond * Time.deltaTime;
-        //Room = Room - roomDecayPerSecond * Time.deltaTime; Room does not decay like the other things
+
+        float totalDisgust = 0f;
+        foreach (var rubbish in Rubbish.allRubbish)
+        {
+            totalDisgust += rubbish.disgustness;
+        }
+        Room = 100f - totalDisgust;
     }
 
     protected virtual void DefaultValues()

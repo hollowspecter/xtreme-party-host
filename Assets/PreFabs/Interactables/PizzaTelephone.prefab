@@ -9,47 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1540658416079412}
+  m_RootGameObject: {fileID: 1239938161712882}
   m_IsPrefabAsset: 1
---- !u!1 &1540658416079412
+--- !u!1 &1239938161712882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4609270447704822}
-  - component: {fileID: 33209049920544062}
-  - component: {fileID: 23402359364025576}
-  - component: {fileID: 65162100438109710}
-  - component: {fileID: 114933383302288922}
-  - component: {fileID: 54481856862308412}
+  - component: {fileID: 4355168007658714}
+  - component: {fileID: 33098145440713098}
+  - component: {fileID: 23812464614316678}
+  - component: {fileID: 136842282373421136}
+  - component: {fileID: 114112087964400086}
   m_Layer: 0
-  m_Name: Bier
-  m_TagString: PlayerInteractable
+  m_Name: PizzaTelephone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4609270447704822
+--- !u!4 &4355168007658714
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.926461, y: 1.5, z: -12.912203}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1239938161712882}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.5, y: 1.52, z: -5.314}
+  m_LocalScale: {x: 0.4223, y: 0.4482124, z: 0.28447488}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23402359364025576
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!23 &23812464614316678
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
+  m_GameObject: {fileID: 1239938161712882}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,52 +78,44 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33209049920544062
+--- !u!33 &33098145440713098
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54481856862308412
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &65162100438109710
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114933383302288922
+  m_GameObject: {fileID: 1239938161712882}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114112087964400086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540658416079412}
+  m_GameObject: {fileID: 1239938161712882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218a72ead02c94b8ea29f67e9cf39548, type: 3}
+  m_Script: {fileID: 11500000, guid: 9271bfbd97b864f5aa32c24c1e677e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededTime: 1
+  neededTime: 3
   ResetOnStop: 0
   interactable: 1
-  ItemType: Beercrate
+  ItemType: Telephone
+  ItemNeeded: 
+  AlternativeMethod: 0
+  spawnPoint: {fileID: 0}
+  deliveryPrefab: {fileID: 1013250703519010, guid: 9e2344711037347e4b2f46d5da1ee66e,
+    type: 2}
+  minMaxDeliveryDuration: {x: 15, y: 30}
+--- !u!136 &136842282373421136
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239938161712882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
