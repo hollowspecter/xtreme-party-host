@@ -2,7 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Toilet : AdvertisingObject {
+
+    [SerializeField]
+    private Transform smellyPoint;
+    [SerializeField]
+    private GameObject smellyParticle;
+
+    private GameObject currentSmell;
+
+    [Range(0,1)]
+    public float probability = 0.0f;
 
     protected override void Awake()
     {
@@ -24,6 +35,17 @@ public class Toilet : AdvertisingObject {
     protected virtual void OnEndToiletUsed()
     {
         AddToiletAction();
+        if(currentSmell != null)
+        {
+            return;
+        }
+        probability += 0.2f;
+        if(Random.value <= probability )
+        {
+            //Fire Toilet event
+            probability = 0.0f;
+            currentSmell = Instantiate<GameObject>(smellyParticle, smellyPoint);
+        }
     }
 
     // gets called when toilet action is done!
