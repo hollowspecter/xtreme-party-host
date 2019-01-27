@@ -1865,6 +1865,8 @@ MonoBehaviour:
   actionTickInterval: 1
   hatpoint: {fileID: 4242735176950604}
   useDistanceAttenuation: 0
+  maxTime: 10
+  npcSpawnpoint: {fileID: 0}
   tmpdebug: {fileID: 114075732711385270}
 --- !u!114 &114858555536373266
 MonoBehaviour:
@@ -2062,7 +2064,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   moodColorRenderer: {fileID: 0}
-  sprechblase: {fileID: 0}
+  sprechblase: {fileID: 212226755735663364}
   iconSprite: {fileID: 212226755735663364}
   showIconNeedValueThreshold: 50
   needIcons:
