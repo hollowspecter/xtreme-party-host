@@ -19,11 +19,13 @@ public class GeneralInteractable : IInteractable {
     {
     }
 
-    public override void StartInteracting(PlayerActions playerAction)
+    public override bool StartInteracting(PlayerActions playerAction)
     {
+        if (interactingPlayer)
+            return false;
         //Kein Item required
         if (ItemNeeded.Equals("")) {
-            base.StartInteracting(playerAction);
+            return base.StartInteracting(playerAction);
         }
         else
         {
@@ -35,17 +37,18 @@ public class GeneralInteractable : IInteractable {
                 //Hat es benötigte Komponente, und ist es das richtige Item?
                 if (requirementMet)
                 {
-                    base.StartInteracting(playerAction);
                     foundRequirement = playerAction.holdingItem;
+                    return base.StartInteracting(playerAction);
                 }
             }
 
             //Kein Item, kann ich alternativ damit antworten
             else if (AlternativeMethod) {
-                base.StartInteracting(playerAction);
                 foundRequirement = null;
+                return base.StartInteracting(playerAction);
             }
         }
+        return false;
     }
 
 

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+[RequireComponent(typeof(CharacterMovement))]
 public class PlayerActions : MonoBehaviour {
 
     [SerializeField]
     List<GameObject> interactablesList;
     IInteractable currentInteractingObject;
     IKControl ikcontrol;
-
+    CharacterMovement movement;
 
     //Holding item?
     public GameObject holdingItem;
@@ -21,6 +21,7 @@ public class PlayerActions : MonoBehaviour {
 	void Awake () {
         interactablesList = new List<GameObject>();
         ikcontrol = GetComponentInChildren<IKControl>();
+        movement = GetComponent<CharacterMovement>();
 	}
 	
 	// Update is called once per frame
@@ -69,6 +70,7 @@ public class PlayerActions : MonoBehaviour {
         }
         if(closest) {
             Debug.Log("Interacting with: " + closest.name);
+            movement.movementBlocked = true;
             currentInteractingObject = closest.GetComponent<IInteractable>();
             currentInteractingObject.StartInteracting(this);
 
@@ -88,13 +90,21 @@ public class PlayerActions : MonoBehaviour {
         {
             currentInteractingObject.StopInteracting();
             currentInteractingObject = null;
+            movement.movementBlocked = false;
         }
     }
 
     private void ProgressAction()
     {
-        if (currentInteractingObject != null)
-            currentInteractingObject.OnInteractionProgress(Time.deltaTime);
+        if (currentInteractingObject != null) {
+            if (!currentInteractingObject.isPlayerInteracting(this))
+            {
+                movement.movementBlocked = false;
+                currentInteractingObject = null;
+            }
+            else
+                currentInteractingObject.OnInteractionProgress(Time.deltaTime);
+        }
     }
 
     public void PickupObject(GameObject objectToCarry)

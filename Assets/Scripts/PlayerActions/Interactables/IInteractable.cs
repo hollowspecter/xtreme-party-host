@@ -13,10 +13,12 @@ public abstract class IInteractable : MonoBehaviour
         neededTime = _value;
     }
 
+    [SerializeField]
     protected float interactionProgress = 0.0f;
 
     public bool ResetOnStop = false;
 
+    [SerializeField]
     protected PlayerActions interactingPlayer = null;
 
     protected bool progressable = true;
@@ -52,9 +54,14 @@ public abstract class IInteractable : MonoBehaviour
         interactable = false;
     }
 
-    public virtual void StartInteracting(PlayerActions playerAction)
+    public virtual bool StartInteracting(PlayerActions playerAction)
     {
-        interactingPlayer = playerAction;
+        if(!interactingPlayer)
+        {
+            interactingPlayer = playerAction;
+            return true;
+        }
+        return false;
     }
 
     // Update is called once per frame
@@ -65,6 +72,7 @@ public abstract class IInteractable : MonoBehaviour
 
     public virtual void OnInteractionProgress(float progress)
     {
+        //Debug.Log(interactingPlayer);
         if(progressable && interactingPlayer)
         {
             progress /= neededTime;
@@ -91,5 +99,10 @@ public abstract class IInteractable : MonoBehaviour
         interactingPlayer = null;
         interactionProgress = 0.0f;
         progressable = true;
+    }
+
+    public virtual bool isPlayerInteracting(PlayerActions player)
+    {
+        return (interactingPlayer && interactingPlayer.Equals(player));
     }
 }
