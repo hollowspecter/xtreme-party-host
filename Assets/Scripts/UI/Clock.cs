@@ -7,6 +7,8 @@ using System;
 
 public class Clock : MonoBehaviour
 {
+    public static Clock instance;
+
     [Header("Colors")]
     public Color lineColor;
     public Color glowColor;
@@ -23,8 +25,13 @@ public class Clock : MonoBehaviour
     //buffer, so Party People have time to leave/give points.
     [SerializeField] private float _partyEndBuffer = 10f;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Use this for initialization
-	void Start ()
+    void Start ()
     {
         outline.color = lineColor;
         outlineGlow.color = glowColor;
