@@ -48,7 +48,7 @@ public class Pizza : AdvertisingObject {
         }
         else
         {
-            slices[slicesLeft - 1].SetActive(false);
+            slices[(slicesLeft - 1)%slices.Length].SetActive(false);
         }
     }
 }

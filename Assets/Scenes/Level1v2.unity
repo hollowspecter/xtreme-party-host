@@ -2317,7 +2317,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh110030
+  m_Name: pb_Mesh34200
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3451,7 +3451,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1234460
+  m_Name: pb_Mesh35046
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12058,7 +12058,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh110666
+  m_Name: pb_Mesh36018
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -44934,6 +44934,10 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1080316820}
+    - target: {fileID: 1239938161712882, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
+      propertyPath: m_TagString
+      value: PlayerInteractable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fefb4e3d066147c8af8a8b3f7cdf1a9, type: 2}
   m_IsPrefabAsset: 0
@@ -51510,6 +51514,10 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097248582499490, guid: 362e7175d468473458c27d3311d1b5cc, type: 2}
+      propertyPath: m_TagString
+      value: PlayerInteractable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 362e7175d468473458c27d3311d1b5cc, type: 2}
@@ -64936,7 +64944,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh110318
+  m_Name: pb_Mesh34750
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -65333,6 +65341,10 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1080316820}
+    - target: {fileID: 1581629450548564, guid: b242e854abe954661a91e99778572316, type: 2}
+      propertyPath: m_TagString
+      value: PlayerInteractable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b242e854abe954661a91e99778572316, type: 2}
   m_IsPrefabAsset: 0
@@ -65923,7 +65935,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh110298
+  m_Name: pb_Mesh34698
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
