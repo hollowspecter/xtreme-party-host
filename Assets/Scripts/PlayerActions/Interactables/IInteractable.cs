@@ -43,11 +43,13 @@ public abstract class IInteractable : MonoBehaviour
     protected virtual void OnEnable()
     {
         progressable = true;
+        interactable = true;
     }
 
     protected virtual void OnDisable()
     {
         progressable = false;
+        interactable = false;
     }
 
     public virtual void StartInteracting(PlayerActions playerAction)
