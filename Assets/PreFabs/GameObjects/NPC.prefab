@@ -746,8 +746,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223030496390074}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.335547, y: 1.61, z: -9.456117}
+  m_LocalRotation: {x: -0, y: 0.76161796, z: -0, w: 0.64802635}
+  m_LocalPosition: {x: 12.485328, y: 2.3599997, z: -7.541198}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4947872555955614}
@@ -758,7 +758,7 @@ Transform:
   - {fileID: 4770085470878042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 99.214005, z: 0}
 --- !u!4 &4096211573991024
 Transform:
   m_ObjectHideFlags: 1
@@ -1118,8 +1118,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390483135018050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.26, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 4.01, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4041195285633048}
   m_Father: {fileID: 4089504914925306}
@@ -1534,6 +1534,7 @@ MonoBehaviour:
   ikActive: 1
   headIkActive: 0
   isWalking: 0
+  isDancing: 0
   holdingItem: 0
   holdingOnlyRight: 0
   drinkingItem: 0
@@ -1548,7 +1549,8 @@ MonoBehaviour:
   rightFootObj: {fileID: 4441492590794246}
   leftFootObj: {fileID: 4275747907082806}
   lookObj: {fileID: 4944929944337910}
-  grabObjectPosition: {fileID: 4306216316693654}
+  grabObjectPosition: {fileID: 4551352632661774, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   walkAnimSpeed: 4
   feetCurve:
     serializedVersion: 2
@@ -1571,12 +1573,85 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    m_PreInfinity: 2
+    m_PreInfinity: 0
     m_PostInfinity: 0
     m_RotationOrder: 4
-  drinkObjectHandPosition: {fileID: 4848762094983602}
-  drinkObjectLookPosition: {fileID: 4191212462215162}
+  drinkObjectHandPosition: {fileID: 4539059843089054, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
+  drinkObjectLookPosition: {fileID: 4982587299470158, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   drinkTiltBackAngle: -30
+  danceAnimSpeed: 2
+  chosenDance: 0
+  changeDanceInterval: 4
+  chosenHands: 1
+  changeHandsInterval: 2
+  pointedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00011862158
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: -1
+      inSlope: 2.390192
+      outSlope: 2.390192
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24775696
+    - serializedVersion: 3
+      time: 0.7
+      value: 1
+      inSlope: 5.01169
+      outSlope: 5.01169
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2743586
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  posedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.09146104
+      outSlope: -0.09146104
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1415441
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
 --- !u!114 &114038591669002386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2065,14 +2140,14 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   moodColorRenderer: {fileID: 0}
   sprechblase: {fileID: 212226755735663364}
-  iconSprite: {fileID: 212226755735663364}
+  iconSprite: {fileID: 212467521175136942}
   showIconNeedValueThreshold: 50
   needIcons:
-  - {fileID: 21300000, guid: 2969d90b86698124696637a6df64a112, type: 3}
-  - {fileID: 21300000, guid: 3f1b6f6f939d55e468844dd28a87e9b3, type: 3}
-  - {fileID: 21300000, guid: 5c70525c81c9ccf42866ac963ce0f087, type: 3}
-  - {fileID: 21300000, guid: 394e93ce356b57344903a08ff72fcab2, type: 3}
-  - {fileID: 21300000, guid: e9980ad31e8dba04aa8110ba611c69d8, type: 3}
+  - {fileID: 21300000, guid: 957c5a162386b4fa48cecb3e3f5b2389, type: 3}
+  - {fileID: 21300000, guid: 032e769d7b45b4fc0b13ba83aceb69cb, type: 3}
+  - {fileID: 21300000, guid: 48cfca650ce894c4199519c3876e3a25, type: 3}
+  - {fileID: 21300000, guid: a1fcacb0e18b64d478b883147ad7f32c, type: 3}
+  - {fileID: 21300000, guid: ac2cc362c32784f55b072662a04be556, type: 3}
 --- !u!114 &114980998005774876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2119,7 +2194,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 929cf2d2b86b8e743b6ec53d13c314c0, type: 3}
+  - {fileID: 2100000, guid: ecf799e559bb0e64f8660a6bcd16ba6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2226,15 +2301,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 968db2d483559475899cd882f69b27e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 5, y: 4.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212467521175136942
@@ -2272,15 +2347,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ac2cc362c32784f55b072662a04be556, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 5, y: 4.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &222423185787475594

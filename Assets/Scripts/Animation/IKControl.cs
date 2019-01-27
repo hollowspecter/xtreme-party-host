@@ -15,6 +15,8 @@ public class IKControl : MonoBehaviour
     public bool ikActive = false;
     public bool headIkActive = false;
     public bool isWalking;
+    public bool isDancing;
+
 
     public bool holdingItem;
     public bool holdingOnlyRight;
@@ -52,6 +54,19 @@ public class IKControl : MonoBehaviour
     public Transform drinkObjectHandPosition;
     public Transform drinkObjectLookPosition;
     public float drinkTiltBackAngle;
+
+    [Header("Dancing")]
+    public float danceAnimSpeed = 1f;
+    public Dances chosenDance = Dances.Shuffle;
+    private float danceTimer;
+    public float changeDanceInterval;
+    [Space]
+    public Hands chosenHands = Hands.PumpingDown;
+    private float handsTimer;
+    public float changeHandsInterval;
+    public AnimationCurve pointedDance;
+    public AnimationCurve posedDance;
+
 
     void Start()
     {
@@ -156,6 +171,165 @@ public class IKControl : MonoBehaviour
             }
 
         }
+
+        if(isDancing)
+        {
+            danceTimer += Time.deltaTime;
+            handsTimer += Time.deltaTime;
+            
+            if(danceTimer > changeDanceInterval)
+            {
+                danceTimer = 0;
+                chosenDance = ChooseRandomDance();
+            }
+
+            if (handsTimer > changeHandsInterval)
+            {
+                handsTimer = 0;
+                chosenHands = ChooseRandomHands();
+            }
+
+            float danceMoveSpeed = 1f;
+            //FEET
+            switch (chosenDance)
+            {
+                case Dances.Shuffle:
+                {
+                        danceMoveSpeed = 1f;
+                        rightFootObj.localPosition = new Vector3(defaultRightFootPosition.x, defaultRightFootPosition.y, pointedDance.Evaluate(Time.time * danceAnimSpeed * danceMoveSpeed) * 0.2f);
+                        leftFootObj.localPosition = new Vector3(defaultLeftFootPosition.x, defaultLeftFootPosition.y, pointedDance.Evaluate(Time.time * danceAnimSpeed * danceMoveSpeed + 1.0f) * 0.2f);
+
+                        transform.localPosition = new Vector3(0, 0 - ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 1f) * 0.5f) * 0.05f, 0);
+
+                        break;
+                }
+                case Dances.Jumping:
+                {
+                    danceMoveSpeed = 0.5f;
+                    rightFootObj.localPosition = new Vector3(defaultRightFootPosition.x, defaultRightFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed + 1f) * 0.2f, defaultRightFootPosition.z);
+                    leftFootObj.localPosition = new Vector3(defaultLeftFootPosition.x, defaultLeftFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed + 1f) * 0.2f, defaultRightFootPosition.z);
+                    transform.localPosition = new Vector3(0, 0 + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f, 0);
+
+                    break;
+                }
+                case Dances.JumpKickLeft:
+                {
+                    danceMoveSpeed = 1f;
+                    rightFootObj.localPosition = new Vector3(defaultRightFootPosition.x, defaultRightFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed + 1f) * 0.2f, defaultRightFootPosition.z);
+                    leftFootObj.localPosition = new Vector3(defaultLeftFootPosition.x - ((pointedDance.Evaluate(Time.time * danceAnimSpeed * 2f) + 0.75f) * 0.5f * 0.4f), defaultLeftFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed) * 0.05f + 0.3f + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f, defaultLeftFootPosition.z + 0.3f);
+                    transform.localPosition = new Vector3(0, 0 + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f, 0);
+
+                    break;
+                }
+                case Dances.JumpKickRight:
+                    {
+                        danceMoveSpeed = 1f;
+                        leftFootObj.localPosition = new Vector3(defaultLeftFootPosition.x, defaultLeftFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed + 1f) * 0.2f, defaultLeftFootPosition.z);
+                        rightFootObj.localPosition = new Vector3(defaultRightFootPosition.x - ((pointedDance.Evaluate(Time.time * danceAnimSpeed * 2f) + 0.75f) * 0.5f * 0.4f), defaultRightFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed) * 0.05f + 0.3f + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f, defaultRightFootPosition.z - 0.3f);
+                        transform.localPosition = new Vector3(0, 0 + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f, 0);
+
+                        break;
+                    }
+                case Dances.Polka:
+                    {
+                        danceMoveSpeed = 1f;
+                        leftFootObj.localPosition = new Vector3(defaultLeftFootPosition.x, defaultLeftFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * 2f + 1f) * 0.1f + 0.1f, defaultLeftFootPosition.z + 1 * (pointedDance.Evaluate(Time.time * danceAnimSpeed) + 1f) * 0.5f * 0.5f);
+                        rightFootObj.localPosition = new Vector3(defaultRightFootPosition.x, defaultRightFootPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * 2f) * 0.1f + 0.1f, defaultRightFootPosition.z + 1 * (pointedDance.Evaluate(Time.time * danceAnimSpeed + 1f) + 1f) * 0.5f * 0.5f);
+                        transform.localPosition = new Vector3(0, 0 - ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 1f) * 0.5f) * 0.05f, 0);
+
+                        break;
+                    }
+            }
+            float handsMoveSpeed = 1f;
+            //UpperBody
+            switch (chosenHands)
+            {
+                case Hands.PumpingDown:
+                {
+                    headIkActive = true;
+                    lookObj.localPosition = new Vector3(defaultHeadPosition.x, defaultHeadPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed) * 0.5f - 0.8f, defaultHeadPosition.z);
+                    handsMoveSpeed = 2f;
+                    //Body
+                    transform.localEulerAngles = new Vector3(Mathf.LerpUnclamped(-1f, 3f, pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed)), 0, 0);
+
+                    //Pumping
+                    rightHandObj.localPosition = (new Vector3(grabWidth, grabObjectPosition.localPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1) * 0.3f - 0.15f, grabObjectPosition.localPosition.z));
+                    leftHandObj.localPosition = (new Vector3(-grabWidth, grabObjectPosition.localPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1) * 0.3f - 0.15f, grabObjectPosition.localPosition.z));
+                    rightHandObj.localRotation = grabObjectPosition.localRotation;
+                    leftHandObj.localRotation = grabObjectPosition.localRotation;
+                    break;
+                }
+                case Hands.PumpingUp:
+                {
+                    handsMoveSpeed = 2f;
+                    //Body
+                    transform.localEulerAngles = new Vector3(Mathf.LerpUnclamped(3f, -1f, pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed)), 0, 0);
+                    headIkActive = true;
+                    lookObj.localPosition = new Vector3(defaultHeadPosition.x, defaultHeadPosition.y + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.4f + 1f, defaultHeadPosition.z);
+                    //Pumping
+                    rightHandObj.localPosition = (new Vector3(defaultRightHandPosition.x, defaultRightHandPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1) * 0.1f + 0.8f, defaultRightHandPosition.z + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed + 1) * 0.1f + 0.3f));
+                    leftHandObj.localPosition = (new Vector3(defaultLeftHandPosition.x, defaultLeftHandPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed  + 1) * 0.1f + 0.8f, defaultLeftHandPosition.z + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed + 1) * 0.1f + 0.3f));
+                    rightHandObj.localRotation = grabObjectPosition.localRotation;
+                    leftHandObj.localRotation = grabObjectPosition.localRotation;
+                    break;
+                }
+                case Hands.SidePump:
+                {
+                    handsMoveSpeed = 2f;
+                    //Body
+                    transform.localEulerAngles = new Vector3(Mathf.LerpUnclamped(3f, -1f, pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed)), 0, 0);
+                    headIkActive = true;
+                    lookObj.localPosition = new Vector3(defaultHeadPosition.x + pointedDance.Evaluate(Time.time * danceAnimSpeed) * 0.6f, defaultHeadPosition.y + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.2f + 0.3f, defaultHeadPosition.z);
+                    //Pumping
+                    rightHandObj.localPosition = (new Vector3(defaultRightHandPosition.x + (pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1f) + 1f) * 0.5f * 0.5f, defaultRightHandPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1f) * 0.1f + 0.8f, defaultRightHandPosition.z + (pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed + 1)+1) * 0.5f * 0.1f + 0.1f));
+                    leftHandObj.localPosition = (new Vector3(defaultLeftHandPosition.x - (pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed)+1f) * 0.5f * 0.5f, defaultLeftHandPosition.y + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed) * 0.1f + 0.8f, defaultLeftHandPosition.z + (pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed) + 1) * 0.5f * 0.1f + 0.1f));
+                    rightHandObj.localRotation = defaultRightHandRotation;
+                    leftHandObj.localRotation = defaultLeftHandRotation;
+                        break;
+                }
+                case Hands.Point:
+                {
+                    handsMoveSpeed = 0.5f;
+                    //Body
+                    transform.localEulerAngles = new Vector3(Mathf.LerpUnclamped(3f, -1f, pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed)), 0, 0);
+                    headIkActive = true;
+                    lookObj.localPosition = new Vector3(defaultHeadPosition.x + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed) * 0.3f, defaultHeadPosition.y + ((pointedDance.Evaluate(Time.time * danceAnimSpeed) + 0.8f) * 0.5f) * 0.4f + 1f, defaultHeadPosition.z);
+                    //Pumping
+                    rightHandObj.localPosition = (new Vector3(grabWidth, grabObjectPosition.localPosition.y + 0.2f, grabObjectPosition.localPosition.z + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed) * 0.3f + 0.1f));
+                    leftHandObj.localPosition = (new Vector3(-grabWidth, grabObjectPosition.localPosition.y + 0.2f, grabObjectPosition.localPosition.z + pointedDance.Evaluate(Time.time * danceAnimSpeed * handsMoveSpeed * danceMoveSpeed + 1) * 0.3f + 0.1f));
+                        rightHandObj.localRotation = defaultRightHandRotation;
+                    leftHandObj.localRotation = defaultLeftHandRotation;
+                    break;
+                }
+            }
+        }
+    }
+
+    public enum Dances
+    {
+        Shuffle,
+        Jumping,
+        JumpKickLeft,
+        JumpKickRight,
+        Polka,
+    }
+
+    public Dances ChooseRandomDance()
+    {
+        return (Dances)UnityEngine.Random.Range(0, 5);
+    }
+
+    public Hands ChooseRandomHands()
+    {
+        return (Hands)UnityEngine.Random.Range(0, 4);
+    }
+
+    public enum Hands
+    {
+        PumpingDown,
+        PumpingUp,
+        SidePump,
+        Point,
     }
 
     void AnimateRightToDefaultTransform(bool tween)

@@ -821,7 +821,7 @@ Transform:
   - {fileID: 4364256841356428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 127.379005, z: 0}
 --- !u!4 &4462660788034634
 Transform:
   m_ObjectHideFlags: 1
@@ -1322,6 +1322,7 @@ MonoBehaviour:
   ikActive: 1
   headIkActive: 0
   isWalking: 0
+  isDancing: 1
   holdingItem: 0
   holdingOnlyRight: 0
   drinkingItem: 0
@@ -1336,7 +1337,8 @@ MonoBehaviour:
   rightFootObj: {fileID: 4284468965418566}
   leftFootObj: {fileID: 4980238900212608}
   lookObj: {fileID: 4419712619103748}
-  grabObjectPosition: {fileID: 4387581454132626}
+  grabObjectPosition: {fileID: 4551352632661774, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   walkAnimSpeed: 4
   feetCurve:
     serializedVersion: 2
@@ -1359,12 +1361,85 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    m_PreInfinity: 2
+    m_PreInfinity: 0
     m_PostInfinity: 0
     m_RotationOrder: 4
-  drinkObjectHandPosition: {fileID: 4315079138963442}
-  drinkObjectLookPosition: {fileID: 4180950782891634}
+  drinkObjectHandPosition: {fileID: 4539059843089054, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
+  drinkObjectLookPosition: {fileID: 4982587299470158, guid: 8a529f1b110a9ce4bb2e15319d028934,
+    type: 2}
   drinkTiltBackAngle: -30
+  danceAnimSpeed: 2
+  chosenDance: 0
+  changeDanceInterval: 4
+  chosenHands: 0
+  changeHandsInterval: 2
+  pointedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00011862158
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: -1
+      inSlope: 2.390192
+      outSlope: 2.390192
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24775696
+    - serializedVersion: 3
+      time: 0.7
+      value: 1
+      inSlope: 5.01169
+      outSlope: 5.01169
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2743586
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  posedDance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.09146104
+      outSlope: -0.09146104
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1415441
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 0
+    m_RotationOrder: 4
 --- !u!136 &136573730647891816
 CapsuleCollider:
   m_ObjectHideFlags: 1

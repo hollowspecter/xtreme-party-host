@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 4355168007658714}
   - component: {fileID: 136842282373421136}
   - component: {fileID: 114112087964400086}
+  - component: {fileID: 82471591000929458}
   m_Layer: 0
   m_Name: PizzaTelephone
-  m_TagString: Untagged
+  m_TagString: PlayerInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1239938161712882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.52, z: -5.314}
+  m_LocalPosition: {x: 5.05, y: 2.5409188, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4850440582181146}
@@ -216,6 +217,101 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876237906271870}
   m_Mesh: {fileID: 4300002, guid: d7d8b079170614ad9bd2126d51637c24, type: 3}
+--- !u!82 &82471591000929458
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239938161712882}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114112087964400086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9271bfbd97b864f5aa32c24c1e677e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededTime: 3
+  neededTime: 6
   ResetOnStop: 0
   interactable: 1
   ItemType: Telephone
@@ -236,7 +332,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   deliveryPrefab: {fileID: 1013250703519010, guid: 9e2344711037347e4b2f46d5da1ee66e,
     type: 2}
-  minMaxDeliveryDuration: {x: 15, y: 30}
+  minMaxDeliveryDuration: {x: 15, y: 20}
+  soundeffect:
+  - {fileID: 8300000, guid: d6611dd210fc04ca9b65a6a996eb190a, type: 3}
+  - {fileID: 8300000, guid: 0405814c6d8974303a0dd90945915403, type: 3}
 --- !u!136 &136842282373421136
 CapsuleCollider:
   m_ObjectHideFlags: 1

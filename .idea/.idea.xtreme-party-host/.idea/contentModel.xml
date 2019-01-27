@@ -81,6 +81,7 @@
             <e p="BoomBoxBouncer.cs" t="Include" />
             <e p="IKControl.cs" t="Include" />
           </e>
+          <e p="BillBoard.cs" t="Include" />
           <e p="CharacterMovement.cs" t="Include" />
           <e p="Controller" t="Include">
             <e p="IActorInput.cs" t="Include" />
@@ -90,6 +91,7 @@
           <e p="DiscoballSpin.cs" t="Include" />
           <e p="FowManager.cs" t="Include" />
           <e p="KonfettiScript.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
           <e p="PartPersons" t="Include">
             <e p="PartyPersonGenerator.cs" t="Include" />
             <e p="PPGenEvent.cs" t="Include" />
@@ -107,15 +109,18 @@
               <e p="Refridgerator.cs" t="Include" />
               <e p="Rubbish.cs" t="Include" />
               <e p="RubbishSpawner.cs" t="Include" />
+              <e p="Soundanlage.cs" t="Include" />
               <e p="Telephone.cs" t="Include" />
             </e>
             <e p="NPCInteractable.cs" t="Include" />
             <e p="PlayerActions.cs" t="Include" />
           </e>
+          <e p="ScoreManager.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="Clock.cs" t="Include" />
           </e>
           <e p="Utility.cs" t="Include" />
+          <e p="VictoryScreen.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
           <e p="DiscoBall.shader" t="Include" />

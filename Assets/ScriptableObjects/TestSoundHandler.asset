@@ -21,6 +21,7 @@ MonoBehaviour:
   BackgroundChatter: {fileID: 8300000, guid: 7f4da92c17a18462097668c0864dc56e, type: 3}
   BeerBotteClinging: {fileID: 8300000, guid: 701baeaed228f4fd9879ca3dfd391332, type: 3}
   FridgeBeer: {fileID: 8300000, guid: cee4d840d12764aebab79aa9e64d38f7, type: 3}
+  TelephoneCall: {fileID: 8300000, guid: b61a11a422d144b3aac53cf9f198becd, type: 3}
   rRange: 0.5
-  volumeRangePos: 0.3034938
-  pitchRangePos: 1.1111186
+  volumeRangePos: 0.7332994
+  pitchRangePos: 1.1299456
