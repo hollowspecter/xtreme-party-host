@@ -27,7 +27,17 @@ public class Toilet : AdvertisingObject {
     {
         Debug.Log("Add Toilet Action");
         KeyValuePair<NeedType, float>[] ads = new KeyValuePair<NeedType, float>[1];
-        ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 100f);
+
+
+        //Wenn der Toilettengestank noch da ist, weniger Rewarding
+        if(currentSmell)
+        {
+            ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 50f);
+        }
+        else
+        {
+            ads[0] = new KeyValuePair<NeedType, float>(NeedType.BLADDER, 100f);
+        }
         TimedAction toiletAction = new TimedAction(this, "Empty Bladder", ads, ads, OnEndToiletUsed, null, 5f);
         advertisedActions.Add(toiletAction);
     }

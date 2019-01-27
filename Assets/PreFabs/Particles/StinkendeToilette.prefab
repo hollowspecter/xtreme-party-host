@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114246703223481896}
   m_Layer: 0
   m_Name: StinkendeToilette
-  m_TagString: Untagged
+  m_TagString: PlayerInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4379549889b475e8f968c9f3f62e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededTime: 1
+  neededTime: 5
   ResetOnStop: 0
   interactable: 1
   ItemType: default
