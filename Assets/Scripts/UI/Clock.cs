@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Clock : MonoBehaviour
 {
@@ -38,19 +39,22 @@ public class Clock : MonoBehaviour
         clockText.color = lineColor;
         clockText.fontMaterial.SetColor(ShaderUtilities.ID_GlowColor, glowColor);
         time = new DateTime(1,1,1, 20, 0, 0);
-        timeUntilPartyEnd += _partyEndBuffer;
+        _partyEndBuffer += timeUntilPartyEnd;
     }
 
     private void Update()
     {
         var timeTick = Time.deltaTime * simulationTimeFactor;
         timeUntilPartyEnd = timeUntilPartyEnd - timeTick;
+        _partyEndBuffer = _partyEndBuffer - timeTick;
         
+        Debug.Log(_partyEndBuffer);
         time = time.AddMinutes(timeTick);
         clockText.text = time.ToString("HH:mm");
         
         if (_partyEndBuffer > 0) return;
-            //final score is set and ending screen will be shown
+            SceneManager.LoadScene("VictoryScreen",LoadSceneMode.Single);
+            
 
 
 
