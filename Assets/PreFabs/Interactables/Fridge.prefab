@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4766982424801326}
   - component: {fileID: 33050148371198038}
   - component: {fileID: 23439488683880872}
+  - component: {fileID: 65917760453106514}
+  - component: {fileID: 114001250523814470}
   m_Layer: 0
   m_Name: Fridge
-  m_TagString: Untagged
+  m_TagString: PlayerInteractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967397701463284}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -14.610319, y: 0.000000058169505, z: -0.80151844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967397701463284}
   m_Mesh: {fileID: 4300000, guid: 0d0adef4f0f1014429dcf6fc8605e9cf, type: 3}
+--- !u!65 &65917760453106514
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967397701463284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: -0.0061439574}
+--- !u!114 &114001250523814470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967397701463284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0beb3ee4eaba541c08e0dd3ddb53a4b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededTime: 1
+  ResetOnStop: 0
+  interactable: 1
+  ItemType: Refridgerator
+  ItemNeeded: Beercrate
+  AlternativeMethod: 1
+  maxAmountOfBeer: 2
+  beerAmount: 5
+  beerbottlePrefab: {fileID: 1889158294022594, guid: 2eb6b02a708324145a60c79cd8ea23aa,
+    type: 2}
