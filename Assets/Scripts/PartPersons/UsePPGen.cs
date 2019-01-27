@@ -12,16 +12,17 @@ public class UsePPGen : MonoBehaviour
 	private int _personAmt;
 	
 	private float _maxStayAmt = 60f;
-	private Clock _clockTime;
+    private Clock _clockTime;
     
 	
 	private void Awake()
 	{
 		_bellSource = this.GetComponent<AudioSource>();
-	}
+    }
 
     private void Start()
     {
+        _clockTime = Clock.instance;
         Spawn();
     }
 
@@ -42,7 +43,7 @@ public class UsePPGen : MonoBehaviour
             DoInvoke();
 
         _bellSource.Play();
-        PPGenerator.PPGEn(gameObject.transform.position, _maxStayAmt);
+        PPGenerator.PPGEn(gameObject.transform, _maxStayAmt);
         Debug.Log("Person " + _personAmt + " spawned!");
         _personAmt++;
     }
