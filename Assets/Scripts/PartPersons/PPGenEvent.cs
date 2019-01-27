@@ -16,14 +16,16 @@ public class PPGenEvent : PartyPersonGenerator
 	[Range(-20, 20)] private Vector3 _randomAngles;
 
 
-	public override void PPGEn(Vector3 spawnPoint, float maxStayAmt)
+	public override void PPGEn(Transform spawnPoint, float maxStayAmt)
 	{
-		var PPCharacter = Instantiate(PartyPerson, spawnPoint, Quaternion.identity);
+		var PPCharacter = Instantiate(PartyPerson, spawnPoint.position, Quaternion.identity);
 		
 		//Give each person a stay Amt
 		myStayAmt = Random.Range(_minStayAmt, maxStayAmt);
-		
-		//VIVI Setze myStayAmt in den jeweilig gespawnten NPC
+
+        //VIVI Setze myStayAmt in den jeweilig gespawnten NPC
+        PPCharacter.GetComponent<ActionManager>().maxTime = myStayAmt;
+        PPCharacter.GetComponent<ActionManager>().npcSpawnpoint = spawnPoint.GetComponent<EmptyObject>();
 		if (HatPool.Length == 0) return;
 		  
 

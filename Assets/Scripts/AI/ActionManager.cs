@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEditor;
 using TMPro;
 
@@ -10,6 +11,8 @@ public class ActionManager : MonoBehaviour {
     public ActionQueue actionQueue;
     public Transform hatpoint;
     public bool useDistanceAttenuation = false;
+    public float maxTime = 10f;
+    public AdvertisingObject npcSpawnpoint;
 
     [Header("Debug")]
     public TextMeshPro tmpdebug;
@@ -17,6 +20,8 @@ public class ActionManager : MonoBehaviour {
     private AbstractAction currentAction = null;
     private float tickTimer = 0f;
     private Needs needs;
+    private float leaveTimer = -1f;
+    private bool leaving = false;
 
     protected virtual void Awake()
     {
@@ -31,6 +36,33 @@ public class ActionManager : MonoBehaviour {
             TryPerformCurrentAction();
 
         if (tmpdebug) UpdateDebug();
+
+        if (!leaving) CheckStayingAmount();
+    }
+
+    protected virtual void CheckStayingAmount()
+    {
+        leaveTimer += Time.deltaTime;
+        if (leaveTimer >= maxTime)
+        {
+            Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name);
+
+            // dont call this method again
+            leaving = true;
+
+            // save score
+            ScoreManager.instance.Score += needs.CalculateMood();
+
+            // queue leaving action
+            actionQueue.Enqueue(new TimedAction(
+                npcSpawnpoint,
+                "Getting outta here",
+                null,
+                null,
+                () => { Destroy(gameObject); },//onend
+                () => { }, //onstart
+                3f));
+        }
     }
 
     protected virtual void UpdateActionTickTimer()
