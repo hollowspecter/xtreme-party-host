@@ -7,7 +7,10 @@ public class TimedAction : AbstractAction
 {
     protected float duration;
     private float timer = 0f;
-    
+    private bool paused = false;
+    public bool Paused { set { paused = value; } }
+    public bool finishEarly = false;
+
     public TimedAction(AdvertisingObject _myObject, string _name, KeyValuePair<NeedType, float>[] _advertisedReward, KeyValuePair<NeedType, float>[] _rewards, UnityAction _onEnd, UnityAction _onStart, float _duration)
     : base(_myObject, _name, _advertisedReward, _rewards, _onEnd, _onStart)
     {
@@ -19,11 +22,7 @@ public class TimedAction : AbstractAction
         if (!base.EvaluatePrecondition()) return false;
 
         // check distance to player
-        float distance = Vector3.Distance(needs.transform.position, myObject.transform.position);
-        if (distance <= myObject.interactionDistance)
-        {
-            return true;
-        }
+        if (CheckDistance()) return true;
 
         // force enqueue a move action
         WalkAction walkAction = new WalkAction(myObject, null, null, null);
@@ -36,15 +35,28 @@ public class TimedAction : AbstractAction
     {
         if (!base.Perform()) return false;
 
-        timer += Time.deltaTime;
+        if (!paused)
+            timer += Time.deltaTime;
 
-        if (timer >= duration)
+        if (timer >= duration || finishEarly)
         {
             EndAction();
             return true;
         }
         else
             return false;
+    }
+
+    public virtual bool CheckDistance()
+    {
+        if (needs == null) return false;
+
+        float distance = Vector3.Distance(needs.transform.position, myObject.transform.position);
+        if (distance <= myObject.interactionDistance)
+        {
+            return true;
+        }
+        return false;
     }
 
     public static TimedAction CreateWaitAction(float _duration, string _name)
