@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Rubbish : GeneralInteractable {
 
-
-    static List<Rubbish> allRubbish = new List<Rubbish>();
+    public static List<Rubbish> allRubbish = new List<Rubbish>();
+    public float disgustness;
 
     protected override void Awake()
     {
@@ -31,11 +31,4 @@ public class Rubbish : GeneralInteractable {
         //Räume den Müll weg!
         Destroy(gameObject);
     }
-
-
-
-    public float disgustness;
-
-
-
 }
