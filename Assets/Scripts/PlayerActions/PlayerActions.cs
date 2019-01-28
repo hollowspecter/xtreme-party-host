@@ -97,6 +97,8 @@ public class PlayerActions : MonoBehaviour {
             movement.movementBlocked = false;
             progressBar.fillAmount = 0.0f;
         }
+        movement.movementBlocked = false;
+        progressBar.fillAmount = 0.0f;
     }
 
     private void ProgressAction()

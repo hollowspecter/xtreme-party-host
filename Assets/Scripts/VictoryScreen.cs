@@ -25,7 +25,7 @@ public class VictoryScreen : MonoBehaviour
 		}
 
 
-		Score.text = "" + ScoreManager.instance.Score; //insert score
+        Score.text = "" + (int)(ScoreManager.instance.Score * 103f); //insert score
 		
 	}
 	
