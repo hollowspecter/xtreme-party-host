@@ -90,7 +90,17 @@ public class Needs : MonoBehaviour {
             else
                 sum += (10f / needs[i]);
         }
-        return sum;
+        
+        //catch a null
+        if (sum > 0)
+        {
+            return sum;
+        }
+
+        else
+        {
+            return 0;
+        }
     }
 
     protected virtual void UpdateIcon()

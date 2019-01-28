@@ -37,9 +37,10 @@ public class Clock : MonoBehaviour
         outline.color = lineColor;
         outlineGlow.color = glowColor;
         clockText.color = lineColor;
-        clockText.fontMaterial.SetColor(ShaderUtilities.ID_GlowColor, glowColor);
+        //clockText.fontMaterial.SetColor(ShaderUtilities.ID_GlowColor, glowColor);
         time = new DateTime(1,1,1, 20, 0, 0);
         _partyEndBuffer += timeUntilPartyEnd;
+        Debug.Log("Party end buffer: " + _partyEndBuffer + "party en: " + timeUntilPartyEnd);
     }
 
     private void Update()
@@ -48,7 +49,6 @@ public class Clock : MonoBehaviour
         timeUntilPartyEnd = timeUntilPartyEnd - timeTick;
         _partyEndBuffer = _partyEndBuffer - timeTick;
         
-        Debug.Log(_partyEndBuffer);
         time = time.AddMinutes(timeTick);
         clockText.text = time.ToString("HH:mm");
         

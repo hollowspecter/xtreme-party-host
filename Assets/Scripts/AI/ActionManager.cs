@@ -23,6 +23,8 @@ public class ActionManager : MonoBehaviour {
     private float leaveTimer = -1f;
     private bool leaving = false;
 
+    private float score;
+
     protected virtual void Awake()
     {
         actionQueue = new ActionQueue();
@@ -45,13 +47,15 @@ public class ActionManager : MonoBehaviour {
         leaveTimer += Time.deltaTime;
         if (leaveTimer >= maxTime)
         {
-            Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name);
+
 
             // dont call this method again
             leaving = true;
 
             // save score
-            ScoreManager.instance.Score += needs.CalculateMood();
+            if (needs.CalculateMood() == null) return;
+            ScoreManager.instance.Score += needs.CalculateMood() * 10;
+            Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name + ":::" + ScoreManager.instance.Score);
 
             // queue leaving action
             actionQueue.Enqueue(new TimedAction(
@@ -119,7 +123,7 @@ public class ActionManager : MonoBehaviour {
 
         // go thru all objects
         List<KeyValuePair<float, AbstractAction>> listedActions = new List<KeyValuePair<float, AbstractAction>>();
-        float score, sqrDistance, currentMood, futureMood;
+        float  sqrDistance, currentMood, futureMood; //score,
         foreach (var obj in AdvertisingObject.allObjects)
         {
             // go thru all actions
@@ -168,13 +172,13 @@ public class ActionManager : MonoBehaviour {
         else tmpdebug.text = currentAction.Name;
     }
 
-    protected virtual void OnDrawGizmosSelected()
-    {
-        if (actionQueue != null)
-            Handles.Label(transform.position + Vector3.up, actionQueue.ToString());
-        else
-            Handles.Label(transform.position + Vector3.up, "No Actions in the Queue");
-    }
+//    protected virtual void OnDrawGizmosSelected()
+//    {
+//        if (actionQueue != null)
+//            Handles.Label(transform.position + Vector3.up, actionQueue.ToString());
+//        else
+//            Handles.Label(transform.position + Vector3.up, "No Actions in the Queue");
+//    }
 
     public virtual void ForceAction(AbstractAction _action)
     {

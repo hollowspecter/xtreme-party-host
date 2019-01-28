@@ -18,10 +18,7 @@ public class UsePPGen : MonoBehaviour
 	private void Awake()
 	{
 		_bellSource = this.GetComponent<AudioSource>();
-        Spawn();
-        Spawn();
-        Spawn();
-        Spawn();
+
         Spawn();
 
     }
