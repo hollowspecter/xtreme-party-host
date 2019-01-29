@@ -152,6 +152,11 @@ public class ActionManager : MonoBehaviour {
                 futureMood = needs.CalculatePotentialMood(action.AdvertisedReward);
                 score = currentMood - futureMood;
 
+                if (float.IsNaN(score))
+                {
+                    score = 0;
+                }
+
                 if (useDistanceAttenuation)
                 {
                     sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
@@ -186,7 +191,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void UpdateDebug()
     {
-        if (currentAction == null) tmpdebug.text = "nothing to do here."; //Matt: changed from "no action"
+        if (currentAction == null) tmpdebug.text = "nothing to do here"; //Matt: changed from "no action"
         else tmpdebug.text = currentAction.Name;
     }
 

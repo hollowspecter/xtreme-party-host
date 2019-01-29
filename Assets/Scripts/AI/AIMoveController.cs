@@ -210,6 +210,7 @@ public class AIMoveController : MonoBehaviour
     {
         int wait_time = Random.Range(10, 60);
         yield return new WaitForSeconds(wait_time);
-        Instantiate(_konfettiPrefab, pukePosition.position, pukePosition.rotation);
+        GameObject konf = Instantiate(_konfettiPrefab, pukePosition.position, Quaternion.Euler(-90f,0,0));
+        RubbishSpawner.AddRubbishToObject(konf, 4.0f, 6.0f);
     }
 }
