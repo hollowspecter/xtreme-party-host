@@ -1521,6 +1521,8 @@ MonoBehaviour:
   target: {fileID: 0}
   pukePosition: {fileID: 4492740853278900}
   pukePrefab: {fileID: 1334240321100460, guid: 7cdd2586a20b5459c8cee52a3796ea3b, type: 2}
+  _konfettiPrefab: {fileID: 1309692918294386, guid: 7d2f07f418808e847b0c3fe206d11571,
+    type: 2}
 --- !u!114 &114023135434933836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1927,6 +1929,7 @@ MonoBehaviour:
   maxRotationalVelocity: 3
   acceleration: 5
   isAIMovement: 1
+  movementBlocked: 0
 --- !u!114 &114813195885800690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2161,7 +2164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededTime: 1
+  interactionProgress: 0
   ResetOnStop: 1
+  interactingPlayer: {fileID: 0}
   interactable: 1
   ItemType: default
   ItemNeeded: 

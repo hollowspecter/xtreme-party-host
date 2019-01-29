@@ -186,7 +186,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void UpdateDebug()
     {
-        if (currentAction == null) tmpdebug.text = "no action";
+        if (currentAction == null) tmpdebug.text = "nothing to do here."; //Matt: changed from "no action"
         else tmpdebug.text = currentAction.Name;
     }
 

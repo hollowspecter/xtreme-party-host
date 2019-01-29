@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Refridgerator : GeneralInteractable {
 
     [SerializeField]
     private int maxAmountOfBeer;
 
+    public TextMeshPro tmpBeer;
 
     public int beerAmount;
 
@@ -34,6 +36,8 @@ public class Refridgerator : GeneralInteractable {
         beerAmount--;
     }
 
-
-
+    private void Update()
+    {
+        tmpBeer.text = "Beer: \n" + beerAmount + " / " + maxAmountOfBeer;
+    }
 }

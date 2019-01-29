@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daaccc2d-84f6-40cd-a543-d1ab74f191ab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.xtreme-party-host/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/Interactables/Fridge.prefab" afterPath="$PROJECT_DIR$/Assets/PreFabs/Interactables/Fridge.prefab" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Needs.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Needs.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,32 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DiscoBall.shader" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Shaders/DiscoBall.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenu.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <marker date="1548593341474" expanded="true" signature="6:132" ph="..." />
-                <marker date="1548593341474" expanded="true" signature="171:477" ph="{...}" />
-                <marker date="1548593341474" expanded="true" signature="233:353" ph="{...}" />
-                <marker date="1548593341474" expanded="true" signature="371:471" ph="{...}" />
-                <marker date="1548593341474" expanded="true" signature="399:468" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VictoryScreen.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -62,36 +35,67 @@
       <file leaf-file-name="ActionManager.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+            <state relative-caret-position="-2391">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="12" />
               <folding>
-                <marker date="1548775266566" expanded="false" signature="6:140" ph="..." />
-                <marker date="1548775266566" expanded="true" signature="185:6688" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="717:809" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="848:1062" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="1111:2381" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="1190:2375" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="1367:1968" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="1986:2362" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="2433:2601" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="2521:2595" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="2655:3429" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="2713:2799" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="2987:3423" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3277:3413" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3470:3803" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3485:3605" ph="/* Debug.Log(gameObject.name + &quot;: ActionTick!&quot;); ... */" />
-                <marker date="1548775266566" expanded="true" signature="3641:3689" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3724:3797" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3846:5613" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="3861:3949" ph="/* Debug.Log(gameObject.name + &quot;: Try Select an Action&quot;); ... */" />
-                <marker date="1548775266566" expanded="true" signature="4184:4872" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="4291:4862" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="4576:4756" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="5682:5865" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="5907:6032" ph="{...}" />
-                <marker date="1548775266566" expanded="true" signature="6034:6326" ph="/* protected virtual void OnDrawGizmosSelected() ... */" />
-                <marker date="1548775266566" expanded="true" signature="6387:6686" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="6:140" ph="..." />
+                <marker date="1548776282589" expanded="true" signature="185:6731" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="717:809" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="848:1062" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="1111:2381" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="1190:2375" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="1367:1968" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="1986:2362" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="2433:2601" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="2521:2595" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="2655:3429" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="2713:2799" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="2987:3423" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3277:3413" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3470:3803" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3485:3605" ph="/* Debug.Log(gameObject.name + &quot;: ActionTick!&quot;); ... */" />
+                <marker date="1548776282589" expanded="true" signature="3641:3689" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3724:3797" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3846:5613" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="3861:3949" ph="/* Debug.Log(gameObject.name + &quot;: Try Select an Action&quot;); ... */" />
+                <marker date="1548776282589" expanded="true" signature="4184:4872" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="4291:4862" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="4576:4756" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="5682:5865" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="5907:6075" ph="{...}" />
+                <marker date="1548776282589" expanded="true" signature="6077:6369" ph="/* protected virtual void OnDrawGizmosSelected() ... */" />
+                <marker date="1548776282589" expanded="true" signature="6430:6729" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Refridgerator.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <marker date="1548777208509" expanded="true" signature="6:91" ph="..." />
+                <marker date="1548777208509" expanded="true" signature="142:945" ph="{...}" />
+                <marker date="1548777208509" expanded="true" signature="361:463" ph="{...}" />
+                <marker date="1548777208509" expanded="true" signature="513:598" ph="{...}" />
+                <marker date="1548777208509" expanded="true" signature="647:830" ph="{...}" />
+                <marker date="1548777208509" expanded="true" signature="857:943" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiscoballSpin.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <marker date="1548776614652" expanded="true" signature="62:351" ph="{...}" />
+                <marker date="1548776614652" expanded="true" signature="169:216" ph="{...}" />
+                <marker date="1548776614652" expanded="true" signature="237:349" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -128,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AIMoveController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AIMoveController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="825">
               <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
               <folding>
                 <marker date="1548776137850" expanded="false" signature="6:126" ph="..." />
@@ -236,6 +240,7 @@
       <find>listedaction</find>
       <find>score</find>
       <find>calculate</find>
+      <find>tmpdebug</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,6 +258,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/DiscoBall.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPSound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -272,15 +278,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/KonfettiScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/PartyPersonGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/PPGenEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PartPersons/UsePPGen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Clock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/Needs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs" />
       </list>
     </option>
   </component>
@@ -290,7 +297,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="164" />
     <option name="y" value="115" />
     <option name="width" value="1271" />
@@ -362,12 +369,12 @@
       <workItem from="1548495416720" duration="16845000" />
       <workItem from="1548582016392" duration="11025000" />
       <workItem from="1548703514641" duration="7472000" />
-      <workItem from="1548774243770" duration="1614000" />
+      <workItem from="1548774243770" duration="2683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43929000" />
+    <option name="totallyTimeSpent" value="44998000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +386,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="164" y="115" width="1271" height="924" extended-state="0" />
+    <frame x="164" y="115" width="1271" height="924" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -416,13 +423,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FowManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -756,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -850,42 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-          <folding>
-            <marker date="1548775266566" expanded="false" signature="6:140" ph="..." />
-            <marker date="1548775266566" expanded="true" signature="185:6688" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="717:809" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="848:1062" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="1111:2381" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="1190:2375" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="1367:1968" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="1986:2362" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="2433:2601" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="2521:2595" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="2655:3429" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="2713:2799" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="2987:3423" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3277:3413" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3470:3803" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3485:3605" ph="/* Debug.Log(gameObject.name + &quot;: ActionTick!&quot;); ... */" />
-            <marker date="1548775266566" expanded="true" signature="3641:3689" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3724:3797" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3846:5613" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="3861:3949" ph="/* Debug.Log(gameObject.name + &quot;: Try Select an Action&quot;); ... */" />
-            <marker date="1548775266566" expanded="true" signature="4184:4872" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="4291:4862" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="4576:4756" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="5682:5865" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="5907:6032" ph="{...}" />
-            <marker date="1548775266566" expanded="true" signature="6034:6326" ph="/* protected virtual void OnDrawGizmosSelected() ... */" />
-            <marker date="1548775266566" expanded="true" signature="6387:6686" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/Needs.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -917,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIMoveController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="825">
           <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
           <folding>
             <marker date="1548776137850" expanded="false" signature="6:126" ph="..." />
@@ -947,6 +904,69 @@
             <marker date="1548776137850" expanded="true" signature="5869:5982" ph="{...}" />
             <marker date="1548776137850" expanded="true" signature="6072:6227" ph="{...}" />
             <marker date="1548776137850" expanded="true" signature="6266:6460" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DiscoballSpin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <marker date="1548776614652" expanded="true" signature="62:351" ph="{...}" />
+            <marker date="1548776614652" expanded="true" signature="169:216" ph="{...}" />
+            <marker date="1548776614652" expanded="true" signature="237:349" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/AI/ActionManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2391">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <marker date="1548776282589" expanded="true" signature="6:140" ph="..." />
+            <marker date="1548776282589" expanded="true" signature="185:6731" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="717:809" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="848:1062" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="1111:2381" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="1190:2375" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="1367:1968" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="1986:2362" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="2433:2601" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="2521:2595" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="2655:3429" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="2713:2799" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="2987:3423" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3277:3413" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3470:3803" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3485:3605" ph="/* Debug.Log(gameObject.name + &quot;: ActionTick!&quot;); ... */" />
+            <marker date="1548776282589" expanded="true" signature="3641:3689" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3724:3797" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3846:5613" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="3861:3949" ph="/* Debug.Log(gameObject.name + &quot;: Try Select an Action&quot;); ... */" />
+            <marker date="1548776282589" expanded="true" signature="4184:4872" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="4291:4862" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="4576:4756" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="5682:5865" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="5907:6075" ph="{...}" />
+            <marker date="1548776282589" expanded="true" signature="6077:6369" ph="/* protected virtual void OnDrawGizmosSelected() ... */" />
+            <marker date="1548776282589" expanded="true" signature="6430:6729" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerActions/Interactables/Refridgerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <marker date="1548777208509" expanded="true" signature="6:91" ph="..." />
+            <marker date="1548777208509" expanded="true" signature="142:945" ph="{...}" />
+            <marker date="1548777208509" expanded="true" signature="361:463" ph="{...}" />
+            <marker date="1548777208509" expanded="true" signature="513:598" ph="{...}" />
+            <marker date="1548777208509" expanded="true" signature="647:830" ph="{...}" />
+            <marker date="1548777208509" expanded="true" signature="857:943" ph="{...}" />
           </folding>
         </state>
       </provider>
