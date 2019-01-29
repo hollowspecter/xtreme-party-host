@@ -10,7 +10,9 @@ public class Refridgerator : GeneralInteractable {
 
     public TextMeshPro tmpBeer;
 
-    public int beerAmount;
+    public int beerAmount = 6;
+
+    public int beerFill;
 
     [SerializeField]
     protected GameObject beerbottlePrefab;
@@ -25,6 +27,9 @@ public class Refridgerator : GeneralInteractable {
     protected override void ConsumeRequirement()
     {
         base.ConsumeRequirement();
+
+        beerAmount += beerFill;
+        if (beerAmount <= maxAmountOfBeer) return;
         beerAmount = maxAmountOfBeer;
     }
 

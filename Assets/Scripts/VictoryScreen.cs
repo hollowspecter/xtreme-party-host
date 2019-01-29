@@ -8,13 +8,13 @@ public class VictoryScreen : MonoBehaviour
 
 	public TextMeshProUGUI VictoryText;
 	public TextMeshProUGUI Score;
-	public float winScore = 3500;
+	public float winScore = 10000;
 	public String victory = "Epic Party!";
 	public String fail = "worst Party EVAR!";
 
 	private void Start()
 	{
-		var endScore = ScoreManager.instance.Score * 10f;
+		var endScore = ScoreManager.instance.Score * 100f;
 		if (endScore > winScore)
 		{
 			VictoryText.text = victory;
