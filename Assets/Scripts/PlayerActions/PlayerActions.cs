@@ -31,6 +31,7 @@ public class PlayerActions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ProgressAction();
+	    
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,7 +44,7 @@ public class PlayerActions : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-            interactablesList.Remove(other.gameObject);
+        interactablesList.Remove(other.gameObject);
     }
 
     public void RemoveFromList(GameObject _item)
@@ -116,6 +117,12 @@ public class PlayerActions : MonoBehaviour {
                 if (progressBar)
                     progressBar.fillAmount = currentInteractingObject.interactionProgress;
             }
+        }
+
+        for (var i = interactablesList.Count - 1; i > -1; i--)
+        {
+            if(interactablesList[i]==null)
+                interactablesList.RemoveAt(i);
         }
     }
 

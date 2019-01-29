@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance = null;
 
     public float Score = 0f;
+    private float _functionalScore;
 
     private void Awake()
     {
@@ -16,5 +17,19 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        //hope this helps fixing the score
+        if (!float.IsInfinity(Score))
+        {
+            _functionalScore = Score;
+        }
+        else
+        {
+            Score = _functionalScore;
+        }
+            
     }
 }

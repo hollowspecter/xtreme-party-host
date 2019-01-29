@@ -52,20 +52,38 @@ public class ActionManager : MonoBehaviour {
             // dont call this method again
             leaving = true;
 
-            // save score
-            if (needs.CalculateMood() == null) return;
-            ScoreManager.instance.Score += needs.CalculateMood() * 10;
-            Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name + ":::" + ScoreManager.instance.Score);
+            // save score and catch NaN
+            if (!float.IsNaN(needs.CalculateMood()))
+            {
+                ScoreManager.instance.Score += needs.CalculateMood() * 10;
+                Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name + ":::" + ScoreManager.instance.Score);
+                
+                // queue leaving action
+                actionQueue.Enqueue(new TimedAction(
+                    npcSpawnpoint,
+                    "Getting outta here",
+                    null,
+                    null,
+                    () => { Destroy(gameObject); },//onend
+                    () => { }, //onstart
+                    3f));
+            }
 
-            // queue leaving action
-            actionQueue.Enqueue(new TimedAction(
-                npcSpawnpoint,
-                "Getting outta here",
-                null,
-                null,
-                () => { Destroy(gameObject); },//onend
-                () => { }, //onstart
-                3f));
+            else
+            {
+                // queue leaving action
+                actionQueue.Enqueue(new TimedAction(
+                    npcSpawnpoint,
+                    "Getting outta here",
+                    null,
+                    null,
+                    () => { Destroy(gameObject); },//onend
+                    () => { }, //onstart
+                    3f));
+            }
+
+
+
         }
     }
 
@@ -134,6 +152,11 @@ public class ActionManager : MonoBehaviour {
                 futureMood = needs.CalculatePotentialMood(action.AdvertisedReward);
                 score = currentMood - futureMood;
 
+                if (float.IsNaN(score))
+                {
+                    score = 0;
+                }
+
                 if (useDistanceAttenuation)
                 {
                     sqrDistance = (transform.position - action.MyObjectPosition).sqrMagnitude;
@@ -168,7 +191,7 @@ public class ActionManager : MonoBehaviour {
 
     protected virtual void UpdateDebug()
     {
-        if (currentAction == null) tmpdebug.text = "no action";
+        if (currentAction == null) tmpdebug.text = "nothing to do here"; //Matt: changed from "no action"
         else tmpdebug.text = currentAction.Name;
     }
 
