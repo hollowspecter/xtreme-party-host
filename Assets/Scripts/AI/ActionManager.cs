@@ -52,20 +52,38 @@ public class ActionManager : MonoBehaviour {
             // dont call this method again
             leaving = true;
 
-            // save score
-            if (needs.CalculateMood() == null) return;
-            ScoreManager.instance.Score += needs.CalculateMood() * 10;
-            Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name + ":::" + ScoreManager.instance.Score);
+            // save score and catch NaN
+            if (!float.IsNaN(needs.CalculateMood()))
+            {
+                ScoreManager.instance.Score += needs.CalculateMood() * 10;
+                Debug.Log("<color=red>I am getting out of here!</color>: " + gameObject.name + ":::" + ScoreManager.instance.Score);
+                
+                // queue leaving action
+                actionQueue.Enqueue(new TimedAction(
+                    npcSpawnpoint,
+                    "Getting outta here",
+                    null,
+                    null,
+                    () => { Destroy(gameObject); },//onend
+                    () => { }, //onstart
+                    3f));
+            }
 
-            // queue leaving action
-            actionQueue.Enqueue(new TimedAction(
-                npcSpawnpoint,
-                "Getting outta here",
-                null,
-                null,
-                () => { Destroy(gameObject); },//onend
-                () => { }, //onstart
-                3f));
+            else
+            {
+                // queue leaving action
+                actionQueue.Enqueue(new TimedAction(
+                    npcSpawnpoint,
+                    "Getting outta here",
+                    null,
+                    null,
+                    () => { Destroy(gameObject); },//onend
+                    () => { }, //onstart
+                    3f));
+            }
+
+
+
         }
     }
 

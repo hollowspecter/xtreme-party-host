@@ -17,4 +17,5 @@ public class ScoreManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
+    
 }

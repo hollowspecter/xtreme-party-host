@@ -43,6 +43,10 @@ public class AIMoveController : MonoBehaviour
 
     private UnityAction PathComplete;
 
+    //Matt: added for Konfetti throwing
+    [SerializeField]
+    private GameObject _konfettiPrefab;
+
     private void Awake()
     {
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
@@ -52,6 +56,8 @@ public class AIMoveController : MonoBehaviour
         movement = GetComponentInChildren<CharacterMovement>();
         perlinYCoordinate = Random.Range(0, 100);
         iKControl = GetComponentInChildren<IKControl>();
+
+        StartCoroutine(KonfettiTimer());
     }
 
     private void Update()
@@ -198,5 +204,12 @@ public class AIMoveController : MonoBehaviour
             Gizmos.DrawLine(navMeshPath.corners[currentCorner], movement.transform.position);
 
         }
+    }
+
+    IEnumerator KonfettiTimer()
+    {
+        int wait_time = Random.Range(10, 60);
+        yield return new WaitForSeconds(wait_time);
+        Instantiate(_konfettiPrefab, pukePosition.position, pukePosition.rotation);
     }
 }
